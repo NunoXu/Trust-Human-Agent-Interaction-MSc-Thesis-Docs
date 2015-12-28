@@ -50,10 +50,8 @@
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{.5\itemsep}
 \addtolength{\wideitemsep}{-7pt}
-\let\olditem\item
-\renewcommand{\item}{\setlength{\itemsep}{\wideitemsep}\olditem}
 
-\newcommand{\tallitem}{def}
+\newcommand{\tallitem}{\setlength{\itemsep}{\wideitemsep}\item}
 \renewcommand{\arraystretch}{1.2} % increase space in tables
 \setlength{\tabcolsep}{.25em} % increase horizontal space in tables
 
