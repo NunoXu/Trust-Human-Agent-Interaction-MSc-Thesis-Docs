@@ -48,7 +48,8 @@
 \usepackage{newfloat}
 
 \newlength{\wideitemsep}
-\setlength{\wideitemsep}{1.5\itemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{+10pt}
 
 \newcommand{\tallitem}{\setlength{\itemsep}{\wideitemsep}\item}
 \renewcommand{\arraystretch}{1.2} % increase space in tables
