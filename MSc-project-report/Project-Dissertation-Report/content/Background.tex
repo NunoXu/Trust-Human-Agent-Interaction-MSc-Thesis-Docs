@@ -39,7 +39,7 @@ For the purpose of this report, reputation of an agent is defined as the combine
 
 \subsection{Game Theory}
 \label{subsec:GameTheory}
-Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their gains with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
 
 \subsubsection{Prisoner's Dilemma}
 \label{subsubsec:PrisonersDilemma}
@@ -52,3 +52,16 @@ Two criminal partners are arrested and locked in separate cells with no way of c
 	\item If both remain silent, both get just 1 year in prison;
 \end{itemize}
 
+The game's possible outcomes can be represented by a payoff matrix:
+
+\begin{table}[]
+	\centering
+	\caption{My caption}
+	\label{my-label}
+	\begin{tabular}{l|l|l|}
+		\cline{2-3}
+		& $C_2$   & $D_2$   \\ \hline
+		\multicolumn{1}{|l|}{C} & 2,2 & 0,3 \\ \hline
+		\multicolumn{1}{|l|}{D} & 3,0 & 1,1 \\ \hline
+	\end{tabular}
+\end{table}
