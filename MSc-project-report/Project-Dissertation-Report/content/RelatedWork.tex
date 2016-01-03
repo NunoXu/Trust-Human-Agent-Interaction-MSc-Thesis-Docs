@@ -43,7 +43,7 @@ The model also conceptualizes \textbf{Expectation} as a belief of when agent X a
 \end{equation}
 This can be used to establish what expectations the user should have in the agent, whether initial or constructed during interaction, and provide an additional measure to weight the importance of certain agent functions and actions.
 
-As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the mental attitude of the trustor is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through it's \textbf{Degree of Credibility} (DoC), which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $\text{\textit{Qual-i}}_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$.
+As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the mental attitude of the trustor is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through it's \textbf{Degree of Credibility} (DoC), which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $\text{\textit{Qual-i}}_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$. $F_{X, Y, \tau}$ should associate the \textit{strengh-of-sources ($Str_j$)} and \textit{quality-values ($\text{\textit{Qual-i}}_{sjY}(\tau)$)} with  
 \begin{equation}
 	\begin {aligned}
 	DoC_X&(\text{\textit{Qual-i}}_{(s1, ...sn), Y} (\tau)) = F_{X, Y, \tau} (Bel_X(Str_1 \text{\textit{Qual-i}}_{s1Y}(\tau)), \\
@@ -51,6 +51,7 @@ As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the men
 	\end {aligned}
 	\label{eq:DegreeOfCredibility}
 \end{equation}
+
 
 
 
