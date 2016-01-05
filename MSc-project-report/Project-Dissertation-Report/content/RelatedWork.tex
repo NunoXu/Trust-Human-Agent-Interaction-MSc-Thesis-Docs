@@ -96,6 +96,13 @@ This work was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to
 
 The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
 
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=\textwidth]{figures/repage.jpg}
+	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
+	\label{fig:Repage}
+\end{figure}
+
 At the first level of the abstraction hierarchy we have the basis of information to infer predicates, \textit{contracts}, \textit{fulfilments} and \textit{communication}. Contracts are agreements between two agents, while fulfilments are the results of the contract. Communication is the information about other agents that come from third parties. The second level is then constituted by inferences to an outcome, formed by a contract and its fulfilment, and valued information gathered from communications. This inferred predicates are not just tuples, they are give an evaluation to the predicate. 
 
 In the next level we have two predicates: \textit{shared voice} and \textit{shared evaluation}. The former is inferred from communicated reputation, and the latter from communicated images. 
@@ -106,12 +113,7 @@ Finally the last abstractions level is composed of the predicates \textit{cognit
 
 The last element is the analyser and its job is to propose actions in order to improve the accuracy of predicates in Repage and solve cognitive dissonances to produce certainty. The actions are proposed to the agent planner, leaving it to decide how to take this actions into account.
 
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=\textwidth]{figures/repage.jpg}
-	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
-	\label{fig:Repage}
-\end{figure}
+
 
 
 
