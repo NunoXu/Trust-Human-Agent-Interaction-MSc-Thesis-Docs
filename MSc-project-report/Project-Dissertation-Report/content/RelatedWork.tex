@@ -92,7 +92,7 @@ This model is the most abstract, as almost all of the implementation details are
 
 \subsubsection{Repage}
 \label{subsubsec:Related work:Trust Models:Repage}
-This system was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for a social evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad, bad, neutral, good, very good}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
+This system was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad, bad, neutral, good, very good}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
 
 The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
 
@@ -113,6 +113,7 @@ Finally the last abstractions level is composed of the predicates \textit{cognit
 
 The last element is the analyser and its job is to propose actions in order to improve the accuracy of predicates in Repage and solve cognitive dissonances to produce certainty. The actions are proposed to the agent planner, leaving it to decide how to take this actions into account.
 
+Image and Reputation are the predicates that provide a trust evaluation of a target, and as previously stated, 
 
 This work is one of the very few found that tries to establish an implementable architecture for a trust model, as most of the models created are purely theoretical. Furthermore, it fits to our purpose of creating a trust assessment module, corresponding to the memory and detector components, and a trust decision module, corresponding to the analyser.
 
