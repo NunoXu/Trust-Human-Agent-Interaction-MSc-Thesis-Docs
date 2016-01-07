@@ -16,5 +16,6 @@ This module will represent the memory and detector components of the Repage arch
 This module is still very roughly defined as no related work was found about this topic, so most work done in this module will be on experimenting what information can be extracted from the trust model. The main goal is to suggest actions that will either improve the strength of existing beliefs on the trust model, or improve the trust value on the agent, occupying the analyser component in Repage (Section \ref{subsubsec:Related work:Trust Models:Repage}).
 
 \subsection{Putting it Together}
+\label{subsec:Solution:Putting it Together}
 The Trustful Action Suggestion Module is going to be directly dependent on the Cognitive Trust Modelling Module, as all decision making from the former module is going to be based on information from the latter module.
 Both modules must be integrated with the agent in which we will evaluate the work with. Depending on the current state of the agent, a translation module may have to be created, to connect the main memories of the agent to the memories in Cognitive Trust Modelling Module. Additionally the Trustful Action Suggestion Module must also be added onto the planner component of the agent, so that the suggestions will be taken into account.
