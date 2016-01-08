@@ -22,11 +22,11 @@ For related work concerning Trust Models we will focus on \textbf{Cognitive} Tru
 Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we will not use the entirety of this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this report. 
 The model is characterised around their definition referred in Section \ref{subsubsec:CastelfranchiTrust}, through a central core, composed by a five-part relation, between:
 \begin{itemize}
-	\item The trustor (\textbf{X});
-	\item The trustee (\textbf{Y});
-	\item The context where they are inserted in (\textbf{C});
-	\item A task ($\bm{\tau}$) defined by the pair $(\alpha, \rho)$, where \bm{$\alpha$} is the action  entrusted to the trustee, that possibly produces an outcome \bm{$\rho$}, contained in the goal of X ($g_x$);
-	\item The goal of the trustor (\bm{$g_x$}).
+	\item the trustor (\textbf{X});
+	\item the trustee (\textbf{Y});
+	\item the context where they are inserted in (\textbf{C});
+	\item a task ($\bm{\tau}$) defined by the pair $(\alpha, \rho)$, where \bm{$\alpha$} is the action  entrusted to the trustee, that possibly produces an outcome \bm{$\rho$}, contained in the goal of X ($g_x$);
+	\item the goal of the trustor (\bm{$g_x$}).
 \end{itemize}
 More shortly represented by equation \ref{eq:TrustRelation}.
 \begin{equation}
@@ -60,7 +60,7 @@ For example, consider that we want agent X's \ac{DoC} regarding Y's ability to c
 	\item We have two sources about Y's ability to clean:
 	\begin{enumerate}
 		\item X saw Y once clean quite well, but long ago, so we could attribute $\text{\textit{Ability}}_{s1Y}(cleaning) = 0.8$ and $Str_1=0.2$;
-		\item Someone X considers reliable informs that Y performed poorly recently, se we attribute
+		\item someone X considers reliable informs that Y performed poorly recently, se we attribute
 		$\text{\textit{Ability}}_{s2Y}(cleaning) = 0.2s$ and $Str_2=0.6$;
 	\end{enumerate}
 	\item So a possible result of $DoC_X(\text{\textit{Ability}}_Y (cleaning))$ is:
@@ -128,7 +128,7 @@ The hierarchy is composed of three languages, starting with the base language, \
 \textit{$L_{ag}$} contains four sorts:
 \begin{itemize}
 	\item $S_D$: represents application domain, including constants, functions and predicate symbols;
-	\item $S_R$: represents probabilities, including a set of constants, $C_R$, with a label written as $\overline{r}$, where $r \in [0,1]\bigcap Q$, $Q$ being the set of rational numbers;
+	\item $S_R$: represents probabilities, including a set of constants, $C_R$, with a label written as $\overline{r}$, where $r \in [0,1]\bigcap Q$ ;
 	\item $S_A$: represents agent names, including a set of constants $C_A = {i_1, ..., i_n}$, corresponding to the agents' identifiers;
 	\item $S_F$: represents formulas, including a set of constants $C_F$, which is built simultaneously with the construction of the language. This is done by adding the constant $\lceil\phi\rceil$ for each $\phi \in F_m(L_{basic})$, and then, given a formula $\Psi \in F_m(L_{ag})$ we also add $\lceil\Psi\rceil$ to $C_f$.
 \end{itemize}
