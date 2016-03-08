@@ -1,0 +1,75 @@
+\documentclass[runningheads,a4paper]{llncs}
+
+\input{content/Include}
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% For REVIEW
+% \linenumbers
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% fix TOC on llncs
+\makeatletter
+\renewcommand*\l@author[2]{}
+\renewcommand*\l@title[2]{}
+\makeatletter
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\mainmatter
+
+\urldef{\mailsa}\path|nuno.xu@tecnico.ulisboa.pt|
+
+\title{Trust Model for Human Agent Interaction}
+\authorrunning{Trust Model for Human Agent Interaction}
+% (feature abused for this document to repeat the title also on left hand pages)
+
+\author{Nuno Xu\\
+	\mailsa}
+
+\institute{
+	\textbf{Supervisors}: Rui Prada and Ana Paiva\\
+	Técnico Lisboa (Taguspark)\\
+	Universidade de Lisboa\\
+	Av. Prof. Dr. Aníbal Cavaco Silva\\ Porto Salvo, Portugal\\
+	\url{http://tecnico.ulisboa.pt/en/}\\
+}
+
+%\begin{comment}
+%\pagenumbering{gobble}
+\maketitle
+%\input{content/Abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Table of content
+%\newpage
+%\tableofcontents
+%\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\end{comment}
+%\pagenumbering{arabic}
+\input{content/Introduction}
+\input{content/Model}
+\input{content/Conclusion}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% References
+\newpage
+\bibliographystyle{splncs}
+\bibliography{bib/IEEEabrv,bib/library}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%\listoftodos
+
+\input{content/Acronyms}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Appendices
+\newpage
+\appendix
+\input{content/Appendices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}
