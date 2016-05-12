@@ -13,16 +13,14 @@ TRUST(X\ Y\ \tau)
 \label{eq:TrustRelation}
 \end{equation}
 
-We seek to represent the trustee as a collection of features from which an overall evaluation may be retrieved. These features provide a representation of the trustee's abilities in various fields, as well as concerns related to willingness, such as task preference, for example, a set can be as seen in set $ F_y $.
+We seek to represent the trustee as a collection of features from which an overall evaluation may be retrieved. These features provide a representation of the trustee's abilities in various fields, as well as concerns related to willingness, such as task preference, for example, a trustee $Y$'s feature set $ F_y $ can be as seen in \ref{eq:FeaturesExample}.
 
 \begin{equation}
-F_y=\left\{cooking, writing, preference to cook\right\}
+F_y=\left\{cooking, writing, preference\ to\ cook\right\}
 \label{eq:FeaturesExample}
 \end{equation}
 
-This makes visualization of a certain trustee's trust reasoning, as we can observe all the factors that contribute towards an evaluation. The specificity of the concrete features is purposefully left generic in order make the model fit in different scenarios. Of course this makes the model dependent on a well made ontology for the scenario, but we think this concern is unavoidable if we want to have understandable models, as the alternative solution is to use machine learning to provide unsupervised classification.
-
- as represented in Figure \ref{fig:trustee}. These features must be able to provide 2 values:
+This makes visualization of a certain trustee's trust reasoning, as we can observe all the factors that contribute towards an evaluation. The specificity of the concrete features is purposefully left generic in order make the model fit in different scenarios. This makes the model dependent on a well made ontology for the scenario, but we think this concern is unavoidable if we want to have understandable models, as the alternative solution is to use machine learning to perform clustering, which provi. These features must be able to provide 2 values:
 
 \begin{itemize}
 	\item trust - a value for how much trust we have in this trustee's specific feature;
