@@ -25,7 +25,7 @@ These features must be able to provide 2 values:
 	\item certainty - the degree of how much we believe this trust assumption to be true, tanking into account factors like how many times, or how long ago did we last affirm this belief.
 \end{itemize}
 
-This makes it easier to visualize a certain trustee's trust reasoning, as we can observe all the factors that contribute towards an evaluation. The specificity of the concrete features is purposefully left generic in order make the model fit in different scenarios. While the model becomes dependent on an ontology specific for the scenario, we think this concern is unavoidable if we want to have understandable models, as the alternative solution is to use machine learning to perform clustering, which are difficult to describe most of the time. 
+This makes it easier to visualize a certain trustee's trust reasoning, as we can observe all the factors that contribute towards an evaluation. The specificity of the concrete features is purposefully left generic in order make the model fit in different scenarios. While the model becomes dependent on an ontology specific for the scenario, we think this concern is unavoidable if we seek to have understandable models, as the alternative solution is to use machine learning to perform clustering, which are difficult to describe most of the time. 
 
 
 Trust and certainty are calculated through a collection of belief sources, which in the first version will be a history of direct contacts. The environment must be able to provide some way to access these contacts, either by a callback function or through open access to an action history. If the environment does not provide such features, a perception module, capable of checking action results, will be required.
