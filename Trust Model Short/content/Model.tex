@@ -26,6 +26,13 @@ This makes it easier to visualize a certain trustee's trust reasoning, as we can
 	\item trust - a value for how much trust we have in this trustee's specific feature;
 	\item certainty - the degree of how much we believe this trust assumption to be true, as factors like how many times, or how long ago, did we last affirm this belief may affect the believability of our assumptions.
 \end{itemize}
+
+
+Trust and certainty are calculated through a collection of belief sources, which in the first version will be a history of direct contacts. The environment must be able to provide some way to access these contacts, either by a callback function or through open access to an action history. If the environment does not provide such features, a perception module, capable of checking action results, will be required.
+
+The task is composed by a set of related features with a given weight. This represents the features most closely related to the task at hand, and their importance to he completion of the task.
+
+
 \begin{figure}[hbt]
 	\centering
 	\includegraphics[height=200px]{figures/Trust_Model_Diagram.png}
@@ -33,9 +40,6 @@ This makes it easier to visualize a certain trustee's trust reasoning, as we can
 	\label{fig:trustee}
 \end{figure}
 
-Trust and certainty are calculated through a collection of belief sources, which in the first version will be a history of direct contacts. The environment must be able to provide some way to access these contacts, either by a callback function or through open access to an action history. If the environment does not provide such features, a perception module, capable of checking action results, will be required.
-
-The task is composed by a set of related features with a given weight. This represents the features most closely related to the task at hand, and their importance to he completion of the task.
 
 \subsection{Implementation}
 
