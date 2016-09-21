@@ -1,0 +1,91 @@
+% This is "Background.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+\section{Background}
+\label{sec:Background}
+
+% Reference 3 types of agents that may be applicable to the project: 
+% - Social Agents
+% - Afective Agents
+% - Anthromorphic Agents
+% --- Embodied Conversational Agents (ECAs)
+
+% When talking about trust and reputation mention the differences between both.
+% Tell what is a trust model and what is a reputation model
+
+Before discussing related work and our solution to the problem, we will present the main concepts that  will be mentioned in the rest of this report, specifically regarding trust and reputation.
+
+\subsection{Trust}
+\label{subsec:Trust}
+Trust is regarded throughout the literature as one of the fundamental components of human society, being essential in cooperative and collaborative behaviour, having been studied in a multitude of disciplines, from Psychology and Sociology, to Philosophy and Economy\cite{Rousseau1998, Jones1997, Sabater2005}. For that reason, it is no wonder that it acquired a very large number of different definitions throughout the years of study, causing the problem of not existing a consensus on a definition of trust\cite{Castelfranchi2010}. In the scope of this project, the most relevant start for our discussion is the dyadic definition of trust: `an orientation of an actor (the \textbf{truster}) toward a specific person (the \textbf{trustee}) with whom the actor is in some way interdependent' (taken from \cite{Simpson2007}), as we want to focus on interpersonal relationships. This definition has been expanded throughout the literature, often adapted to fit the context or scope of the work, but three main definitions are highlighted in computational trust:
+\begin{itemize}
+	\tallitem First, Gambetta\cite{Gambetta1988} defined trust as follows: `Trust is the \textit{subjective probability} by which an individual, A, \textit{expects} that another individual, B, performs a given action on which its \textit{welfare depends}' (taken from \cite{Castelfranchi2010}). This is accepted by most authors as one of the most classical definitions of trust, but it is too restrictive with its uni-dimensionality, as it only refers to predictability of the trustor, and does not take into account competence in executing the given action.
+	
+	\tallitem Marsh\cite{Marsh1994} was the first author to formalize trust as a measurable Computational Concept, continuing the perspective of reducing trust to a numerical value, set by Gambetta\cite{Gambetta1988}, but also adding that: X trusts Y if, and only if, `X \textit{expects} that Y will behave according to X's best interest, and will not attempt to harm X' (taken from \cite{Castelfranchi2010}). This definition does not represent other parts of trust, such as the notion that trustor must ascertain some risk from delegating the action to the trustee.
+	
+	\tallitem Castelfranchi and Falcone then introduced a Cognitive aspect to Computational Trust\cite{Castelfranchi1998}. They define trust as the mental state of the trustor and the action in which the trustor refers upon the trustee to perform. This is the definition of trust that we will adopt throughout the rest of the report, as it represents a vision of trust that takes into account the trustor set of beliefs and intentions, approaching it to an agent's cognitive model, while also linking trust to the action being performed, as one might trust another for certain types of actions and not for others (e.g. I may trust my squire to polish my sword, but not to swing it).
+\end{itemize}
+
+\subsubsection{Castelfranchi and Falcone's Trust}
+\label{subsubsec:CastelfranchiTrust}
+More explicitly, Castelfranchi and Falcone\cite{Castelfranchi1998} state that trust is a conjunction of three concepts:
+\begin{itemize}
+	\item A \textit{mental attitude} or (pre)disposition of the agent towards another agent; this is represented by beliefs about the trustees' qualities and defects;
+	\item A \textit{decision} to rely upon another, and therefore making the trustor `vulnerable' to the possible negative actions of the trustee;
+	\item The \textit{act} of trusting another agent and the following behaviour of counting on the trustee to perform according to plan. 
+\end{itemize}
+By describing trust as a mental attitude it is also implied that: `Only a cognitive agent can trust another agent; only an agent endowed with goals and beliefs'\cite{Castelfranchi2010}.
+
+From this definition we should also address one important component, \textbf{Delegation}, which happens when an agent (X) needs or likes the action delegated to another agent (Y), so X includes it in his plans, therefore relying on Y. X plans to achieve his goal through Y. So, he formulates in his mind a multi-agent plan with a state or action goal being Y’s delegated\cite{Castelfranchi1998}.
+
+
+
+\subsection{Reputation and Image}
+\label{subsec:Reputation}
+\textit{Reputation} is also a concept that appears very often linked with trust in the literature, specially since recent models created for representing trust have been focused on \acp{MAS} (see \cite{Abdul-rahman2000, Sabater2002, Sabater2006, Huynh2006, Pinyol2009}), where more recent trust models have been developed to also include reputation as a source of trust.
+
+An agent is not influenced only by their own beliefs about the subject, the \textit{Image}, but also by what other agents say about it, its \textit{Reputation}.
+
+We describe Image and Reputation as introduced by Sabater in \cite{Sabater2006}:
+Image is defined as the agent's personal belief about a certain property of the target agent, be it a physical, mental or social trait. Reputation is a meta-belief about an impersonal evaluation of the target, in other words, it is the belief on the evaluation being circulated about the target. On a more concrete level, reputation is separated between \textit{shared evaluation} and \textit{shared voice}. Consider that an agent has beliefs about how other agents evaluate a certain target, if in a set of agents these beliefs converge to a value (e.g. `good' or `bad') we can say that there exists a shared evaluation of the target. It is important to note that all sharing agents are known and well defined. A shared voice is a belief that another set of agents themselves believe that an evaluation of the target exists. In other words, it is the belief that a group of agents will consistently report that a voice exists. These meta-beliefs are considered important as one is not required to believe that other's evaluation is correct, but might still believe that it exists.
+
+The mental decisions regarding reputation can be categorized as follows:
+\begin{itemize}
+	\item Epistemic decisions: accepting trust beliefs to update or generate a given image or reputation;
+	\item Pragmatic-Strategic decisions: using trust beliefs to decide how to behave towards other agents;
+	\item Memetic decisions: transmitting trust beliefs to others. 
+\end{itemize}
+This difference of possible decisions allows to describe how one may transmit reputation without having the responsibility for the credibility or truthfulness of the content transmitted, as one does not have to commit to accepting the reputation value, and just say that the rumour exists.
+
+
+\subsection{Game Theory}
+\label{subsec:GameTheory}
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
+
+\subsubsection{Prisoner's Dilemma}
+\label{subsubsec:PrisonersDilemma}
+The Prisoner's Dilemma is a two player game and is usually described as follows:
+
+Two criminal partners are arrested and locked in separate cells with no way of communicating with each other. They are then questioned separately, where they are given 2 options, betray the other prisoner by testifying against him, or remain silent, with the following outcomes:
+\begin{itemize}
+	\item If both prisoners betray each other, both get 2 years in prison;
+	\item If one of them betrays and the other remains silent, the betrayer goes free and the other gets 3 years in prison;
+	\item If both remain silent, both get just 1 year in prison;
+\end{itemize}
+
+We can represent betraying as \textit{Defecting} (D), and staying silent as \textit{Cooperating} (C), and name the players \textit{player1} and \textit{player2}. So the game's possible outcomes can be represented by a payoff matrix, like the one in Table \ref{PrisonerDilemaPayoffMatrix}, where each entry represents a tuple of the form (\textit{player1} payoff, \textit{player2} payoff). As the goal is to not get years in prison, the payoffs correspond to $Max\ years\ in\ prison - years\ got\ in\ prison$.
+
+\begin{table}[]
+	\centering
+	\begin{tabular}{l|l|l|}
+		\cline{2-3}
+		& $C_2$   & $D_2$   \\ \hline
+		\multicolumn{1}{|l|}{$C_1$} & 2,2 & 0,3 \\ \hline
+		\multicolumn{1}{|l|}{$D_1$} & 3,0 & 1,1 \\ \hline
+	\end{tabular}
+	\caption{Prisoner's Dilemma Payoff Matrix}
+	\label{PrisonerDilemaPayoffMatrix}
+\end{table}	
+
+In the game we can say that \textit{Defecting} \textbf{dominates} \textit{Cooperating}, as for any action that the adversary player may choose, \textit{Defecting} always gives a better payoff for the individual player\cite{Nash1951}.
+
