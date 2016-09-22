@@ -1,0 +1,848 @@
+% flatex input: [TrustfullActionSuggestion-Paper.tex]
+% This is "TrustfullActionSuggestion-Paper" 
+% Adapted from "sig-alternate.tex" V2.1 April 2013
+% This file should be compiled with V2.5 of "sig-alternate.cls" May 2012
+%
+% This example file demonstrates the use of the 'sig-alternate.cls'
+% V2.5 LaTeX2e document class file. It is for those submitting
+% articles to ACM Conference Proceedings WHO DO NOT WISH TO
+% STRICTLY ADHERE TO THE SIGS (PUBS-BOARD-ENDORSED) STYLE.
+% The 'sig-alternate.cls' file will produce a similar-looking,
+% albeit, 'tighter' paper resulting in, invariably, fewer pages.
+%
+% ----------------------------------------------------------------------------------------------------------------
+% This .tex file (and associated .cls V2.5) produces:
+%       1) The Permission Statement
+%       2) The Conference (location) Info information
+%       3) The Copyright Line with ACM data
+%       4) NO page numbers
+%
+% as against the acm_proc_article-sp.cls file which
+% DOES NOT produce 1) thru' 3) above.
+%
+% Using 'sig-alternate.cls' you have control, however, from within
+% the source .tex file, over both the CopyrightYear
+% (defaulted to 200X) and the ACM Copyright Data
+% (defaulted to X-XXXXX-XX-X/XX/XX).
+% e.g.
+% \CopyrightYear{2007} will cause 2007 to appear in the copyright line.
+% \crdata{0-12345-67-8/90/12} will cause 0-12345-67-8/90/12 to appear in the copyright line.
+%
+% ---------------------------------------------------------------------------------------------------------------
+% This .tex source is an example which *does* use
+% the .bib file (from which the .bbl file % is produced).
+% REMEMBER HOWEVER: After having produced the .bbl file,
+% and prior to final submission, you *NEED* to 'insert'
+% your .bbl file into your source .tex file so as to provide
+% ONE 'self-contained' source file.
+%
+% ================= IF YOU HAVE QUESTIONS =======================
+% Questions regarding the SIGS styles, SIGS policies and
+% procedures, Conferences etc. should be sent to
+% Adrienne Griscti (griscti@acm.org)
+%
+% Technical questions _only_ to
+% Gerald Murray (murray@hq.acm.org)
+% ===============================================================
+%
+% For tracking purposes - this is V2.0 - May 2012
+\documentclass{sig-alternate}
+
+% ---------------------------------------------------------------------------------------------------------------
+% PREAMBLE
+% flatex input: [content/Include.tex]
+% This is "Include.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+\usepackage[USenglish, american]{babel}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc} 							% Encoding (allows accents)
+\usepackage{epstopdf}
+\usepackage[printonlyused,nolist]{acronym}	% Acronyms (print only used)
+
+\newlength{\wideitemsep}
+\setlength{\wideitemsep}{\itemsep}
+\addtolength{\wideitemsep}{+10pt}
+\newcommand{\tallitem}{\setlength{\itemsep}{\wideitemsep}\item}
+\usepackage{bm}
+\usepackage{breqn}
+% flatex input end: [content/Include.tex]
+
+% PREAMBLE
+\graphicspath{{figures/}}
+% ---------------------------------------------------------------------------------------------------------------
+
+\begin{document}
+
+% ---------------------------------------------------------------------------------------------------------------
+% Copyright
+%\setcopyright{acmcopyright}
+%\setcopyright{acmlicensed}
+\setcopyright{rightsretained}
+%\setcopyright{usgov}
+%\setcopyright{usgovmixed}
+%\setcopyright{cagov}
+%\setcopyright{cagovmixed}
+% ---------------------------------------------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------------------------------------------
+% UID Metadata
+% DOI
+%\doi{10.475/123_4}
+
+% ISBN
+%\isbn{123-4567-24-567/08/06}
+% ---------------------------------------------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------------------------------------------
+% Conference Info
+\conferenceinfo{HRI '17}{June 6--9, 2017, Vienna, Austria}
+%\acmPrice{\$15.00}
+% ---------------------------------------------------------------------------------------------------------------
+
+
+% ---------------------------------------------------------------------------------------------------------------
+% --- Author Metadata here ---
+%\conferenceinfo{WOODSTOCK}{'97 El Paso, Texas USA}
+%\CopyrightYear{2007} % Allows default copyright year (20XX) to be over-ridden - IF NEED BE.
+%\crdata{0-12345-67-8/90/01}  % Allows default copyright data (0-89791-88-6/97/05) to be over-ridden - IF NEED BE.
+% --- End of Author Metadata ---
+% ---------------------------------------------------------------------------------------------------------------
+
+
+% flatex input: [content/Acronyms.tex]
+% This is the ACRONYMS Definition
+\begin{acronym}[TDMA]
+	\acro{GAIPS}{Intelligent Agents and Synthetic Characters Group}
+	\acro{ML}{Machine Learning}
+	\acro{SVM}{Suport Vector Machine}
+	\acro{HRI}{Human-Robot Interaction}	
+	\acro{HAI}{Human-Agent Interaction}
+	\acro{HCI}{Human-Computer Interaction}
+	\acro{CTM}{Cognitive Trust Model}
+	\acro{MAS}{Multi-Agent System}
+	\acro{NLP}{Natural Language Processing}	
+	\acro{AI}{Artificial Intelligence}	
+	\acro{DoC}{Degree of Credibility}
+	\acro{DoT}{Degree of Trust}
+	\acro{SBH}{Social Brain Hypothesis}
+	\acro{TiA}{Trust in Automation}
+	
+	
+	
+	%%%%%%%%%%%%%%%
+	\acro{AAC}{Advanced Audio Coding}
+	\acro{ADTS}{Audio Data Transport Stream}
+	\acro{AS}{Application Server}
+	\acro{AV}{Audio-Visual}
+	\acro{AVC}{Advanced Video Coding}
+	\acro{BMFF}{base media file format}
+	\acro{CASHED}{Cloud-Assisted Adaptive and Scalable Video Streaming for Heterogenous End-User Devices}
+	\acro{CC}{Cloud Computing}
+	\acro{CDN}{Content Distribution Network}
+	\acro{CPU}{Central Processing Unit}
+	\acro{DASH}{Dynamic Adaptive Streaming over HTTP}
+	\acro{DVD}{Digital Versatile Disk}	
+	\acro{ES}{Elementary Stream}
+	\acro{ESM}{End System Multicast}
+	\acro{ftyp}{File Type}
+	\acro{FLV}{Flash Video}
+	\acro{GPRS}{General Packet Radio Service}
+	\acro{GSM}{Global System for Mobile Communications}
+	\acro{H.264/AVC}{Advanced Video Coding}
+	\acro{H.264/SVC}{Scalable Video Coding}
+	\acro{HD}{High Definition}
+	\acro{HDTV}{High Definition Television}
+	\acro{HLS}{HTTP Live Streaming}
+	\acro{HTTP}{Hypertext Transfer Protocol}
+	\acro{IaaS}{Infrastructure as a Service}
+	\acro{IETF}{Internet Engineering Task Force}
+	\acro{IGMP}{Internet Group Management Protocol}
+	\acro{IIS}{Internet Information Services}
+	\acro{IMS}{IP Multimedia Subsystem}
+	\acro{IP}{Internet Protocol}
+	\acro{IPTV}{IP Television}
+	\acro{ISP}{Internet Service Provider}
+	\acro{IT}{Information Technology}
+	\acro{JSVM}{Joint Scalable Video Model}
+	\acro{LAN}{Local Area Network}
+	\acro{LTE}{Long Term Evolution}
+	\acro{MDC}{Multiple Description Coding}
+	\acro{MIB}{Management Information Bases}
+	\acro{MIME}{Multipurpose Internet Mail Extension}
+	\acro{MOS}{Mean Opinion Score}
+	\acro{MPD}{Media Presentation Description}
+	\acro{MPEG}{Moving Picture Expert Group}
+	\acro{MVC}{Multi-View Coding}
+	\acro{NAL}{Network Abstraction Layer}
+	\acro{NAT}{Network Address Translation}	
+%	\acro{NAL}{Network Access Layer}
+	\acro{OS}{Operating System}
+	\acro{OSMF}{Open Source Media Framework}
+	\acro{P2P}{Peer-to-Peer}
+	\acro{P2P}{Peer-To-Peer}
+	\acro{PPSP}{Peer-to-Peer Streaming Protocol}
+	\acro{PaaS}{Platform as a Service}
+	\acro{PES}{Packetized Elementary Streams}
+	\acro{QoE}{Quality Of Experience}
+	\acro{QoS}{Quality Of Service}
+	\acro{QP}{Quantization Parameter}
+	\acro{RMON}{Remote Monitoring}
+	\acro{RTCP}{RTP Control Protocol}
+	\acro{RTMP}{Real Time Messaging Protocol}
+	\acro{RTP}{Real-time Transport Protocol}
+	\acro{RTSP}{Real Time Streaming Protocol}
+	\acro{SaaS}{Software as a Service}
+	\acro{SD}{Standard Definition}
+	\acro{SEI}{Supplemental Enhancement Information}
+	\acro{SIP}{Selective Inter-layer Prediction}
+	\acro{SMS}{Short Message Service}
+	\acro{SNMP}{Simple Network Monitoring Protocol}
+	\acro{SNR}{Signal-to-Noise Ratio}
+	\acro{SVC}{Scalable Video Coding}
+	\acro{TCP}{Transport Control Protocol}
+	\acro{TS}{Transport Stream}
+	\acro{TTL}{Time-to-Live}
+	\acro{UDP}{User Datagram Protocol}
+	\acro{UI}{User Interface}
+	\acro{UMTS}{Universal Mobile Telecommunication System}
+	\acro{URL}{Uniform Resource Locator}
+	\acro{VCEG}{Video Content Expert Group}
+	\acro{VCL}{Video Coding Layer}
+	\acro{VoD}{Video On Demand}
+	\acro{WAN}{Wide Area Nework}
+	\acro{WLAN}{Wireless Local Area Network}
+	\acro{WMA}{Windows Media Audio}
+	\acro{WWAN}{Wireless Wide Area Network}		
+	\acro{XML}{Extensible Markup Language}
+\end{acronym}
+% flatex input end: [content/Acronyms.tex]
+
+% ---------------------------------------------------------------------------------------------------------------
+
+\title{Trustful Action Suggestion in Human Agent Interaction}
+\subtitle{[Extended Abstract]}
+%
+% You need the command \numberofauthors to handle the 'placement
+% and alignment' of the authors beneath the title.
+%
+% For aesthetic reasons, we recommend 'three authors at a time'
+% i.e. three 'name/affiliation blocks' be placed beneath the title.
+%
+% NOTE: You are NOT restricted in how many 'rows' of
+% "name/affiliations" may appear. We just ask that you restrict
+% the number of 'columns' to three.
+%
+% Because of the available 'opening page real-estate'
+% we ask you to refrain from putting more than six authors
+% (two rows with three columns) beneath the article title.
+% More than six makes the first-page appear very cluttered indeed.
+%
+% Use the \alignauthor commands to handle the names
+% and affiliations for an 'aesthetic maximum' of six authors.
+% Add names, affiliations, addresses for
+% the seventh etc. author(s) as the argument for the
+% \additionalauthors command.
+% These 'additional authors' will be output/set for you
+% without further effort on your part as the last section in
+% the body of your article BEFORE References or any Appendices.
+
+\numberofauthors{5} %  in this sample file, there are a *total*
+% of EIGHT authors. SIX appear on the 'first-page' (for formatting
+% reasons) and the remaining two appear in the \additionalauthors section.
+%
+\author{
+% You can go ahead and credit any number of authors here,
+% e.g. one 'row of three' or two rows (consisting of one row of three
+% and a second row of one, two or three).
+%
+% The command \alignauthor (no curly braces needed) should
+% precede each author name, affiliation/snail-mail address and
+% e-mail address. Additionally, tag each line of
+% affiliation/address with \affaddr, and tag the
+% e-mail address with \email.
+%
+% 1st. author
+\alignauthor
+Nuno Xu
+%\titlenote{Dr.~Trovato insisted his name be first.}
+\\
+       \affaddr{Instituto Superior Técnico}\\
+       \affaddr{1932 Wallamaloo Lane}\\
+       \affaddr{Wallamaloo, New Zealand}\\
+       \email{nuno.xu@tecnico.ulisboa.pt}
+% 2nd. author
+\alignauthor
+Bruno Henriques\\
+       \affaddr{Institute for Clarity in Documentation}\\
+       \affaddr{P.O. Box 1212}\\
+       \affaddr{Dublin, Ohio 43017-6221}\\
+       \email{webmaster@marysville-ohio.com}
+% 3rd. author
+\alignauthor Sofia Petisca\\
+       \affaddr{The Th{\o}rv{\"a}ld Group}\\
+       \affaddr{1 Th{\o}rv{\"a}ld Circle}\\
+       \affaddr{Hekla, Iceland}\\
+       \email{larst@affiliation.org}
+\and  % use '\and' if you need 'another row' of author names
+% 4th. author
+\alignauthor Rui Prada\\
+       \affaddr{Brookhaven Laboratories}\\
+       \affaddr{Brookhaven National Lab}\\
+       \affaddr{P.O. Box 5000}\\
+       \email{lleipuner@researchlabs.org}
+% 5th. author
+\alignauthor Ana Paiva\\
+       \affaddr{NASA Ames Research Center}\\
+       \affaddr{Moffett Field}\\
+       \affaddr{California 94035}\\
+       \email{fogartys@amesres.org}
+}
+% There's nothing stopping you putting the seventh, eighth, etc.
+% author on the opening page (as the 'third row') but we ask,
+% for aesthetic reasons that you place these 'additional authors'
+% in the \additional authors block, viz.
+%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
+%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
+%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
+%\date{30 July 1999}
+% Just remember to make sure that the TOTAL number of authors
+% is the number that will appear on the first page PLUS the
+% number that will appear in the \additionalauthors section.
+
+
+% ---------------------------------------------------------------------------------------------------------------
+\maketitle
+% flatex input: [content/Abstract.tex]
+% This is "Abstract.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+\begin{abstract}
+This paper provides a sample of a \LaTeX\ document which conforms,
+somewhat loosely, to the formatting guidelines for
+ACM SIG Proceedings. It is an {\em alternate} style which produces
+a {\em tighter-looking} paper and was designed in response to
+concerns expressed, by authors, over page-budgets.
+It complements the document \textit{Author's (Alternate) Guide to
+Preparing ACM SIG Proceedings Using \LaTeX$2_\epsilon$\ and Bib\TeX}.
+This source file has been written with the intention of being
+compiled under \LaTeX$2_\epsilon$\ and BibTeX.
+
+The developers have tried to include every imaginable sort
+of ``bells and whistles", such as a subtitle, footnotes on
+title, subtitle and authors, as well as in the text, and
+every optional component (e.g. Acknowledgments, Additional
+Authors, Appendices), not to mention examples of
+equations, theorems, tables and figures.
+
+To make best use of this sample document, run it through \LaTeX\
+and BibTeX, and compare this source code with the printed
+output produced by the dvi file. A compiled PDF version
+is available on the web page to help you with the
+`look and feel'.
+\end{abstract}
+% flatex input end: [content/Abstract.tex]
+
+% ---------------------------------------------------------------------------------------------------------------
+% flatex input: [content/CSSXML.tex]
+% This is "CSSXML.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+%
+% The code below should be generated by the tool at
+% http://dl.acm.org/ccs.cfm
+%
+\begin{CCSXML}
+    <ccs2012>
+    <concept>
+    <concept_id>10010147.10010178.10010216.10010217</concept_id>
+    <concept_desc>Computing methodologies~Cognitive science</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010147.10010178.10010219.10010221</concept_id>
+    <concept_desc>Computing methodologies~Intelligent agents</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010147.10010341.10010342.10010343</concept_id>
+    <concept_desc>Computing methodologies~Modeling methodologies</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010147.10010341.10010349.10010355</concept_id>
+    <concept_desc>Computing methodologies~Agent / discrete models</concept_desc>
+    <concept_significance>300</concept_significance>
+    </concept>
+    <concept>
+    <concept_id>10010147.10010178.10010219.10010223</concept_id>
+    <concept_desc>Computing methodologies~Cooperation and coordination</concept_desc>
+    <concept_significance>100</concept_significance>
+    </concept>
+    </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[300]{Computing methodologies~Cognitive science}
+\ccsdesc[300]{Computing methodologies~Intelligent agents}
+\ccsdesc[300]{Computing methodologies~Modeling methodologies}
+\ccsdesc[300]{Computing methodologies~Agent / discrete models}
+\ccsdesc[100]{Computing methodologies~Cooperation and coordination}
+%
+% End generated code
+%
+% flatex input end: [content/CSSXML.tex]
+
+% ---------------------------------------------------------------------------------------------------------------
+
+% --------------------------------------------------------
+\printccsdesc
+\keywords{ACM proceedings; \LaTeX; text tagging}
+% --------------------------------------------------------
+% flatex input: [content/Introduction.tex]
+% This is "Introduction.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+\section{Introduction}
+\label{sec:Introduction}
+The \textit{proceedings} are the records of a conference.
+ACM seeks to give these conference by-products a uniform,
+high-quality appearance.  To do this, ACM has some rigid
+requirements for the format of the proceedings documents: there
+is a specified format (balanced  double columns), a specified
+set of fonts (Arial or Helvetica and Times Roman) in
+certain specified sizes (for instance, 9 point for body copy),
+a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
+the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom
+and (1.9 cm [.75"]) left and right; specified column width
+(8.45 cm [3.33"]) and gutter size (.83 cm [.33"]).
+
+The good news is, with only a handful of manual
+settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}}
+    and {\texttt{\char'134 alignauthor}} commands, you have
+    already used; another, {\texttt{\char'134 balancecolumns}}, will
+    be used in your very last run of \LaTeX\ to ensure
+    balanced column heights on the last page.}, the \LaTeX\ document
+class file handles all of this for you.
+
+The remainder of this document is concerned with showing, in
+the context of an ``actual'' document, the \LaTeX\ commands
+specifically available for denoting the structure of a
+proceedings paper, rather than with giving rigorous descriptions
+or explanations of such commands.
+% flatex input end: [content/Introduction.tex]
+
+% --------------------------------------------------------
+%\input{content/Example(ignore)}
+% flatex input: [content/Background.tex]
+% This is "Background.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+\section{Background}
+\label{sec:Background}
+
+% Reference 3 types of agents that may be applicable to the project: 
+% - Social Agents
+% - Afective Agents
+% - Anthromorphic Agents
+% --- Embodied Conversational Agents (ECAs)
+
+% When talking about trust and reputation mention the differences between both.
+% Tell what is a trust model and what is a reputation model
+
+Before discussing related work and our solution to the problem, we will present the main concepts that  will be mentioned in the rest of this report, specifically regarding trust and reputation.
+
+\subsection{Trust}
+\label{subsec:Trust}
+Trust is regarded throughout the literature as one of the fundamental components of human society, being essential in cooperative and collaborative behaviour, having been studied in a multitude of disciplines, from Psychology and Sociology, to Philosophy and Economy\cite{Rousseau1998, Jones1997, Sabater2005}. For that reason, it is no wonder that it acquired a very large number of different definitions throughout the years of study, causing the problem of not existing a consensus on a definition of trust\cite{Castelfranchi2010}. In the scope of this project, the most relevant start for our discussion is the dyadic definition of trust: `an orientation of an actor (the \textbf{truster}) toward a specific person (the \textbf{trustee}) with whom the actor is in some way interdependent' (taken from \cite{Simpson2007}), as we want to focus on interpersonal relationships. This definition has been expanded throughout the literature, often adapted to fit the context or scope of the work, but three main definitions are highlighted in computational trust:
+\begin{itemize}
+	\tallitem First, Gambetta\cite{Gambetta1988} defined trust as follows: `Trust is the \textit{subjective probability} by which an individual, A, \textit{expects} that another individual, B, performs a given action on which its \textit{welfare depends}' (taken from \cite{Castelfranchi2010}). This is accepted by most authors as one of the most classical definitions of trust, but it is too restrictive with its uni-dimensionality, as it only refers to predictability of the trustor, and does not take into account competence in executing the given action.
+	
+	\tallitem Marsh\cite{Marsh1994} was the first author to formalize trust as a measurable Computational Concept, continuing the perspective of reducing trust to a numerical value, set by Gambetta\cite{Gambetta1988}, but also adding that: X trusts Y if, and only if, `X \textit{expects} that Y will behave according to X's best interest, and will not attempt to harm X' (taken from \cite{Castelfranchi2010}). This definition does not represent other parts of trust, such as the notion that trustor must ascertain some risk from delegating the action to the trustee.
+	
+	\tallitem Castelfranchi and Falcone then introduced a Cognitive aspect to Computational Trust\cite{Castelfranchi1998}. They define trust as the mental state of the trustor and the action in which the trustor refers upon the trustee to perform. This is the definition of trust that we will adopt throughout the rest of the report, as it represents a vision of trust that takes into account the trustor set of beliefs and intentions, approaching it to an agent's cognitive model, while also linking trust to the action being performed, as one might trust another for certain types of actions and not for others (e.g. I may trust my squire to polish my sword, but not to swing it).
+\end{itemize}
+
+\subsubsection{Castelfranchi and Falcone's Trust}
+\label{subsubsec:CastelfranchiTrust}
+More explicitly, Castelfranchi and Falcone\cite{Castelfranchi1998} state that trust is a conjunction of three concepts:
+\begin{itemize}
+	\item A \textit{mental attitude} or (pre)disposition of the agent towards another agent; this is represented by beliefs about the trustees' qualities and defects;
+	\item A \textit{decision} to rely upon another, and therefore making the trustor `vulnerable' to the possible negative actions of the trustee;
+	\item The \textit{act} of trusting another agent and the following behaviour of counting on the trustee to perform according to plan. 
+\end{itemize}
+By describing trust as a mental attitude it is also implied that: `Only a cognitive agent can trust another agent; only an agent endowed with goals and beliefs'\cite{Castelfranchi2010}.
+
+From this definition we should also address one important component, \textbf{Delegation}, which happens when an agent (X) needs or likes the action delegated to another agent (Y), so X includes it in his plans, therefore relying on Y. X plans to achieve his goal through Y. So, he formulates in his mind a multi-agent plan with a state or action goal being Y’s delegated\cite{Castelfranchi1998}.
+
+
+
+\subsection{Reputation and Image}
+\label{subsec:Reputation}
+\textit{Reputation} is also a concept that appears very often linked with trust in the literature, specially since recent models created for representing trust have been focused on \acp{MAS} (see \cite{Abdul-rahman2000, Sabater2002, Sabater2006, Huynh2006, Pinyol2009}), where more recent trust models have been developed to also include reputation as a source of trust.
+
+An agent is not influenced only by their own beliefs about the subject, the \textit{Image}, but also by what other agents say about it, its \textit{Reputation}.
+
+We describe Image and Reputation as introduced by Sabater in \cite{Sabater2006}:
+Image is defined as the agent's personal belief about a certain property of the target agent, be it a physical, mental or social trait. Reputation is a meta-belief about an impersonal evaluation of the target, in other words, it is the belief on the evaluation being circulated about the target. On a more concrete level, reputation is separated between \textit{shared evaluation} and \textit{shared voice}. Consider that an agent has beliefs about how other agents evaluate a certain target, if in a set of agents these beliefs converge to a value (e.g. `good' or `bad') we can say that there exists a shared evaluation of the target. It is important to note that all sharing agents are known and well defined. A shared voice is a belief that another set of agents themselves believe that an evaluation of the target exists. In other words, it is the belief that a group of agents will consistently report that a voice exists. These meta-beliefs are considered important as one is not required to believe that other's evaluation is correct, but might still believe that it exists.
+
+The mental decisions regarding reputation can be categorized as follows:
+\begin{itemize}
+	\item Epistemic decisions: accepting trust beliefs to update or generate a given image or reputation;
+	\item Pragmatic-Strategic decisions: using trust beliefs to decide how to behave towards other agents;
+	\item Memetic decisions: transmitting trust beliefs to others. 
+\end{itemize}
+This difference of possible decisions allows to describe how one may transmit reputation without having the responsibility for the credibility or truthfulness of the content transmitted, as one does not have to commit to accepting the reputation value, and just say that the rumour exists.
+
+
+\subsection{Game Theory}
+\label{subsec:GameTheory}
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
+
+\subsubsection{Prisoner's Dilemma}
+\label{subsubsec:PrisonersDilemma}
+The Prisoner's Dilemma is a two player game and is usually described as follows:
+
+Two criminal partners are arrested and locked in separate cells with no way of communicating with each other. They are then questioned separately, where they are given 2 options, betray the other prisoner by testifying against him, or remain silent, with the following outcomes:
+\begin{itemize}
+	\item If both prisoners betray each other, both get 2 years in prison;
+	\item If one of them betrays and the other remains silent, the betrayer goes free and the other gets 3 years in prison;
+	\item If both remain silent, both get just 1 year in prison;
+\end{itemize}
+
+We can represent betraying as \textit{Defecting} (D), and staying silent as \textit{Cooperating} (C), and name the players \textit{player1} and \textit{player2}. So the game's possible outcomes can be represented by a payoff matrix, like the one in Table \ref{PrisonerDilemaPayoffMatrix}, where each entry represents a tuple of the form (\textit{player1} payoff, \textit{player2} payoff). As the goal is to not get years in prison, the payoffs correspond to $Max\ years\ in\ prison - years\ got\ in\ prison$.
+
+\begin{table}[]
+	\centering
+	\begin{tabular}{l|l|l|}
+		\cline{2-3}
+		& $C_2$   & $D_2$   \\ \hline
+		\multicolumn{1}{|l|}{$C_1$} & 2,2 & 0,3 \\ \hline
+		\multicolumn{1}{|l|}{$D_1$} & 3,0 & 1,1 \\ \hline
+	\end{tabular}
+	\caption{Prisoner's Dilemma Payoff Matrix}
+	\label{PrisonerDilemaPayoffMatrix}
+\end{table}	
+
+In the game we can say that \textit{Defecting} \textbf{dominates} \textit{Cooperating}, as for any action that the adversary player may choose, \textit{Defecting} always gives a better payoff for the individual player\cite{Nash1951}.
+
+
+% flatex input end: [content/Background.tex]
+
+%\input{content/Example(ignore)}
+% flatex input: [content/RelatedWork.tex]
+% This is "RelatedWork.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+% More than a literature review
+% Organize related work - impose structure
+% Be clear as to how previous work being described relates to your own.
+% The reader should not be left wondering why you've described something!!
+% Critique the existing work - Where is it strong where is it weak? What are the unreasonable/undesirable assumptions?
+% Identify opportunities for more research (i.e., your thesis) Are there unaddressed, or more important related topics?
+% After reading this chapter, one should understand the motivation for and importance of your thesis
+% You should clearly and precisely define all of the key concepts dealt with in the rest of the thesis, and teach the reader what s/he needs to know to understand the rest of the thesis.
+
+
+\section{Related Work}
+\label{sec:Related Work}
+Computational Trust research has been focused on modelling trust in \acp{MAS}, specially on open e-commerce environments\cite{Granatyr2015, HanYu2013, Pinyol2013, Noorian2010, Huang2008}, with at least 106 models created\cite{Granatyr2015}, since the formalization of trust as a measurable property by Marsh in 1994 \cite{Marsh1994}. We will present some trust models from which we will take inspiration while creating our own, and some work done in measuring trust in \ac{HRI}.
+
+\subsection{Trust Models}
+\label{subsec:Related work:Trust Models}
+For related work concerning Trust Models we will focus on \textbf{Cognitive} Trust Models, first introduced by Castelfranchi and Falcone\cite{Castelfranchi1998}, which are defined by measuring trust on the strength of an agent's beliefs and the changes enacted through the consequent act of trusting. We want to focus on modelling trust through multiple dimensions, with the intent of having trust depend on the action to perform, context and agent performing the task and having these dimensions represented explicitly in the model, something that it is not possible with \textbf{Numerical} models, like the one introduced by \cite{Marsh1994}. 
+
+
+\subsubsection{Castelfranchi and Falcone's model}
+\label{subsubsec:Related work:Trust Models:Castelfranchi and Falcone}
+Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we will not use the entirety of this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this report. 
+The model is characterised around their definition referred in Section \ref{subsubsec:CastelfranchiTrust}, through a central core, composed by a five-part relation, between:
+\begin{itemize}
+	\item The trustor (\textbf{X});
+	\item The trustee (\textbf{Y});
+	\item The context where they are inserted in (\textbf{C});
+	\item A task ($\bm{\tau}$) defined by the pair $(\alpha, \rho)$, where \bm{$\alpha$} is the action  entrusted to the trustee, that possibly produces an outcome \bm{$\rho$}, contained in the goal of X ($g_x$);
+	\item The goal of the trustor (\bm{$g_x$}).
+\end{itemize}
+More shortly represented by equation \ref{eq:TrustRelation}.
+\begin{equation}
+TRUST(X\ Y\ C\ \tau\ g_x)
+\label{eq:TrustRelation}
+\end{equation}
+This defines Trust as goal-oriented, contextual, and multi-dimensional, as from the point of view of the trustor, it varies not only on the trustee, but also from the overall context, the action that is being delegated, and the particular goal of the trustor. For example, if the goal of the trustor is simple to perform and not very critical to him, he may be more willing to delegate the task, and trust another agent to perform such task. Adjustments can be attached to this core adjusting better to the context in which it may be used. For instance, one may add an authoritative third party element to the relation in supervised security applications.
+
+The model also conceptualizes \textbf{Expectation} as a belief of when agent X awaits for $\rho$ to happen when an action $\alpha$ trusted to Y is being performed, formalized in first order logic in equation \ref{eq:TrustExpectation}.
+\begin{equation}
+	\begin{split}
+		(\text{\textit{Expectation}}\ X\ \rho) \implies (Bel_x^{t'} (\text{\textit{will-be-true}} ^ {t''} \rho)) \wedge \\
+             (Goal_x^{Period(t', t''')} (KnowWhether_X (\rho\ OR\ \text{\textit{Not} } \rho)^{t''}))
+	\end{split}
+	\label{eq:TrustExpectation}
+\end{equation}
+This can be used to establish what expectations the user should have in the agent, whether initial or constructed during interaction, and provide an additional measure to weight the importance of certain agent functions and actions.
+
+As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the mental attitude of the trustor X is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through its \textbf{\ac{DoC}}, which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $\text{\textit{Qual-i}}_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$. 
+\begin{equation}
+	\begin {aligned}
+	DoC_X&(\text{\textit{Qual-i}}_{(s1, ...sn), Y} (\tau)) = F_{X, Y, \tau} (Bel_X(Str_1 \text{\textit{Qual-i}}_{s1Y}(\tau)), \\
+		 &Bel_X(Str_2 \text{\textit{Qual-i}}_{s2Y}(\tau)), ..., Bel_X(Str_n \text{\textit{Qual-i}}_{snY}(\tau))) \\
+	\end {aligned}
+	\label{eq:DegreeOfCredibility}
+\end{equation}
+$F_{X, Y, \tau}$ associates the \textit{strengh-of-sources ($Str_j$)} and \textit{quality-values ($\text{\textit{Qual-i}}_{sjY}(\tau)$)} with a probability curve. It should return a matrix with two columns, with an amount of rows corresponding to the number of quality values selected out of the received as input (since not all values must or should be used, and some may be integrated into a single value), and the first column should contain these values associated with their normalized probabilities in the second column (the probabilities sum should be 1). 
+
+For example, consider that we want agent X's \ac{DoC} regarding Y's ability to clean:
+\begin{itemize}
+	\item We have two sources about Y's ability to clean:
+	\begin{enumerate}
+		\item X saw Y once clean quite well, but long ago, so we could attribute $\text{\textit{Ability}}_{s1Y}(cleaning) = 0.8$ and $Str_1=0.2$;
+		\item Someone X considers reliable informs that Y performed poorly recently, se we attribute\\
+		$\text{\textit{Ability}}_{s2Y}(cleaning) = 0.2s$ and $Str_2=0.6$;
+	\end{enumerate}
+	\item So a possible result of $DoC_X(\text{\textit{Ability}}_Y (cleaning))$ is:
+	$$\begin{pmatrix}
+		0.8 & 0.25 \\
+		0.2 & 0.75
+	\end{pmatrix}$$
+\end{itemize} 
+	
+
+Finally \textbf{\ac{DoT}} quantifies the Trust level agent X has in Y to perform task $\tau$ according to the formula depicted in equation \ref{eq:DegreeOfTrust}.
+\begin{equation}
+	\begin{aligned}
+		DoT_{XY\tau} =\ &c_{Opp}\ DoC_x[Opp_y(\alpha, \rho)] \times\\
+					    \times\ &c_{Ability_y}\ DoC_x[Ability_y(\alpha)]\times \\
+					    \times\ &c_{WillDo}\ DoC_x[WillDo_y(\alpha, \rho)]
+	\end{aligned}
+	\label{eq:DegreeOfTrust}
+\end{equation}
+Where:
+\begin{itemize}
+	\item $DoC_x[Opp_y(\alpha, \rho)]$ is the \ac{DoC} of X's beliefs about all contextual factors in which Y will act; in other words, the degree of Opportunity Y has to do $\alpha$ and result in $\rho$;
+	\item $DoC_x[Ability_y(\alpha)]$ is the \ac{DoC} of X's beliefs about Y's ability to perform $\alpha$;
+	\item $DoC_x[WillDo_y(\alpha, \rho)]$ is the \ac{DoC} of X's beliefs concerning if Y's actually is going to perform $\alpha$ with the result $\rho$;
+	\item $c_{Opp}$, $c_{Ability_y}$ and $c_{WillDo}$ are constants representing the weight of each \ac{DoC}.
+\end{itemize}
+
+This model is the most abstract, as almost all of the implementation details are left aside, particularly how the beliefs are modelled and how to or even what should be a good quantification to the quality values for the agent. This provides a lot of liberty on how to contextualize the model, and for our modules such adaptability is interesting for our intent to try our modules in different scenarios.
+
+\subsubsection{Repage: A REPutation and ImAGE model}
+\label{subsubsec:Related work:Trust Models:Repage}
+This system was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
+
+The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
+
+\begin{figure}[hbt]
+	\centering
+	\includegraphics[width=20px]{repage.jpg}
+	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
+	\label{fig:Repage}
+\end{figure}
+
+At the first level of the abstraction hierarchy we have the basis of information to infer predicates, \textit{contracts}, \textit{fulfilments} and \textit{communication} (they are not themselves predicates, as no evaluation is attached). Contracts are agreements between two agents, while fulfilments are the results of the contract. Communication is the information about other agents that come from third parties. The second level is then constituted by inferences to an outcome, formed by a contract and its fulfilment, and valued information gathered from communications. This inferred predicates are not just tuples, they give an evaluation to the predicate, setting its belief strength. 
+
+In the next level we have two predicates: \textit{shared voice} and \textit{shared evaluation}. The former is inferred from communicated reputation, and the latter from communicated images. 
+
+The fourth level is composed from five types of predicates: \textit{Candidate Image}, \textit{Candidate Reputation}, \textit{Image}, \textit{Reputation} and \textit{Confirmation}. The candidate predicates are Images and Reputations that do not have enough support yet. Special detectors turns them to fill image/reputations when a strength threshold is surpassed. Confirmation is the feedback to a communication, received from comparing it to the image of the target. 
+
+Finally the last abstractions level is composed of the predicates \textit{cognitive dissonance} and \textit{certainty}. Cognitive dissonance is a contradiction between relevant pieces of information that refer to the same target. This predicate may create instabilities in the mind of the individual, so the agent will most likely try to perform action in order to confirm the sources of this dissonance. Certainty represents full reliance on what the predicate asserts.
+
+The last element is the analyser and its job is to propose actions in order to improve the accuracy of predicates in Repage and solve cognitive dissonances to produce certainty. The actions are proposed to the agent planner, leaving it to decide how to take this actions into account.
+
+Image and Reputation are the predicates that provide a trust evaluation of a target, and as previously stated, they have a role, that represents two things: the agents interaction model, in other words, the actions that may affect to this evaluation, and a function that contextualizes the evaluative labels of \textit{VB, B, N, G, VG}. The probability distribution of the values gives out a picture of the target interaction forecast (e.g. a probability value of $0.5$ to VB gives a $50\%$ chance of the next interaction with the target being very bad).
+
+The work described here is the only found that tries to establish an implementable architecture for a trust model, as most of the models created are purely theoretical. Furthermore, it fits to our goals of creating a trust assessment module, corresponding to the memory and detector components, and a trust decision module, corresponding to the analyser.
+
+
+\subsubsection{\textit{BC}-logic: A Representation of Beliefs for Repage}
+\label{subsubsec:Related work:Trust Models:BDI + Repage}
+Pinyol et al.\cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a BDI Agent\cite{Rao1995}. While the BDI model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
+
+\textit{BC}-logic is structured hierarchically, in a way that formulas from a certain first-order language lower in the hierarchy can be embedded in another language above as constants. This is written as $\lceil\phi\rceil$, with $\phi$ being the formula of the lower language.
+The hierarchy is composed of three languages, starting with the base language, \textit{$L_{basic}$}, that expresses the ontology and contains the symbols to represent the domain. Next there is \textit{$L_{ag}$}, which contains symbols of the base language and special predicates to allow to reason about probability of formulas, about formulas communicated, and formulas believed by agents. Finally there is \textit{BC}-language, the meta-logic language, with the aim to express statements about the agents' reasoning. \textit{$L_{ag}$} and \textit{BC}-language are sorted languages, in other words, its symbols and predicates are partitioned into sorts, each containing their own semantics. All languages contain the logical symbols $\forall$, $\exists$, $\wedge$, $\vee$, $\neg$, and $\implies$.
+
+\textit{$L_{ag}$} contains four sorts:
+\begin{itemize}
+	\item $S_D$: represents application domain, including constants, functions and predicate symbols;
+	\item $S_R$: represents probabilities, including a set of constants, $C_R$, with a label written as $\overline{r}$, where $r \in [0,1]\bigcap Q$; $Q$ being the set of rational numbers;
+	\item $S_A$: represents agent names, including a set of constants $C_A = {i_1, ..., i_n}$, corresponding to the agents' identifiers;
+	\item $S_F$: represents formulas, including a set of constants $C_F$, which is built simultaneously with the construction of the language. This is done by adding the constant $\lceil\phi\rceil$ for each $\phi \in F_m(L_{basic})$, and then, given a formula $\Psi \in F_m(L_{ag})$ we also add $\lceil\Psi\rceil$ to $C_f$.
+\end{itemize}
+
+Symbols in predicates are identified by their sorts, take for example a binary predicate $B$, it is written as $B(S_A, S_F)$, meaning that the first argument must be part of sort $S_A$ and the second argument part of sort $S_F$.
+
+The set of formulas $Fm(L_{ag})$ has the following special predicates:
+\begin{itemize}
+	\item $B(S_A, S_F)$: An agent's belief towards a formula \\(e.g. $B(i_c, \lceil sunny(Lisbon)\rceil)$); abbreviated to $B_{S_A}(S_F)$;
+	\item $Pr\leq(S_F, S_R),\ Pr\geq(C_F, C_R)$: A lower/upper bound on probability of a formula (e.g. $Pr\geq(\lceil sunny(Lisbon)\rceil, 0.8)$);
+	\item $S(S_A, S_A, S_F)$: The communication predicate, as stated in Repage \\(e.g. $S(i_c, j_c, \lceil sunny(Lisbon)\rceil)$);
+	abbreviated to $S_{S_A, S_A}(S_F)$.
+\end{itemize}
+
+
+\textit{\textit{BC}-language} contains five sorts:
+\begin{itemize}
+	\item $S_R$, $S_A$ and $S_F$: as defined above for $L_{ag}$;
+	\item $S_V$: represents variable sequences;
+	\item $S_T$: represents ground term sequences;
+\end{itemize}
+
+Image and Reputation towards an agent $j_c$, playing the role $r$ can then be represented by:
+\begin{itemize}
+	\item Image: $Img_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$
+	\item Reputation: $Rep_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$
+\end{itemize}
+with $[V_{w_1}, ..., V_{w_m}]$ being an abstracted set of evaluations in the belief, as while Repage maps evaluation from Very Bad to Very Good, this can be applied to any ordered mapping of $m$ evaluations. As a simplification, the model summarizes the interaction model of the participating agents ($i_c$ and $j_c$) to a single action. Through this a mapping $R_ri$ can be defined between each role $r$, agent $i_c$ and the action. A mapping $T_{r, w_k}$ is also defined between each role $r$ and label $w_k$ to a formula written in $L_{basic}$.
+
+Image and Reputation can also be represented as a set of beliefs:
+\begin{table}[]
+	\centering
+	\begin{tabular}{ccc}
+		$Img_{i_c}(j_c, r, [V_{w_1}, ..., V_{w_m}])$  & & $Rep_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$\\ \cline{1-1} \cline{3-3} 
+		$B_{i_c} (pr\geq([R_{rj_c} T_{r_{w_1}}, V_{w_1}]))$ & & $B_{i_c} (s(pr\geq([R_{rj_c} T_{r_{w_1}}, V_{w_1}])))$ \\
+		$B_{i_c} (pr\geq([R_{rj_c} T_{r_{w_2}}, V_{w_2}]))$ & & $B_{i_c} (s(pr\geq([R_{rj_c} T_{r_{w_2}}, V_{w_2}])))$ \\
+		... & & ...
+	\end{tabular}
+\end{table}
+
+The work goes into further detail regarding representing the relationship of Image and Reputation, addressing agent honesty and consistency in communicating reputation, and while interesting, it is not part of what we to model.
+
+Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model and we will most likely choose it for the model representation, as it is the most well developed that we found.
+
+\subsubsection{Sutcliffe and Wang's model}
+\label{subsubsec:Related work:Sutcliffe and Wang}
+This work was published by Sucliffe and Wang in 2012\cite{Sutcliffe2012} and they built a trust model to figure out how cognitive social mechanisms emerge to follow Dunbar's \ac{SBH}\cite{Dunbar1998}, an evolutionary psychology theory that proposes that humans have a predisposition to build relationships in layers of decreasing intimacy. As trust has been acknowledged to be one of major component of human relationships, they demonstrate that simulating trust development and decay, through interactions and neglect, respectively, show the patterns predicted in \ac{SBH}.
+
+From the model standpoint, its main interesting feature is that agents develop trusting relationships between one another, affecting interaction frequency between agents, by preferring to pick those with already high trust value. Additionally the trust relationship degrades as time passes by, with variable speeds depending on the current relationship level, giving stronger ties a slower descent. All in all, the model provides a good tool to simulate multi agent social behaviour, and may be interesting to predict trust degradation in the agent, albeit its described application for social simulations is a bit far from our scope.
+
+\subsubsection{Discussion}
+Of the related work discussed here, we are going to base our solution on Repage and \textit{BC}-logic, as described in their respective Sections \ref{subsubsec:Related work:Trust Models:Repage} and \ref{subsubsec:Related work:Trust Models:BDI + Repage}. Repage fits well as a basis for our objectives, as it has the details of modelling trust already dealt with and leaves us the room to develop the analysis component that corresponds directly to the goal of this project. The choice was also made out of convenience, as no other work was found were implementable design was a concern.
+
+\subsection{The Perception and Measurement of Human-Robot Trust}
+\label{subsec:Related work:The Perception and Measurement of Human-Robot Trust}
+
+Schaefer\cite{Schaefer2009} presents a trust perception scale providing a way of extracting an accurate trust score from humans interacting with robots. The scale is composed of 40 items that can be ranked from 0 to 100, in 10 point intervals. The final result it then averaged by adding all the item values and divided by the total number of items (40). 
+
+While this work has been done specifically for \ac{HRI} we believe that a sub-set of this items can be used for the features used in the cognitive model of the user's trust, further described in Section \ref{subsec:Solution:Trust Assessment Module}. The items are listed in Table \ref{tbl:measurement.items.table} in appendix \ref{app:measurement.items.table}.
+
+
+% flatex input end: [content/RelatedWork.tex]
+
+%\input{content/Example(ignore)}
+% flatex input: [content/Conclusions.tex]
+% This is "Conclusions.tex"
+% A content sub-file of "TrustfullActionSugestion-Paper.tex"
+\section{Conclusions}
+This paragraph will end the body of this sample document.
+Remember that you might still have Acknowledgments or
+Appendices; brief samples of these
+follow.  There is still the Bibliography to deal with; and
+we will make a disclaimer about that here: with the exception
+of the reference to the \LaTeX\ book, the citations in
+this paper are to articles which have nothing to
+do with the present subject and are used as
+examples only.
+% flatex input end: [content/Conclusions.tex]
+
+%\input{content/Example(ignore)}
+
+%\end{document}  % This is where a 'short' article might terminate
+
+%ACKNOWLEDGMENTS are optional
+% flatex input: [content/Acknowledgments.tex]
+% This is "Acknowledgments.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+\section{Acknowledgments}
+This section is optional; it is a location for you
+to acknowledge grants, funding, editing assistance and
+what have you.  In the present case, for example, the
+authors would like to thank Gerald Murray of ACM for
+his help in codifying this \textit{Author's Guide}
+and the \textbf{.cls} and \textbf{.tex} files that it describes.
+% flatex input end: [content/Acknowledgments.tex]
+
+%ACKNOWLEDGMENTS are optional
+%
+% The following two commands are all you need in the
+% initial runs of your .tex file to
+% produce the bibliography for the citations in your paper.
+%*flatex input: [TrustfullActionSuggestion-Paper.bbl]
+\begin{thebibliography}{1}
+
+\bibitem{bowman:reasoning}
+M.~Bowman, S.~K. Debray, and L.~L. Peterson.
+\newblock Reasoning about naming systems.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):795--825, November 1993.
+
+\bibitem{braams:babel}
+J.~Braams.
+\newblock Babel, a multilingual style-option system for use with latex's
+  standard document styles.
+\newblock {\em TUGboat}, 12(2):291--301, June 1991.
+
+\bibitem{clark:pct}
+M.~Clark.
+\newblock Post congress tristesse.
+\newblock In {\em TeX90 Conference Proceedings}, pages 84--89. TeX Users Group,
+  March 1991.
+
+\bibitem{herlihy:methodology}
+M.~Herlihy.
+\newblock A methodology for implementing highly concurrent data objects.
+\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):745--770, November 1993.
+
+\bibitem{Lamport:LaTeX}
+L.~Lamport.
+\newblock {\em LaTeX User's Guide and Document Reference Manual}.
+\newblock Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.
+
+\bibitem{salas:calculus}
+S.~Salas and E.~Hille.
+\newblock {\em Calculus: One and Several Variable}.
+\newblock John Wiley and Sons, New York, 1978.
+
+\end{thebibliography}
+
+% flatex input end: [TrustfullActionSuggestion-Paper.bbl]
+%FLATEX-REM:\bibliographystyle{abbrv}
+%FLATEX-REM:\bibliography{bib/sigproc}  % sigproc.bib is the name of the Bibliography in this case
+% You must have a proper ".bib" file
+%  and remember to run:
+% latex bibtex latex latex
+% to resolve all references
+%
+% ACM needs 'a single self-contained file'!
+%
+%APPENDICES are optional
+%\balancecolumns
+\appendix
+% flatex input: [content/Appendices.tex]
+% This is "Appendices.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+% Appendix A
+\section{Headings in Appendices}
+The rules about hierarchical headings discussed above for
+the body of the article are different in the appendices.
+In the \textbf{appendix} environment, the command
+\textbf{section} is used to
+indicate the start of each Appendix, with alphabetic order
+designation (i.e. the first is A, the second B, etc.) and
+a title (if you include one).  So, if you need
+hierarchical structure
+\textit{within} an Appendix, start with \textbf{subsection} as the
+highest level. Here is an outline of the body of this
+document in Appendix-appropriate form:
+\subsection{Introduction}
+
+% This next section command marks the start of
+% Appendix B, and does not continue the present hierarchy
+\section{More Help for the Hardy}
+The sig-alternate.cls file itself is chock-full of succinct
+and helpful comments.  If you consider yourself a moderately
+experienced to expert user of \LaTeX, you may find reading
+it useful but please remember not to change it.
+% flatex input end: [content/Appendices.tex]
+
+%\balancecolumns
+
+%\balancecolumns % GM June 2007
+% That's all folks!
+\end{document}
+
+% flatex input end: [TrustfullActionSuggestion-Paper.tex]
