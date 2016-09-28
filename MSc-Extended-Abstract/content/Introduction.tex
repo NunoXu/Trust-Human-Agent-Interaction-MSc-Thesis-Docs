@@ -2,28 +2,21 @@
 % A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
 \section{Introduction}
 \label{sec:Introduction}
-The \textit{proceedings} are the records of a conference.
-ACM seeks to give these conference by-products a uniform,
-high-quality appearance.  To do this, ACM has some rigid
-requirements for the format of the proceedings documents: there
-is a specified format (balanced  double columns), a specified
-set of fonts (Arial or Helvetica and Times Roman) in
-certain specified sizes (for instance, 9 point for body copy),
-a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
-the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom
-and (1.9 cm [.75"]) left and right; specified column width
-(8.45 cm [3.33"]) and gutter size (.83 cm [.33"]).
 
-The good news is, with only a handful of manual
-settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}}
-    and {\texttt{\char'134 alignauthor}} commands, you have
-    already used; another, {\texttt{\char'134 balancecolumns}}, will
-    be used in your very last run of \LaTeX\ to ensure
-    balanced column heights on the last page.}, the \LaTeX\ document
-class file handles all of this for you.
+% TODO - Insert motivation on the topic:
+% - while a lot of reasearch has been done in modeling trust and in automation, little  research trust in HAI has been found
+% - trust is an important component of the social fabric, and essential if we want to have collaboration
+% - mention that people tend to "anthropomorphize" computers, applying social rules in computer interactions so trust becomes an interesting concern as shown in \cite{Reeves1998a} and \cite{Fogg1997}
+% - First paragraph - Say that trust is a fundamental part of social interaction, and as agents try to simulate this,and by this reason there's been quite some focues in computational trust during recent years, (cite reviews). Give applications of the trust models (specially on e-commerce)
+% - Second paragraph - Briefly say what has been done (not too much, leave for related work) and comment on what is lacking.
+% - Third paragraph - Introduce your solution, and why it's going to improve the field. Relate to the comments mentioned previously
+% - Fourth paragraph - Finally give the structure of the paper (and it's scope? check if hay is needed...)
+Trust has been described in Psychology as being one of the most important components of interpersonal relationships \cite{Simpson2007}. It is undeniable the need of trust to promote cooperation and collaboration between two parties, specially regarding who should one trust and what is worth entrusting. So as \ac{AI} research gravitates towards the development of Intelligent Agent Systems \cite{Russell2009a}, a focal concern is the performance of collaborative tasks\cite{Grosz1996, Allen2002, Allen2007}. And while the amount of literature has been increasing, we found it surprising that not enough work has been done in \ac{HAI} focusing on trust, other than on design issues\cite{Bickmore2005} and the sub-field of \ac{HRI}\cite{Goodrich2007, VandenBrule2014}, specially when so much has been done regarding \ac{TiA} \cite{Lee1992, Jones1997, Lee2004}. This reveals that while the area has so much potential, the level of understanding is still very shallow, only deeply focused in certain areas\cite{Granatyr2015}.
 
-The remainder of this document is concerned with showing, in
-the context of an ``actual'' document, the \LaTeX\ commands
-specifically available for denoting the structure of a
-proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands.
+\ac{MAS} trust and Reputation modelling is one of the areas that has been having a great increase of interest lately, specially ever since the advent of \ac{P2P} e-commerce in platforms like \textit{eBay}\footnote{eBay Auctions: \url{http://www.ebay.com/}}. For this applications, tools and solutions to ensure trust were needed for a new reality of a mass amount of anonymous entities constantly entering and exiting the environment and performing trading transactions through an open space. However almost all research focuses purely on the creation and maintenance of the internal trust model structure of the agent, normally with just the purpose of ranking other agents, through the use of statistical and game theoretical based methods\cite{Granatyr2015}. This makes it difficult to create a model that is easy to understand, analyse and, most importantly, describe its evaluative reasoning in a human understandable manner. The introduction of cognitive models by Castelfranchi and Falcone \cite{Castelfranchi1998} tries to solve that problem by mapping the trust model to the agent's mental state, composed by beliefs and goals, very akin to existing cognitive agent architectures like BDI\cite{Rao1995}. Then some systems, like Repage\cite{Sabater2006}, created implementations of this new paradigm of trust modelling; until then most of the models were purely theoretical. Nevertheless, there is a gap in this area of research that we wish to address with our work: the lack of an implementation for an action suggester based on the agent's trust model to improve the strength of our beliefs in the model and to improve trust in our agent. While one could argue that this is the responsibility of the decision making or planner component of the agent, we believe that a dedicated module will ease the complexity of decision by making it more modular, and also allowing for a greater degree of integration with the trust model of the agent. To our knowledge, no attempts have been done towards this goal, so we propose to develop two agent modules: firstly, one capable of creating a cognitive model representing the mental state of the user's trust in the agent, using Repage's architecture, and secondly, another to suggest what actions should be used to improve trust on the agent. We will ascertain this project's objectives by integrating the modules in an agent implementation  that is capable of acting as one of the players in the \textit{Split or Steal} scenario, introduced in the British game show \textit{Golden Balls}\footnote{Golden Balls TV Show: \url{http://www.goldenballstvshow.com/}} (currently finishing development in our research group, \acs{GAIPS}\footnote{\ac{GAIPS}: \url{http://gaips.inesc-id.pt/}}). The scenario is further described in Section \ref{subsec:Evaluation:Split or Steal}. 
+
+We hope that this project will make agent decision making more interesting, provide some insight on how actions affect trust and budge the field a bit in this unexplored direction.
+
+% Put goals in 1 sentence.
+
+
