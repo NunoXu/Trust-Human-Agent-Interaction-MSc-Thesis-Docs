@@ -3,7 +3,14 @@
 
 \section{Trust Model}
 \label{sec:TrustModel}
-We sought out to develop a trust model definition that would be easily implementable, but generic enough to be able to adapt to various testing scenarios. To do this we first took inspiration from the work by Sabater et al.\cite{Sabater2006} described in Section \ref{TODO} by taking a similar architecture, where model  Castelfranchi and Falcone's definition of  
+We sought out to develop a trust model definition that would be easily implementable, but generic enough to be able to adapt to various testing scenarios. To do this we first took inspiration from the work by Sabater et al.\cite{Sabater2006} described in Section \ref{TODO} by taking a similar approach to architecture. The model can be divided in 3 main components:
+\begin{itemize}
+    \item Core Model, 
+    \item Perceptions 
+    \item Suggestions,
+\end{itemize}
+
+\subsection{Architecture}
 
 
 % Agent contains Trustees, which are representations of the other agents.
@@ -21,5 +28,7 @@ We sought out to develop a trust model definition that would be easily implement
 \subsection{Representing Trust Features}
 
 \subsection{Action Suggestion}
-% 
+% This model component describes a mapping of trust increasing oppurtunities to actions that are performed depending on what features are lacking in the trustee for a particular trustor.
+
+% A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
 

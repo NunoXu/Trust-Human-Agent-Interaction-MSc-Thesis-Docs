@@ -60,32 +60,6 @@ This difference of possible decisions allows to describe how one may transmit re
 
 \subsection{Game Theory}
 \label{subsec:GameTheory}
-Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action.
 
-\subsubsection{Prisoner's Dilemma}
-\label{subsubsec:PrisonersDilemma}
-The Prisoner's Dilemma is a two player game and is usually described as follows:
-
-Two criminal partners are arrested and locked in separate cells with no way of communicating with each other. They are then questioned separately, where they are given 2 options, betray the other prisoner by testifying against him, or remain silent, with the following outcomes:
-\begin{itemize}
-	\item If both prisoners betray each other, both get 2 years in prison;
-	\item If one of them betrays and the other remains silent, the betrayer goes free and the other gets 3 years in prison;
-	\item If both remain silent, both get just 1 year in prison;
-\end{itemize}
-
-We can represent betraying as \textit{Defecting} (D), and staying silent as \textit{Cooperating} (C), and name the players \textit{player1} and \textit{player2}. So the game's possible outcomes can be represented by a payoff matrix, like the one in Table \ref{PrisonerDilemaPayoffMatrix}, where each entry represents a tuple of the form (\textit{player1} payoff, \textit{player2} payoff). As the goal is to not get years in prison, the payoffs correspond to $Max\ years\ in\ prison - years\ got\ in\ prison$.
-
-\begin{table}[]
-	\centering
-	\begin{tabular}{l|l|l|}
-		\cline{2-3}
-		& $C_2$   & $D_2$   \\ \hline
-		\multicolumn{1}{|l|}{$C_1$} & 2,2 & 0,3 \\ \hline
-		\multicolumn{1}{|l|}{$D_1$} & 3,0 & 1,1 \\ \hline
-	\end{tabular}
-	\caption{Prisoner's Dilemma Payoff Matrix}
-	\label{PrisonerDilemaPayoffMatrix}
-\end{table}	
-
-In the game we can say that \textit{Defecting} \textbf{dominates} \textit{Cooperating}, as for any action that the adversary player may choose, \textit{Defecting} always gives a better payoff for the individual player\cite{Nash1951}.
 
