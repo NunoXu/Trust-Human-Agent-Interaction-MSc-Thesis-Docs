@@ -58,6 +58,7 @@
 \usepackage[utf8x]{inputenc} 							% Encoding (allows accents)
 \usepackage{epstopdf}
 \usepackage[printonlyused,nolist]{acronym}	% Acronyms (print only used)
+\usepackage{amsmath}
 
 \newlength{\wideitemsep}
 \setlength{\wideitemsep}{\itemsep}
@@ -401,31 +402,25 @@ is available on the web page to help you with the
 % A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
 \section{Introduction}
 \label{sec:Introduction}
-The \textit{proceedings} are the records of a conference.
-ACM seeks to give these conference by-products a uniform,
-high-quality appearance.  To do this, ACM has some rigid
-requirements for the format of the proceedings documents: there
-is a specified format (balanced  double columns), a specified
-set of fonts (Arial or Helvetica and Times Roman) in
-certain specified sizes (for instance, 9 point for body copy),
-a specified live area (18 $\times$ 23.5 cm [7" $\times$ 9.25"]) centered on
-the page, specified size of margins (1.9 cm [0.75"]) top, (2.54 cm [1"]) bottom
-and (1.9 cm [.75"]) left and right; specified column width
-(8.45 cm [3.33"]) and gutter size (.83 cm [.33"]).
 
-The good news is, with only a handful of manual
-settings\footnote{Two of these, the {\texttt{\char'134 numberofauthors}}
-    and {\texttt{\char'134 alignauthor}} commands, you have
-    already used; another, {\texttt{\char'134 balancecolumns}}, will
-    be used in your very last run of \LaTeX\ to ensure
-    balanced column heights on the last page.}, the \LaTeX\ document
-class file handles all of this for you.
+% TODO - Insert motivation on the topic:
+% - while a lot of reasearch has been done in modeling trust and in automation, little  research trust in HAI has been found
+% - trust is an important component of the social fabric, and essential if we want to have collaboration
+% - mention that people tend to "anthropomorphize" computers, applying social rules in computer interactions so trust becomes an interesting concern as shown in \cite{Reeves1998a} and \cite{Fogg1997}
+% - First paragraph - Say that trust is a fundamental part of social interaction, and as agents try to simulate this,and by this reason there's been quite some focues in computational trust during recent years, (cite reviews). Give applications of the trust models (specially on e-commerce)
+% - Second paragraph - Briefly say what has been done (not too much, leave for related work) and comment on what is lacking.
+% - Third paragraph - Introduce your solution, and why it's going to improve the field. Relate to the comments mentioned previously
+% - Fourth paragraph - Finally give the structure of the paper (and it's scope? check if hay is needed...)
+Trust has been described in Psychology as being one of the most important components of interpersonal relationships \cite{Simpson2007}. It is undeniable the need of trust to promote cooperation and collaboration between two parties, specially regarding who should one trust and what is worth entrusting. So as \ac{AI} research gravitates towards the development of Intelligent Agent Systems \cite{Russell2009a}, a focal concern is the performance of collaborative tasks\cite{Grosz1996, Allen2002, Allen2007}. And while the amount of literature has been increasing, we found it surprising that not enough work has been done in \ac{HAI} focusing on trust, other than on design issues\cite{Bickmore2005} and the sub-field of \ac{HRI}\cite{Goodrich2007, VandenBrule2014}, specially when so much has been done regarding \ac{TiA} \cite{Lee1992, Jones1997, Lee2004}. This reveals that while the area has so much potential, the level of understanding is still very shallow, only deeply focused in certain areas\cite{Granatyr2015}.
 
-The remainder of this document is concerned with showing, in
-the context of an ``actual'' document, the \LaTeX\ commands
-specifically available for denoting the structure of a
-proceedings paper, rather than with giving rigorous descriptions
-or explanations of such commands.
+\ac{MAS} trust and Reputation modelling is one of the areas that has been having a great increase of interest lately, specially ever since the advent of \ac{P2P} e-commerce in platforms like \textit{eBay}\footnote{eBay Auctions: \url{http://www.ebay.com/}}. For this applications, tools and solutions to ensure trust were needed for a new reality of a mass amount of anonymous entities constantly entering and exiting the environment and performing trading transactions through an open space. However almost all research focuses purely on the creation and maintenance of the internal trust model structure of the agent, normally with just the purpose of ranking other agents, through the use of statistical and game theoretical based methods\cite{Granatyr2015}. This makes it difficult to create a model that is easy to understand, analyse and, most importantly, describe its evaluative reasoning in a human understandable manner. The introduction of cognitive models by Castelfranchi and Falcone \cite{Castelfranchi1998} tries to solve that problem by mapping the trust model to the agent's mental state, composed by beliefs and goals, very akin to existing cognitive agent architectures like BDI\cite{Rao1995}. Then some systems, like Repage\cite{Sabater2006}, created implementations of this new paradigm of trust modelling; until then most of the models were purely theoretical. Nevertheless, there is a gap in this area of research that we wish to address with our work: the lack of an implementation for an action suggester based on the agent's trust model to improve the strength of our beliefs in the model and to improve trust in our agent. While one could argue that this is the responsibility of the decision making or planner component of the agent, we believe that a dedicated module will ease the complexity of decision by making it more modular, and also allowing for a greater degree of integration with the trust model of the agent. To our knowledge, no attempts have been done towards this goal, so we propose to develop two agent modules: firstly, one capable of creating a cognitive model representing the mental state of the user's trust in the agent, using Repage's architecture, and secondly, another to suggest what actions should be used to improve trust on the agent. We will ascertain this project's objectives by integrating the modules in an agent implementation  that is capable of acting as one of the players in the \textit{Split or Steal} scenario, introduced in the British game show \textit{Golden Balls}\footnote{Golden Balls TV Show: \url{http://www.goldenballstvshow.com/}} (currently finishing development in our research group, \acs{GAIPS}\footnote{\ac{GAIPS}: \url{http://gaips.inesc-id.pt/}}). The scenario is further described in Section \ref{subsec:Evaluation:Split or Steal}. 
+
+We hope that this project will make agent decision making more interesting, provide some insight on how actions affect trust and budge the field a bit in this unexplored direction.
+
+% Put goals in 1 sentence.
+
+
+
 % flatex input end: [content/Introduction.tex]
 
 % --------------------------------------------------------
@@ -493,34 +488,8 @@ This difference of possible decisions allows to describe how one may transmit re
 
 \subsection{Game Theory}
 \label{subsec:GameTheory}
-Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action. To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma.
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action.
 
-\subsubsection{Prisoner's Dilemma}
-\label{subsubsec:PrisonersDilemma}
-The Prisoner's Dilemma is a two player game and is usually described as follows:
-
-Two criminal partners are arrested and locked in separate cells with no way of communicating with each other. They are then questioned separately, where they are given 2 options, betray the other prisoner by testifying against him, or remain silent, with the following outcomes:
-\begin{itemize}
-	\item If both prisoners betray each other, both get 2 years in prison;
-	\item If one of them betrays and the other remains silent, the betrayer goes free and the other gets 3 years in prison;
-	\item If both remain silent, both get just 1 year in prison;
-\end{itemize}
-
-We can represent betraying as \textit{Defecting} (D), and staying silent as \textit{Cooperating} (C), and name the players \textit{player1} and \textit{player2}. So the game's possible outcomes can be represented by a payoff matrix, like the one in Table \ref{PrisonerDilemaPayoffMatrix}, where each entry represents a tuple of the form (\textit{player1} payoff, \textit{player2} payoff). As the goal is to not get years in prison, the payoffs correspond to $Max\ years\ in\ prison - years\ got\ in\ prison$.
-
-\begin{table}[]
-	\centering
-	\begin{tabular}{l|l|l|}
-		\cline{2-3}
-		& $C_2$   & $D_2$   \\ \hline
-		\multicolumn{1}{|l|}{$C_1$} & 2,2 & 0,3 \\ \hline
-		\multicolumn{1}{|l|}{$D_1$} & 3,0 & 1,1 \\ \hline
-	\end{tabular}
-	\caption{Prisoner's Dilemma Payoff Matrix}
-	\label{PrisonerDilemaPayoffMatrix}
-\end{table}	
-
-In the game we can say that \textit{Defecting} \textbf{dominates} \textit{Cooperating}, as for any action that the adversary player may choose, \textit{Defecting} always gives a better payoff for the individual player\cite{Nash1951}.
 
 
 % flatex input end: [content/Background.tex]
@@ -578,13 +547,12 @@ The model also conceptualizes \textbf{Expectation} as a belief of when agent X a
 This can be used to establish what expectations the user should have in the agent, whether initial or constructed during interaction, and provide an additional measure to weight the importance of certain agent functions and actions.
 
 As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the mental attitude of the trustor X is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through its \textbf{\ac{DoC}}, which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $\text{\textit{Qual-i}}_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$. 
-\begin{equation}
-	\begin {aligned}
-	DoC_X&(\text{\textit{Qual-i}}_{(s1, ...sn), Y} (\tau)) = F_{X, Y, \tau} (Bel_X(Str_1 \text{\textit{Qual-i}}_{s1Y}(\tau)), \\
-		 &Bel_X(Str_2 \text{\textit{Qual-i}}_{s2Y}(\tau)), ..., Bel_X(Str_n \text{\textit{Qual-i}}_{snY}(\tau))) \\
-	\end {aligned}
+\begin{multline}
+	DoC_X(\text{\textit{Qual-i}}_{(s1, ...sn), Y} (\tau)) =\\
+          = F_{X, Y, \tau} (Bel_X(Str_1 \text{\textit{Qual-i}}_{s1Y}(\tau)), \\
+		 Bel_X(Str_2 \text{\textit{Qual-i}}_{s2Y}(\tau)), ...,\\ Bel_X(Str_n \text{\textit{Qual-i}}_{snY}(\tau)))
 	\label{eq:DegreeOfCredibility}
-\end{equation}
+\end{multline}
 $F_{X, Y, \tau}$ associates the \textit{strengh-of-sources ($Str_j$)} and \textit{quality-values ($\text{\textit{Qual-i}}_{sjY}(\tau)$)} with a probability curve. It should return a matrix with two columns, with an amount of rows corresponding to the number of quality values selected out of the received as input (since not all values must or should be used, and some may be integrated into a single value), and the first column should contain these values associated with their normalized probabilities in the second column (the probabilities sum should be 1). 
 
 For example, consider that we want agent X's \ac{DoC} regarding Y's ability to clean:
@@ -630,7 +598,7 @@ The architecture is composed by three main elements, a \textit{memory}, a set of
 
 \begin{figure}[hbt]
 	\centering
-	\includegraphics[width=20px]{repage.jpg}
+	\includegraphics[width=200px]{repage.jpg}
 	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
 	\label{fig:Repage}
 \end{figure}
@@ -650,71 +618,13 @@ Image and Reputation are the predicates that provide a trust evaluation of a tar
 The work described here is the only found that tries to establish an implementable architecture for a trust model, as most of the models created are purely theoretical. Furthermore, it fits to our goals of creating a trust assessment module, corresponding to the memory and detector components, and a trust decision module, corresponding to the analyser.
 
 
-\subsubsection{\textit{BC}-logic: A Representation of Beliefs for Repage}
-\label{subsubsec:Related work:Trust Models:BDI + Repage}
-Pinyol et al.\cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a BDI Agent\cite{Rao1995}. While the BDI model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
-
-\textit{BC}-logic is structured hierarchically, in a way that formulas from a certain first-order language lower in the hierarchy can be embedded in another language above as constants. This is written as $\lceil\phi\rceil$, with $\phi$ being the formula of the lower language.
-The hierarchy is composed of three languages, starting with the base language, \textit{$L_{basic}$}, that expresses the ontology and contains the symbols to represent the domain. Next there is \textit{$L_{ag}$}, which contains symbols of the base language and special predicates to allow to reason about probability of formulas, about formulas communicated, and formulas believed by agents. Finally there is \textit{BC}-language, the meta-logic language, with the aim to express statements about the agents' reasoning. \textit{$L_{ag}$} and \textit{BC}-language are sorted languages, in other words, its symbols and predicates are partitioned into sorts, each containing their own semantics. All languages contain the logical symbols $\forall$, $\exists$, $\wedge$, $\vee$, $\neg$, and $\implies$.
-
-\textit{$L_{ag}$} contains four sorts:
-\begin{itemize}
-	\item $S_D$: represents application domain, including constants, functions and predicate symbols;
-	\item $S_R$: represents probabilities, including a set of constants, $C_R$, with a label written as $\overline{r}$, where $r \in [0,1]\bigcap Q$; $Q$ being the set of rational numbers;
-	\item $S_A$: represents agent names, including a set of constants $C_A = {i_1, ..., i_n}$, corresponding to the agents' identifiers;
-	\item $S_F$: represents formulas, including a set of constants $C_F$, which is built simultaneously with the construction of the language. This is done by adding the constant $\lceil\phi\rceil$ for each $\phi \in F_m(L_{basic})$, and then, given a formula $\Psi \in F_m(L_{ag})$ we also add $\lceil\Psi\rceil$ to $C_f$.
-\end{itemize}
-
-Symbols in predicates are identified by their sorts, take for example a binary predicate $B$, it is written as $B(S_A, S_F)$, meaning that the first argument must be part of sort $S_A$ and the second argument part of sort $S_F$.
-
-The set of formulas $Fm(L_{ag})$ has the following special predicates:
-\begin{itemize}
-	\item $B(S_A, S_F)$: An agent's belief towards a formula \\(e.g. $B(i_c, \lceil sunny(Lisbon)\rceil)$); abbreviated to $B_{S_A}(S_F)$;
-	\item $Pr\leq(S_F, S_R),\ Pr\geq(C_F, C_R)$: A lower/upper bound on probability of a formula (e.g. $Pr\geq(\lceil sunny(Lisbon)\rceil, 0.8)$);
-	\item $S(S_A, S_A, S_F)$: The communication predicate, as stated in Repage \\(e.g. $S(i_c, j_c, \lceil sunny(Lisbon)\rceil)$);
-	abbreviated to $S_{S_A, S_A}(S_F)$.
-\end{itemize}
 
 
-\textit{\textit{BC}-language} contains five sorts:
-\begin{itemize}
-	\item $S_R$, $S_A$ and $S_F$: as defined above for $L_{ag}$;
-	\item $S_V$: represents variable sequences;
-	\item $S_T$: represents ground term sequences;
-\end{itemize}
-
-Image and Reputation towards an agent $j_c$, playing the role $r$ can then be represented by:
-\begin{itemize}
-	\item Image: $Img_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$
-	\item Reputation: $Rep_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$
-\end{itemize}
-with $[V_{w_1}, ..., V_{w_m}]$ being an abstracted set of evaluations in the belief, as while Repage maps evaluation from Very Bad to Very Good, this can be applied to any ordered mapping of $m$ evaluations. As a simplification, the model summarizes the interaction model of the participating agents ($i_c$ and $j_c$) to a single action. Through this a mapping $R_ri$ can be defined between each role $r$, agent $i_c$ and the action. A mapping $T_{r, w_k}$ is also defined between each role $r$ and label $w_k$ to a formula written in $L_{basic}$.
-
-Image and Reputation can also be represented as a set of beliefs:
-\begin{table}[]
-	\centering
-	\begin{tabular}{ccc}
-		$Img_{i_c}(j_c, r, [V_{w_1}, ..., V_{w_m}])$  & & $Rep_{i_c} (j_c, r, [V_{w_1}, ..., V_{w_m}])$\\ \cline{1-1} \cline{3-3} 
-		$B_{i_c} (pr\geq([R_{rj_c} T_{r_{w_1}}, V_{w_1}]))$ & & $B_{i_c} (s(pr\geq([R_{rj_c} T_{r_{w_1}}, V_{w_1}])))$ \\
-		$B_{i_c} (pr\geq([R_{rj_c} T_{r_{w_2}}, V_{w_2}]))$ & & $B_{i_c} (s(pr\geq([R_{rj_c} T_{r_{w_2}}, V_{w_2}])))$ \\
-		... & & ...
-	\end{tabular}
-\end{table}
-
-The work goes into further detail regarding representing the relationship of Image and Reputation, addressing agent honesty and consistency in communicating reputation, and while interesting, it is not part of what we to model.
-
-Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model and we will most likely choose it for the model representation, as it is the most well developed that we found.
-
-\subsubsection{Sutcliffe and Wang's model}
-\label{subsubsec:Related work:Sutcliffe and Wang}
-This work was published by Sucliffe and Wang in 2012\cite{Sutcliffe2012} and they built a trust model to figure out how cognitive social mechanisms emerge to follow Dunbar's \ac{SBH}\cite{Dunbar1998}, an evolutionary psychology theory that proposes that humans have a predisposition to build relationships in layers of decreasing intimacy. As trust has been acknowledged to be one of major component of human relationships, they demonstrate that simulating trust development and decay, through interactions and neglect, respectively, show the patterns predicted in \ac{SBH}.
-
-From the model standpoint, its main interesting feature is that agents develop trusting relationships between one another, affecting interaction frequency between agents, by preferring to pick those with already high trust value. Additionally the trust relationship degrades as time passes by, with variable speeds depending on the current relationship level, giving stronger ties a slower descent. All in all, the model provides a good tool to simulate multi agent social behaviour, and may be interesting to predict trust degradation in the agent, albeit its described application for social simulations is a bit far from our scope.
 
 \subsubsection{Discussion}
 Of the related work discussed here, we are going to base our solution on Repage and \textit{BC}-logic, as described in their respective Sections \ref{subsubsec:Related work:Trust Models:Repage} and \ref{subsubsec:Related work:Trust Models:BDI + Repage}. Repage fits well as a basis for our objectives, as it has the details of modelling trust already dealt with and leaves us the room to develop the analysis component that corresponds directly to the goal of this project. The choice was also made out of convenience, as no other work was found were implementable design was a concern.
 
-\subsection{The Perception and Measurement of Human-Robot Trust}
+\subsection{The Perception and Measurement of\\Human-Robot Trust}
 \label{subsec:Related work:The Perception and Measurement of Human-Robot Trust}
 
 Schaefer\cite{Schaefer2009} presents a trust perception scale providing a way of extracting an accurate trust score from humans interacting with robots. The scale is composed of 40 items that can be ranked from 0 to 100, in 10 point intervals. The final result it then averaged by adding all the item values and divided by the total number of items (40). 
@@ -722,7 +632,109 @@ Schaefer\cite{Schaefer2009} presents a trust perception scale providing a way of
 While this work has been done specifically for \ac{HRI} we believe that a sub-set of this items can be used for the features used in the cognitive model of the user's trust, further described in Section \ref{subsec:Solution:Trust Assessment Module}. The items are listed in Table \ref{tbl:measurement.items.table} in appendix \ref{app:measurement.items.table}.
 
 
+
 % flatex input end: [content/RelatedWork.tex]
+
+%\input{content/Example(ignore)}
+% flatex input: [content/Model.tex]
+% This is "Model.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+\section{Trust Model}
+\label{sec:TrustModel}
+We sought out to develop a trust model definition that would be easily implementable, but generic enough to be able to adapt to various testing scenarios. To do this we took inspiration from the work by Sabater et al.\cite{Sabater2006} described in Section \ref{subsubsec:Related work:Trust Models:Repage} by taking a similar approach to architecture where a central memory component holds the model's current state, getting updated by perceptions received from the environment. But while Repage describes a third module that suggests actions to resolve belief conflicts in the model, we instead defined such module to assume the point of view of one of the agents in the scenario and if participating in a social interaction, it suggests actions to improve the trust relationship with a trustor. And so, the model can be described by 3 main components:
+\begin{itemize}
+    \item \textbf{Memory}, which defines and stores the main model structure;
+    \item \textbf{Perceptions}, a series of environment inputs mapped to changes in the Memory;
+    \item \textbf{Action Suggestion}, a module that outputs different actions depending on current perceptions and the state of the model.
+\end{itemize}
+
+\subsection{Memory}
+The model's structure was initially based in Castlefranchi and Falcone's conceptualization of trust\cite{Castelfranchi2010}, focusing specially in trust being dependent on the task entrusted, and the transferability of trust between different tasks. So the structure is formed by the concepts represented in Figure \ref{fig:MemoryArchitecture}, and described as follows:
+
+\begin{itemize}
+    \item \textbf{Agent}: a simple representation of the known entities in the scenario world space, serving mostly as an identifier;
+    \item \textbf{Trustee}: each agent contains a collection of other agents he has information about,  either by reputation, or by interaction, which we represent as their Trustees;
+    \item \textbf{Trust Feature}: a piece of information a trustor has on a trustee is represented in a Trust Feature, which contains the Belief Sources of said information, and a Feature Model defining what feature is represented.
+    \item \textbf{Feature Model}: the possible set of trust features from which a trustee can be assigned is defined in a collection of Feature Models where each one represents a possible piece of trust related information relevant to the model scenario (e.g. The trustee's ability to cook, or the willingness to drive);
+    \item \textbf{Category}: a Feature Model must belong to a Category, making it easier to present the different type of Trust Features;
+    \item \textbf{Belief Source}: this represents a source of information, providing 3 values to determine the associated feature's belief value: 
+        \begin{itemize}
+            \item Belief Value, a number between 0.0 and 1.0 describing the trustor evaluation;
+            \item Certainty describes how well the trustee was evaluated, in Reputation for instance, this might represent how well we trust in the reporter, and in Direct Contact how well the trustor observed the trustee performing said feature;
+            \item Time is just a record of when was this belief source recorded, as older records might have a lower impact in the overall belief value score, compared to newer records.
+        \end{itemize} 
+    \item \textbf{Task}: a representation of the possible delegation tasks in the scenario, containing the Feature Models associated with the performance of this task (e.g. The ability to serve drinks if the task is bartending). A weight is given to each Feature corresponding to its importance in the task.
+    
+\end{itemize} 
+
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=200px]{TrustMemoryDiagram.png}
+    \caption{Memory Architecture (represented in UML)}
+    \label{fig:MemoryArchitecture}
+\end{figure}
+
+
+\subsubsection{Ontology} 
+The model was structured in a way to easily adapt an ontology to a particular scenario, which can be defined by 4 main components of the trust model:
+
+
+\subsubsection{Trust Calculation}
+Through this model, trust is mainly defined through a simpler three-part relation, involving just the trustor (\textbf{X}), the trustee (\textbf{Y}) and the task ($\bm{\tau}$), represented in Equation \ref{eq:TrustCalc}.
+\begin{equation}
+TRUST(X\ Y\ \tau)
+\label{eq:TrustCalc}
+\end{equation}
+An agent's trust value in a trustee can then be calculated by 
+
+% Agent contains Trustees, which are representations of the other agents.
+% A trustee has a set of features that the trustor has assigned as representative of it's trust.
+% A feature belongs to a certain category, which in most scenarios, would be Ability and Willingness
+% A feature has a belief value, that is calculated from a set of belief sources
+% A belief source can either be Direct Contact, Reputation or Bias
+% Each belief source has three values, a belief value, a certainty value, and a time value.
+% Belief value is a normalized number that describes the trustee's evaluation on that feature
+% Certainty describes how well the trustee was evaluated, in Reputation for instance, this might represent how well we trust in the reporter, and in Direct Contact how well the trustor observed the trustee performing said feature.
+% Time is just a record of when was this belief source recorded, as older records might have a lower impact in the overall belief value score, compared to newer records.
+% Perceptions correspond to the inputs from the environment that are inserted into the model as belief values to associated features.
+% 
+
+\subsection{Perception}
+
+\subsection{Action Suggestion}
+% This model component describes a mapping of trust increasing oppurtunities to actions that are performed depending on what features are lacking in the trustee for a particular trustor.
+
+% A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
+
+
+% flatex input end: [content/Model.tex]
+
+%\input{content/Example(ignore)}
+% flatex input: [content/UserStudies.tex]
+% This is "UserStudies.tex"
+% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+
+\section{User Studies}
+\label{sec:UserStudies}
+
+In order to evaluate the model we performed a user study in a Investor Game type scenario, with the intent to create an environment where the human participant would need to make a quantitative choice representing his trust in the agent. These studies were performed in collaboration with Henriques' for his work on \textit{Rapport Simulation in Agents} \cite{todo}, as the area of studies were similar enough to 
+
+\subsection{Quick Numbers Scenario}
+\label{subsec:QuickNumbersScenario}
+
+
+\subsection{Trust Game}
+\label{subsec:Trustgame}
+Our overall scenario is very much based on the Trust/Investor Game, first proposed by Berg et al.~\cite{JoyceBergJohnDickhaut}, so we present a small introduction and discussion to the scenario. The game is set up with 2 anonymous players, which we will call player A and player B, where \$10 is given to player A and none to player B. In the first phase player A must choose how much of the starting \$10 should he give to player B knowing that the value will be tripled in player B’s hands. In the second phase player B chooses how much of the, now tripled, money will he return no player A.
+
+This game forms a good base for our scenario because the decision of how much A should give to B is dependent on 2 different factors: the ability and willingness of B to multiply the investment and the willingness of B to return the profits of the investment. This is possible to perform because, while the source of the game explicit the multiplication factor of giving money to B, this value can be a hidden parameter, making the ability of B something to take into account.
+
+We used this game as a foundation for our user studies, described further on in Section \ref{sec:UserStudies}, where we attempted to resolve some of it's faults, such as the game lack of any negotiation phase, in fact, both players are in separate rooms, with no way of interacting with one another, inducing trust to be modelled in a game theory point of view, which is contrary what we wish to accomplish.
+
+\subsection{Results}
+% Mostly inconclusive
+% flatex input end: [content/UserStudies.tex]
 
 %\input{content/Example(ignore)}
 % flatex input: [content/Conclusions.tex]
@@ -763,45 +775,180 @@ and the \textbf{.cls} and \textbf{.tex} files that it describes.
 % initial runs of your .tex file to
 % produce the bibliography for the citations in your paper.
 %*flatex input: [TrustfullActionSuggestion-Paper.bbl]
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 
-\bibitem{bowman:reasoning}
-M.~Bowman, S.~K. Debray, and L.~L. Peterson.
-\newblock Reasoning about naming systems.
-\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):795--825, November 1993.
+\bibitem{Abdul-rahman2000}
+A.~Abdul-rahman and S.~Hailes.
+\newblock {Supporting Trust in Virtual Communities}.
+\newblock {\em System Sciences, 2000. Proceedings of the 33rd Annual Hawaii
+  International Conference on}, 00(c):1--9, 2000.
 
-\bibitem{braams:babel}
-J.~Braams.
-\newblock Babel, a multilingual style-option system for use with latex's
-  standard document styles.
-\newblock {\em TUGboat}, 12(2):291--301, June 1991.
+\bibitem{Allen2007}
+J.~Allen, N.~Chambers, G.~Ferguson, L.~Galescu, H.~Jung, and W.~Taysom.
+\newblock {PLOW : A Collaborative Task Learning Agent}.
+\newblock {\em Interpreting}, 22:1514--1519, 2007.
 
-\bibitem{clark:pct}
-M.~Clark.
-\newblock Post congress tristesse.
-\newblock In {\em TeX90 Conference Proceedings}, pages 84--89. TeX Users Group,
-  March 1991.
+\bibitem{Allen2002}
+J.~Allen and G.~Ferguson.
+\newblock {Human-machine collaborative planning}.
+\newblock {\em International NASA Workshop on Planning}, pages 1--10, 2002.
 
-\bibitem{herlihy:methodology}
-M.~Herlihy.
-\newblock A methodology for implementing highly concurrent data objects.
-\newblock {\em ACM Trans. Program. Lang. Syst.}, 15(5):745--770, November 1993.
+\bibitem{JoyceBergJohnDickhaut}
+J.~Berg, J.~Dickhaut, and K.~McCabe.
+\newblock {Trust, Reciprocity, and Social History}.
+\newblock {\em Games and Economic Behavior}, 10(1):122--142, 1995.
 
-\bibitem{Lamport:LaTeX}
-L.~Lamport.
-\newblock {\em LaTeX User's Guide and Document Reference Manual}.
-\newblock Addison-Wesley Publishing Company, Reading, Massachusetts, 1986.
+\bibitem{Bickmore2005}
+T.~W. Bickmore and R.~W. Picard.
+\newblock {Establishing and Maintaining Long-Term Human-Computer
+  Relationships}.
+\newblock {\em ACM Transactions on Computer-Human}, 12(2):293--327, 2005.
 
-\bibitem{salas:calculus}
-S.~Salas and E.~Hille.
-\newblock {\em Calculus: One and Several Variable}.
-\newblock John Wiley and Sons, New York, 1978.
+\bibitem{Castelfranchi1998}
+C.~Castelfranchi and R.~Falcone.
+\newblock {Principles of trust for MAS: cognitive anatomy, social importance,
+  and quantification}.
+\newblock {\em Proceedings of the International Conference on Multi Agent
+  Systems}, pages 72--79, 1998.
+
+\bibitem{Castelfranchi2010}
+C.~Castelfranchi and R.~Falcone.
+\newblock {\em {Trust Theory}}.
+\newblock John Wiley {\&} Sons, Ltd, Chichester, UK, 1 edition, mar 2010.
+
+\bibitem{Gambetta1988}
+D.~Gambetta.
+\newblock {Can We Trust Trust?}
+\newblock In {\em Trust: Making and Breaking Cooperative Relations}, pages
+  213--237. Blackwell, 1988.
+
+\bibitem{Goodrich2007}
+M.~a. Goodrich and A.~C. Schultz.
+\newblock {Human-Robot Interaction: A Survey}.
+\newblock {\em Foundations and Trends{\textregistered} in Human-Computer
+  Interaction}, 1(3):203--275, 2007.
+
+\bibitem{Granatyr2015}
+J.~Granatyr, V.~Botelho, O.~R. Lessing, E.~E. Scalabrin, J.-P. Barth{\`{e}}s,
+  and F.~Enembreck.
+\newblock {Trust and Reputation Models for Multiagent Systems}.
+\newblock {\em ACM Computing Surveys}, 48(2):1--42, oct 2015.
+
+\bibitem{Grosz1996}
+B.~J. Grosz.
+\newblock {Collaborative Systems}.
+\newblock {\em AI Magazine}, pages 67--85, 1996.
+
+\bibitem{HanYu2013}
+{Han Yu}, {Zhiqi Shen}, C.~Leung, {Chunyan Miao}, and V.~R. Lesser.
+\newblock {A Survey of Multi-Agent Trust Management Systems}.
+\newblock {\em IEEE Access}, 1:35--50, 2013.
+
+\bibitem{Huang2008}
+H.~Huang, G.~Zhu, and S.~Jin.
+\newblock {Revisiting Trust and Reputation in Multi-agent Systems}.
+\newblock {\em Computing, Communication, Control, and Management, 2008. CCCM
+  '08. ISECS International Colloquium on}, 1:424--429, 2008.
+
+\bibitem{Huynh2006}
+T.~D. Huynh, N.~R. Jennings, and N.~R. Shadbolt.
+\newblock {An integrated trust and reputation model for open multi-agent
+  systems}.
+\newblock {\em Autonomous Agents and Multi-Agent Systems}, 13(2):119--154,
+  2006.
+
+\bibitem{Jones1997}
+S.~Jones and S.~Marsh.
+\newblock {Human-computer-human interaction}.
+\newblock {\em ACM SIGCHI Bulletin}, 29(3):36--40, jul 1997.
+
+\bibitem{Lee1992}
+J.~Lee and N.~Moray.
+\newblock {Trust, control strategies and allocation of function in
+  human-machine systems.}
+\newblock {\em Ergonomics}, 35(10):1243--70, oct 1992.
+
+\bibitem{Lee2004}
+J.~D. Lee and K.~A. See.
+\newblock {Trust in Automation : Designing for Appropriate Reliance}.
+\newblock 46(1):50--80, 2004.
+
+\bibitem{Marsh1994}
+S.~P. Marsh.
+\newblock {\em {Formalising Trust as a Computational Concept}}.
+\newblock PhD thesis, apr 1994.
+
+\bibitem{Noorian2010}
+Z.~Noorian and M.~Ulieru.
+\newblock {The State of the Art in Trust and Reputation Systems: A Framework
+  for Comparison}.
+\newblock {\em Journal of theoretical and applied electronic commerce
+  research}, 5(2):97--117, aug 2010.
+
+\bibitem{Pinyol2009}
+I.~Pinyol.
+\newblock {Reputation-Based Decisions for Cognitive Agents (Thesis Abstract)}.
+\newblock {\em Doctoral Mentoring Program}, (Aamas):33, 2009.
+
+\bibitem{Pinyol2013}
+I.~Pinyol and J.~Sabater-Mir.
+\newblock {Computational trust and reputation models for open multi-agent
+  systems: a review}.
+\newblock {\em Artificial Intelligence Review}, 40(1):1--25, jun 2013.
+
+\bibitem{Rao1995}
+A.~S. Rao and M.~P. Georgeff.
+\newblock {BDI agents: From theory to practice.}
+\newblock {\em Icmas}, 95:312--319, 1995.
+
+\bibitem{Rousseau1998}
+D.~Rousseau, S.~Sitkin, R.~Burt, and C.~Camerer.
+\newblock {Not so different after all: A cross-discipline view of trust.}
+\newblock {\em Academy of Management Review}, 23(3):393--404, 1998.
+
+\bibitem{Russell2009a}
+S.~Russell and P.~Norvig.
+\newblock {\em {Artificial Intelligence: A Modern Approach, 3rd edition}}.
+\newblock 2009.
+
+\bibitem{Sabater2006}
+J.~Sabater, M.~Paolucci, and R.~Conte.
+\newblock {Repage: REPutation and ImAGE among limited autonomous partners}.
+\newblock {\em Jasss}, 9(2):117--134, 2006.
+
+\bibitem{Sabater2002}
+J.~Sabater and C.~Sierra.
+\newblock {Reputation and social network analysis in multi-agent systems}.
+\newblock {\em Proceedings of the first international joint conference on
+  Autonomous agents and multiagent systems part 1 - AAMAS '02}, page 475, 2002.
+
+\bibitem{Sabater2005}
+J.~Sabater and C.~Sierra.
+\newblock {Review on computational trust and reputation models}.
+\newblock {\em Artificial Intelligence Review}, 24(1):33--60, 2005.
+
+\bibitem{Schaefer2009}
+K.~Schaefer.
+\newblock {\em {The Perception and Measurement of Human-Robot Trust}}.
+\newblock PhD thesis, 2009.
+
+\bibitem{Simpson2007}
+J.~A. Simpson.
+\newblock {Foundations of interpersonal trust}.
+\newblock In {\em Social psychology: Handbook of basic principles (2nd ed.).},
+  pages 587--607. 2007.
+
+\bibitem{VandenBrule2014}
+R.~van~den Brule, R.~Dotsch, G.~Bijlstra, D.~H.~J. Wigboldus, and W.~F.~G.
+  Haselager.
+\newblock {Do Robot Performance and Behavioral Style affect Human Trust ?}
+\newblock {\em International Journal of Social Robotics}, 2014.
 
 \end{thebibliography}
 
 % flatex input end: [TrustfullActionSuggestion-Paper.bbl]
 %FLATEX-REM:\bibliographystyle{abbrv}
-%FLATEX-REM:\bibliography{bib/sigproc}  % sigproc.bib is the name of the Bibliography in this case
+%FLATEX-REM:\bibliography{bib/library}  % sigproc.bib is the name of the Bibliography in this case
 % You must have a proper ".bib" file
 %  and remember to run:
 % latex bibtex latex latex
