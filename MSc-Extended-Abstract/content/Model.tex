@@ -91,6 +91,7 @@ In this module, a collection of relevant environment perceptions is inserted int
 \end{figure}
 
 \subsection{Action Suggestion}
-This component is meant to 
+This module contains a series of Actions that are suggested to the agent's planner when certain conditions are met. This Actions should be able to encompass a variety of social strategies relevant to the scenario, but we reduced the scope in this thesis to just utterances suggestions. Each Action is associated to the Features that it predicts it is going to change, storing a Belief Source for each Feature. If a suggested Action is performed it's Belief Sources are then added to the model. A suggestion occurs when an environment perception is received and the current world state is classified as a good moment to perform one of the stored Actions, of course not all Actions will be relevant in a particular situation, so only some of them are then sorted by importance, by checking which action will positively affect the features with the lowest belief values.
+
 % A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
 
