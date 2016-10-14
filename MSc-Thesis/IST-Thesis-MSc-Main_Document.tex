@@ -47,7 +47,7 @@
 \pdfbookmark[0]{Titlepage}{Title}
 \input{IST-Thesis-MSc-Front_Cover}
 
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % PAGE NUMBERING FOR INDEXING MATTER in ROMAN
@@ -76,7 +76,7 @@
 \thispagestyle{empty}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % O RESUMO
@@ -91,7 +91,7 @@
 \thispagestyle{empty}
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % This is required for the Fancy Chapters with minitoc
@@ -108,7 +108,7 @@
 %\contentsline{chapter}{References}{\pageref{bib}}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 % reposition baseline
 \renewcommand{\baselinestretch}{1.5}
 
@@ -116,7 +116,7 @@
 % List of Figures
 \pdfbookmark[1]{List of Figures}{lof}
 \listoffigures
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % List of Tables
@@ -124,7 +124,7 @@
 \listoftables
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % List of Algorithms
@@ -133,14 +133,14 @@
 \listofalgorithms
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % Listings
 % Requires packages listings
 \pdfbookmark[1]{Listings}{lol}
 \lstlistoflistings
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % % List of acronyms
@@ -149,7 +149,7 @@
 \input{./Chapters/IST-Thesis-MSc-Acronyms.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % PAGE NUMBERING FOR DOCUMENT MATTER in ARABIC
@@ -163,37 +163,39 @@
 \input{./Chapters/IST-Thesis-MSc-Chapter_1.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %
 %Chapter 2
 \input{./Chapters/IST-Thesis-MSc-Chapter_2.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %
 %Chapter 3
 \input{./Chapters/IST-Thesis-MSc-Chapter_3.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %
 %Chapter 4
 \input{./Chapters/IST-Thesis-MSc-Chapter_4.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %
 %Chapter 5
 \input{./Chapters/IST-Thesis-MSc-Chapter_5.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
-%
+%\cleardoublepage
 %Chapter 6
 \input{./Chapters/IST-Thesis-MSc-Chapter_6.tex}
+%
+%Chapter 7
+\input{./Chapters/IST-Thesis-MSc-Chapter_7.tex}
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %
 % -----------------------------------------------------------------------------
 % BIBLIOGRAPHY
@@ -221,21 +223,23 @@
 % The following command resets the 'emphasis' style for bibliography entries
 \normalem
 % Name of your BiBTeX file
-\bibliography{./IST-Thesis-MSc-Bibliography} % Put here your own filename
+\bibliography{bib/library} % Put here your own filename
 % If Printing on DOUBLE SIDED pages, the second page should be white.
 % Otherwise, comment the following command:
 \ULforem
-\cleardoublepage
+%\cleardoublepage
 
 % -----------------------------------------------------------------------------
 % HERE GO THE APPENDIXES IF REQUIRED
 \appendix
 %% First Appendix
 \pdfbookmark[1]{Appendix A}{appendix}
-\input{./Chapters/IST-Thesis-MSc-AppendixA.tex}
+%\input{./Chapters/IST-Thesis-MSc-AppendixA.tex}
+\input{./Chapters/IST-Thesis-MSc-QuestionnaireAppendix.tex}
+
 %% If Printing on DOUBLE SIDED pages, the second page should be white.
 %% Otherwise, comment the following command:
-\cleardoublepage
+%\cleardoublepage
 %% Second Appendix
 \pdfbookmark[1]{Appendix B}{appendix}
 \input{./Chapters/IST-Thesis-MSc-AppendixB.tex}

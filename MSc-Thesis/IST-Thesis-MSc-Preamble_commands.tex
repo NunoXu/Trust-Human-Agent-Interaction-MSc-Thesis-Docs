@@ -46,7 +46,7 @@
 % PACKAGE enumerate:
 % -----------------------------------------------------------------------------
 %For enhanced enumeration of lists
-\usepackage{enumerate}
+\usepackage{enumitem}
 
 % -----------------------------------------------------------------------------
 % PACKAGE latexsym:
@@ -81,8 +81,12 @@
 \usepackage{colortbl}
 \usepackage{ctable}
 \usepackage{booktabs}
-% \usepackage{longtable}
+\usepackage{longtable}
 
+% -----------------------------------------------------------------------------
+% PACKAGES pdfpages:
+% -----------------------------------------------------------------------------
+\usepackage{pdfpages}
 % -----------------------------------------------------------------------------
 % PACKAGES graphicx, subfigure:
 % -----------------------------------------------------------------------------
@@ -168,7 +172,7 @@
 % PACKAGE paralist
 % -----------------------------------------------------------------------------
 % This package provides the 'inparaenum' environment for inline lists
-\usepackage{paralist}
+%\usepackage{paralist}
 
 % -----------------------------------------------------------------------------
 % PACKAGE cite:
@@ -211,7 +215,15 @@
 % Provides better support for handling and breaking URLs.
 \usepackage{url} 
 
+
+% -----------------------------------------------------------------------------
+% PACKAGE bm:
+% -----------------------------------------------------------------------------
 \usepackage{bm}
+
+% -----------------------------------------------------------------------------
+% CUSTOM Command just to have a constant euler:
+% -----------------------------------------------------------------------------
 \newcommand{\euler}{e}
 % #############################################################################
 % GLOBAL FORMATTING OF THE THESIS DOCUMENT before using FANCY stuff

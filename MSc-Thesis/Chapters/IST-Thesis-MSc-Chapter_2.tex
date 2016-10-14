@@ -3,54 +3,91 @@
 % !TEX root = ../main.tex
 % #############################################################################
 % Change the Name of the Chapter i the following line
-\fancychapter{This is the Second Chapter}
-\cleardoublepage
+\fancychapter{Background}
+%\cleardoublepage
 % The following line allows to ref this chapter
-\label{chap:back}
+\label{chap:Background}
+Before discussing related work and our solution to the problem, this chapter will present the main concepts that  will be mentioned in the rest of this thesis, specifically regarding trust and reputation.
 
-Vivamus auctor leo vel dui. Aliquam erat volutpat. Phasellus nibh. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cras tempor. Morbi egestas, urna non consequat tempus, nunc arcu mollis enim, eu aliquam erat nulla non nibh. Duis consectetuer malesuada velit. Nam ante nulla, interdum vel, tristique ac, condimentum non, tellus. Proin ornare feugiat nisl. Suspendisse dolor nisl, ultrices at, eleifend vel, consequat at, dolor.
-% #############################################################################
-\section{Traditional Streaming Technologies}
-Cras dictum. Maecenas ut turpis. In vitae erat ac orci dignissim eleifend. Nunc quis justo. Sed vel ipsum in purus tincidunt pharetra \cite{MacAulay:2005fk}. Sed pulvinar, felis id consectetuer malesuada, enim nisl mattis elit, a facilisis tortor nibh quis leo. Sed augue lacus, pretium vitae, molestie eget, rhoncus quis, elit \cite{Schwarz:2007lr}. Donec in augue. Fusce orci wisi, ornare id, mollis vel, lacinia vel, massa. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas..
+\section{Trust}
+\label{sec:Trust}
+Trust is regarded throughout the literature as one of the fundamental components of human society, being essential in cooperative and collaborative behaviour, having been studied in a multitude of disciplines, from Psychology and Sociology, to Philosophy and Economy\cite{Rousseau1998, Jones1997, Sabater2005}. For that reason, it is no wonder that it acquired a very large number of different definitions throughout the years of study, causing the problem of not existing a consensus on a definition of trust\cite{Castelfranchi2010}. In the scope of this project, the most relevant start for our discussion is the dyadic definition of trust: `an orientation of an actor (the \textbf{truster}) toward a specific person (the \textbf{trustee}) with whom the actor is in some way interdependent' (taken from \cite{Simpson2007}), as we want to focus on interpersonal relationships. This definition has been expanded throughout the literature, often adapted to fit the context or scope of the work, but three main definitions are highlighted in computational trust:
+\begin{itemize}
+    \item First, Gambetta\cite{Gambetta1988} defined trust as follows: `Trust is the \textit{subjective probability} by which an individual, A, \textit{expects} that another individual, B, performs a given action on which its \textit{welfare depends}' (taken from \cite{Castelfranchi2010}). This is accepted by most authors as one of the most classical definitions of trust, but it is too restrictive with its uni-dimensionality, as it only refers to predictability of the trustor, and does not take into account competence in executing the given action.
+    
+    \item Marsh\cite{Marsh1994} was the first author to formalize trust as a measurable Computational Concept, continuing the perspective of reducing trust to a numerical value, set by Gambetta\cite{Gambetta1988}, but also adding that: X trusts Y if, and only if, `X \textit{expects} that Y will behave according to X's best interest, and will not attempt to harm X' (taken from \cite{Castelfranchi2010}). This definition does not represent other parts of trust, such as the notion that trustor must ascertain some risk from delegating the action to the trustee.
+    
+    \item Castelfranchi and Falcone then introduced a Cognitive aspect to Computational Trust\cite{Castelfranchi1998}. They define trust as the mental state of the trustor and the action in which the trustor refers upon the trustee to perform. This is the definition of trust that we will adopt throughout the rest of the report, as it represents a vision of trust that takes into account the trustor set of beliefs and intentions, approaching it to an agent's cognitive model, while also linking trust to the action being performed, as one might trust another for certain types of actions and not for others (e.g. I may trust my squire to polish my sword, but not to swing it).
+\end{itemize}
 
-Sed pulvinar, felis id consectetuer malesuada, enim nisl mattis elit, a facilisis tortor nibh quis leo Table~\ref{tab:streamingtech}.
+\subsection{Castelfranchi and Falcone's Trust}
+\label{subsec:CastelfranchiTrust}
+More explicitly, Castelfranchi and Falcone\cite{Castelfranchi1998} state that trust is a conjunction of three concepts:
+\begin{itemize}
+    \item A \textit{mental attitude} or (pre)disposition of the agent towards another agent; this is represented by beliefs about the trustees' qualities and defects;
+    \item A \textit{decision} to rely upon another, and therefore making the trustor `vulnerable' to the possible negative actions of the trustee;
+    \item The \textit{act} of trusting another agent and the following behaviour of counting on the trustee to perform according to plan. 
+\end{itemize}
+By describing trust as a mental attitude it is also implied that: `Only a cognitive agent can trust another agent; only an agent endowed with goals and beliefs'\cite{Castelfranchi2010}.
 
-\begin{table}[htb]
-\centering
-\normalsize
-{\footnotesize
-    \caption{Streaming Technologies Comparison}
-    \label{tab:streamingtech}
-    \begin{tabular}{ | c | c | c | c |}
-    \hline
-    & Dynamic & Smooth & HLS\\
-    & Streaming & Streaming & \\ \hline \hline
+From this definition we should also address one important component, \textbf{Delegation}, which happens when an agent (X) needs or likes the action delegated to another agent (Y), so X includes it in his plans, therefore relying on Y. X plans to achieve his goal through Y. So, he formulates in his mind a multi-agent plan with a state or action goal being Y’s delegated\cite{Castelfranchi1998}.
 
-    Streaming Protocol & RTMP & HTTP & HTTP \\
-    %\textbf{Protocol} & & & \\ 
-    \hline
-    
-    Video Codec & H.264, VP6 & H.264 & H.264 \\ 
-    %\textbf{Codec} & &  & \\ 
-    \hline
-    
-    Audio Codec & AAC, MP3 & WMA, AAC & AAC, MP3  \\
-    %\textbf{Codec} & & & \\ 
-    \hline
-    
-    Container Format & MP4, FLV, & MP4 & MPEG2-TS \\
-    %\textbf{Format} & F4V & & \\ 
-    \hline
-    
-     iOS & NO & YES & YES \\ \hline
-     
-    Android & NO & YES & YES \\ \hline
-    
-    \end{tabular}
+
+
+\section{Reputation and Image}
+\label{sec:Reputation}
+\textit{Reputation} is also a concept that appears very often linked with trust in the literature, specially since recent models created for representing trust have been focused on \acp{MAS} (see \cite{Abdul-rahman2000, Sabater2002, Sabater2006, Huynh2006, Pinyol2009}), where more recent trust models have been developed to also include reputation as a source of trust.
+
+An agent is not influenced only by their own beliefs about the subject, the \textit{Image}, but also by what other agents say about it, its \textit{Reputation}.
+
+We describe Image and Reputation as introduced by Sabater in \cite{Sabater2006}:
+Image is defined as the agent's personal belief about a certain property of the target agent, be it a physical, mental or social trait. Reputation is a meta-belief about an impersonal evaluation of the target, in other words, it is the belief on the evaluation being circulated about the target. On a more concrete level, reputation is separated between \textit{shared evaluation} and \textit{shared voice}. Consider that an agent has beliefs about how other agents evaluate a certain target, if in a set of agents these beliefs converge to a value (e.g. `good' or `bad') we can say that there exists a shared evaluation of the target. It is important to note that all sharing agents are known and well defined. A shared voice is a belief that another set of agents themselves believe that an evaluation of the target exists. In other words, it is the belief that a group of agents will consistently report that a voice exists. These meta-beliefs are considered important as one is not required to believe that other's evaluation is correct, but might still believe that it exists.
+
+The mental decisions regarding reputation can be categorized as follows:
+\begin{itemize}
+    \item Epistemic decisions: accepting trust beliefs to update or generate a given image or reputation;
+    \item Pragmatic-Strategic decisions: using trust beliefs to decide how to behave towards other agents;
+    \item Memetic decisions: transmitting trust beliefs to others. 
+\end{itemize}
+This difference of possible decisions allows to describe how one may transmit reputation without having the responsibility for the credibility or truthfulness of the content transmitted, as one does not have to commit to accepting the reputation value, and just say that the rumour exists.
+
+
+\section{Game Theory}
+\label{sec:GameTheory}
+Game Theory is the field of study that defines and analyses situations involving conflict or cooperation between multiple intelligent decision makers. These situations are called a game, and they are distilled to their core argument, by defining the limited and simple set of actions that the players may perform, and how do they affect the players. It then analyses the decision strategies for each player, by assuming that both will try to maximise their payoff (how much the player gains) with their action.
+
+\subsection{Prisoner's Dilemma}
+\label{subsec:PrisonersDilemma}
+To better explain the concepts we want to present, we will introduce one of the most common exemplary models of Game Theory, the Prisoner's Dilemma. It is a two player game and is usually described as follows:
+
+Two criminal partners are arrested and locked in separate cells with no way of communicating with each other. They are then questioned separately, where they are given 2 options, betray the other prisoner by testifying against him, or remain silent, with the following outcomes:
+\begin{itemize}
+    \item If both prisoners betray each other, both get 2 years in prison;
+    \item If one of them betrays and the other remains silent, the betrayer goes free and the other gets 3 years in prison;
+    \item If both remain silent, both get just 1 year in prison;
+\end{itemize}
+
+\begin{table}[h]
+    \centering
+    \normalsize{
+        \footnotesize
+        \begin{tabular}{l|l|l|}
+            \cline{2-3}
+            & $C_2$   & $D_2$   \\ \hline
+            \multicolumn{1}{|l|}{$C_1$} & 2,2 & 0,3 \\ \hline
+            \multicolumn{1}{|l|}{$D_1$} & 3,0 & 1,1 \\ \hline
+        \end{tabular}
     }
-\end{table} 
+    \caption{Prisoner's Dilemma Payoff Matrix}
+    \label{tbl:PrisonerDilemaPayoffMatrix}
+\end{table}	
+We can represent betraying as \textit{Defecting} (D), and staying silent as \textit{Cooperating} (C), and name the players \textit{player1} and \textit{player2}. So the game's possible outcomes can be represented by a payoff matrix, like the one in Table \ref{tbl:PrisonerDilemaPayoffMatrix}, where each entry represents a tuple of the form (\textit{player1} payoff, \textit{player2} payoff). As the goal is to not get years in prison, the payoffs correspond to $Max\ years\ in\ prison - years\ got\ in\ prison$.
 
-Suspendisse vestibulum dignissim quam. Integer vel augue. Phasellus nulla purus, interdum ac, venenatis non, varius rutrum, leo. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas \cite{RFC-VP8}. Duis a eros. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos hymenaeos. Fusce magna mi, porttitor quis, convallis eget, sodales ac, urna \cite{Chiang:2011fk}. Phasellus luctus venenatis magna. Vivamus eget lacus. 
-% #############################################################################
-\section{Cras lobortis tempor velit}
-Nunc tincidunt convallis tortor. Duis eros mi, dictum vel, fringilla sit amet, fermentum id, sem. Phasellus nunc enim, faucibus ut, laoreet in, consequat id, metus. Vivamus dignissim \cite{Moscoso:2011fk}. Cras lobortis tempor velit. Phasellus nec diam ac nisl lacinia tristique. Nullam nec metus id mi dictum dignissim. Nullam quis wisi non sem lobortis condimentum. Phasellus pulvinar, nulla non aliquam eleifend, tortor wisi scelerisque felis, in sollicitudin arcu ante lacinia leo.
+
+In the game we can say that \textit{Defecting} \textbf{dominates} \textit{Cooperating}, as for any action that the adversary player may choose, \textit{Defecting} always gives a better payoff for the individual player\cite{Nash1951}.
+
+\subsection{Trust Game}
+Additionally we should describe and discuss another Game Theory scenario, the Trust/Investor Game, first proposed by Berg et al.~\cite{JoyceBergJohnDickhaut}, as this serves as a base for our scenario, described in Chapter \ref{chap:scenario}. The game is set up with 2 anonymous players, which we will call player A and player B, where \$10 is given to player A and none to player B. In the first phase player A must choose how much of the starting \$10 should he give to player B knowing that the value will be tripled in player B’s hands. In the second phase player B chooses how much of the, now tripled, money will he return no player A.
+
+We took the decision of making this game our base for the scenario because we can make the decision of how much A should give to B dependent on 2 different factors: trusting that B will multiply the investment and that he will return the profits of the investment. This is possible by putting the multiplication factor of the money dependent on B's ability to perform a task known to A.
+Still, this foundation must be expanded because it lacks sufficient human-agent interaction for trust to be properly modelled and rapport to be developed. The game does not describe any negotiation phase, in fact, both players are in separate rooms, with no way of interacting with one another.

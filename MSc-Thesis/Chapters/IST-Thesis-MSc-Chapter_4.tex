@@ -4,21 +4,27 @@
 % #############################################################################
 % Change the Name of the Chapter i the following line
 \fancychapter{Trust Model}
-\cleardoublepage
+%\cleardoublepage
 % The following line allows to ref this chapter
-\label{chap:Trust Model}
-% This is "Model.tex"
-% A content sub-file for Trustfull Action Suggestion Thesis Extended Abstract
+\label{chap:TrustModel}
 
-We sought out to develop a trust model definition that would be easily implementable, but generic enough to be able to adapt to various testing scenarios. To do this we took inspiration from the work by Sabater et al.\cite{Sabater2006} described in Section \ref{subsubsec:Related work:Trust Models:Repage} by taking a similar approach to architecture where a central memory component holds the model's current state, getting updated by perceptions received from the environment. But while Repage describes a third module that suggests actions to resolve belief conflicts in the model, we instead defined such module to assume the point of view of one of the agents in the scenario and, if participating in a social interaction, it suggests actions to improve the trust relationship with a trustor. In fact, most of the design of the model was made with the intent that it would be used by one of the agent's in the scenario, and the model created would be his own trust model of the world environment. And so, the model can be described by 3 main components:
+We sought out to develop a trust model definition that would be easily implementable, but generic enough to be able to adapt to various testing scenarios. To do this we took inspiration from the work by Sabater et al.\cite{Sabater2006} described in Section \ref{subsec:Related work:Trust Models:Repage} by taking a similar approach to architecture where a central memory component holds the model's current state, getting updated by perceptions received from the environment. But while Repage describes a third module that suggests actions to resolve belief conflicts in the model, we instead defined such module to assume the point of view of one of the agents in the scenario and, if participating in a social interaction, it suggests actions to improve the trust relationship with a trustor. In fact, most of the design of the model was made with the intent that it would be used by one of the agent's in the scenario, and the model created would be his own trust model of the world environment. And so, the model is composed by 3 main components, represented in Figure \ref{fig:ModelArchitecture}, and described as follows:
 \begin{itemize}
     \item \textbf{Memory}, which defines and stores the main model structure;
     \item \textbf{Perceptions}, a series of environment perceptions mapped to changes in the Memory;
     \item \textbf{Action Suggestion}, a module that outputs different actions depending on current perceptions and the state of the model.
 \end{itemize}
 
-\subsection{Memory}
-One of the main concerns while designing the model was how trust would be calculated, as we wanted to use Castlefranchi and Falcone's conceptualization of trust \cite{Castelfranchi2010} as a basis for trust definition, focusing specially on it being dependent on the task entrusted, and the transferability of trust between different tasks. But starting from the five-part definition of trust, as seen in Equation \ref{eq:TrustRelation}, we decided that inserting context (\textbf{C}) and the trustor's goal ($\bm{g_x}$) into the model would bring in too much complexity for the scope of this thesis, as it would require for a world state model to be kept, as well as some way to predict the trustor's goal. So we simplified, defining trust through a simpler three-part relation, involving just the trustor (\textbf{X}), the trustee (\textbf{Y}) and the task ($\bm{\tau}$), represented in Equation \ref{eq:TrustCalc}.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=0.7\textwidth]{figures/ModelDiagram.jpg}
+    \caption{Model Architecture with brief descriptions, their interactions with the scenario and what they contain.}
+    \label{fig:ModelArchitecture}
+\end{figure}
+
+
+\section{Memory}
+One of the main concerns while designing the model was how trust would be calculated, as we wanted to use Castlefranchi and Falcone's conceptualization of trust \cite{Castelfranchi2010} as a basis for trust definition, focusing specially on it being dependent on the task entrusted, and the transferability of trust between different tasks. But starting from the five-part definition of trust, as seen in Equation \ref{eq:TrustRelation}, we decided that inserting context (\textbf{C}) and the trustor's goal (\bm{$g_x$}) into the model would bring in too much complexity for the scope of this thesis, as it would require for a world state model to be kept, as well as some way to predict the trustor's goal. So we simplified, defining trust through a simpler three-part relation, involving just the trustor (\textbf{X}), the trustee (\textbf{Y}) and the task ($\bm{\tau}$), represented in Equation \ref{eq:TrustCalc}.
 \begin{equation}
 TRUST(X\ Y\ \tau)
 \label{eq:TrustCalc}
@@ -43,13 +49,13 @@ So we designed the structure with the concepts and relations represented in Figu
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=200px]{figures/TrustMemoryDiagram.png}
+    \includegraphics[width=0.7\textwidth]{figures/TrustMemoryDiagram.jpg}
     \caption{Memory Architecture (represented in UML)}
     \label{fig:MemoryArchitecture}
 \end{figure}
 
 
-\subsubsection{Trust Calculation}
+\subsection{Trust Calculation}
 Taking a Trustor $X$, a Trustee $Y$ and a delegated task $\tau$, Trust can then be calculated by taking the Trustee's Trust Features $F_y$, the Task's Feature Models $F_\tau$ and checking which they have in common, which we can represent as $F_{y\cap\tau}$~. Remember that Trust Features are uniquely identified by a Feature Model. So after getting $F_{y\cap\tau}$ we can apply a linear function to each of the features in $F_{y\cap\tau}$, where for each element $F_i$ we multiply the trustee's feature's belief value $B(F_i)$ with the weight of the feature for the task $W(F_i)$, as represented in Equation \ref{eq:TrustCalculation}.
 \begin{equation}
 Trust_{X,Y,\tau}=\sum_{i=0}^{n}W(F_i) B(F_i)
@@ -87,18 +93,37 @@ D^j_{F_i} = \euler^{-\frac{T^{Last}_{F_i} - T^j_{F_i}}{2(\frac{L}{4})^2}}
 % Perceptions correspond to the inputs from the environment that are inserted into the model as belief values to associated features.
 % 
 
-\subsection{Perception}
-In this module, a collection of relevant environment perceptions is inserted into the model, in order to translate perceived changes in the environment, into changes in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}.
+
+\section{Perceptions}
+Another issue we encountered in literature was a lack of detail on how would changes be inserted into the model, so we try to solve that issue by defining relevant perceptions as part of the model. As a result, a variety of environment perceptions are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}.
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=0.7\textwidth]{figures/PerceptionsDiagram.jpg}
+    \includegraphics[width=0.9\textwidth]{figures/PerceptionsDiagram.jpg}
     \caption{Perception Example}
     \label{fig:Perceptions Diagram}
 \end{figure}
 
-\subsection{Action Suggestion}
-This component contains a collection of 
+\section{Action Suggestion}
+This is the module that is responsible for suggestion actions to the agent, in order to improve trust. It is composed by a series of Action objects, that contain the following:
+\begin{itemize}
+    \item $F = \{F_1, F_2, ..., F_i, ..., F_n\}$: A collection of $n$ relevant Feature Models that this Action will affect. At least 1 Feature Model needs to be present in the action, but $n$ is only limited by number available in the Model;
+    \item $B(F_i)$: Each $F_i$ Feature Model belonging to $F$ has a collection of Belief Sources that describe how will the Feature be affected by the Action. Through this Belief Sources it is possible to predict how will the model change with this action;
+    \item $E = \{E_1, E_2, ..., E_i, ... E_m\}$ 
+\end{itemize}
+
+. This Actions should be able to encompass a variety of social strategies relevant to the scenario, but we reduced the scope in this thesis to just utterances suggestions. Each Action is associated to the Features that it predicts it is going to change, storing a Belief Source for each Feature. If a suggested Action is performed it's Belief Sources are then added to the model. 
+
+
 
 % A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=\textwidth]{figures/ActionSuggestionDiagram.jpg}
+    \caption{Action Suggestion Behaviour Flow}
+    \label{fig:ActionSuggestionDiagram}
+\end{figure}
 
+
+\section{Scenario Ontology}
+While creating the model, we focused in making it generic, but easily adaptable and transferable between scenarios. So when using the model into a new scenario, a Scenario Ontology must be provided, consisting in 6 entity collections, previously described along this chapter: Agents, Tasks, Feature Models, Categories, Perceptions and Actions.

@@ -81,7 +81,7 @@ B(F_i) = \sum_{j=0}^{n} D^j_{F_i} C^j_{F_i} B_j
 % 
 
 \subsection{Perception}
-In this module, a collection of relevant environment perceptions is inserted into the model, in order to translate perceived changes in the environment, into changes in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}.
+Another issue we encountered in literature was a lack of detail on how would changes be inserted into the model, so we try to solve that issue by defining relevant perceptions as part of the model. As a result, a variety of environment perceptions are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}.
 
 \begin{figure}[hbt]
     \centering
