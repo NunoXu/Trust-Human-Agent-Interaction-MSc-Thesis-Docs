@@ -118,7 +118,7 @@ The work described here is one of the only found that tries to establish an impl
 
 \subsection{\textit{BC}-logic: A Representation of Beliefs for Repage}
 \label{subsec:Related work:Trust Models:BDI + Repage}
-Pinyol et al.\cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a BDI Agent\cite{Rao1995}. While the BDI model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
+Pinyol et al.\cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a \ac{BDI} Agent\cite{Rao1995}. While the \ac{BDI} model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
 
 \textit{BC}-logic is structured hierarchically, in a way that formulas from a certain first-order language lower in the hierarchy can be embedded in another language above as constants. This is written as $\lceil\phi\rceil$, with $\phi$ being the formula of the lower language.
 The hierarchy is composed of three languages, starting with the base language, \textit{$L_{basic}$}, that expresses the ontology and contains the symbols to represent the domain. Next there is \textit{$L_{ag}$}, which contains symbols of the base language and special predicates to allow to reason about probability of formulas, about formulas communicated, and formulas believed by agents. Finally there is \textit{BC}-language, the meta-logic language, with the aim to express statements about the agents' reasoning. \textit{$L_{ag}$} and \textit{BC}-language are sorted languages, in other words, its symbols and predicates are partitioned into sorts, each containing their own semantics. All languages contain the logical symbols $\forall$, $\exists$, $\wedge$, $\vee$, $\neg$, and $\implies$.
@@ -169,7 +169,7 @@ Image and Reputation can also be represented as a set of beliefs:
 
 The work goes into further detail regarding representing the relationship of Image and Reputation, addressing agent honesty and consistency in communicating reputation, and while interesting, it is not part of what we to model.
 
-Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model and we will most likely choose it for the model representation, as it is the most well developed that we found.
+Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model, but we found it to be too complex to be used, as we wanted to maintain simplicity with the model's design.
 
 \subsection{Sutcliffe and Wang's model}
 \label{subsec:Related work:Sutcliffe and Wang}

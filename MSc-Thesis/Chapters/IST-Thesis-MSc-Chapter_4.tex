@@ -98,7 +98,7 @@ D^j_{F_i} = \euler^{-\frac{T^{Last}_{F_i} - T^j_{F_i}}{2(\frac{L}{4})^2}}
 
 
 \section{Perceptions}
-Another issue we encountered in literature was a lack of detail on how would changes be inserted into the model, so we try to solve that issue by inserting relevant perceptions as part of the model. As a result, a variety of environment inputs are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}. When adding a Belief Source to a Trustee, if the associated Feature is not present, then it is added with the Belief Source.
+Another issue we encountered in literature was a lack of detail on how would changes be inserted into the model, so we try to solve that issue by inserting relevant perceptions as part of the model. As a result, a variety of environment inputs are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}. When adding a Belief Source to a Trustee, if the associated Feature is not present, then it is added with the Belief Source. The affected Trustor and Trustee are received as arguments.
 
 \begin{figure}[hbt]
     \centering
@@ -107,7 +107,10 @@ Another issue we encountered in literature was a lack of detail on how would cha
     \label{fig:Perceptions Diagram}
 \end{figure}
 
+
+
 \section{Action Suggestion}
+\label{sec:ActionSuggestion}
 This is the module that is responsible for suggestion actions to the agent, in order to improve trust. It is composed by a series of Action objects, each represented by $A$ and containing the following:
 \begin{itemize}
     \item $A_F = \{F_1, F_2, ..., F_i, ..., F_n\}$: A collection of $n$ relevant Feature Models that this Action will affect. At least 1 Feature Model needs to be present in the action, but $n$ is only limited by number available in the Model;
@@ -134,6 +137,7 @@ The Action Suggestion module tries to provide a suggestion when it is triggered 
 
 
 \section{Scenario Ontology}
+\label{sec:Scenario Ontology}
 While creating the model, we focused in making it generic, but easily adaptable and transferable between scenarios. So when using the model into a new scenario, a Scenario Ontology must be provided, consisting in 6 entity collections, containing objects previously described along this chapter: Agents, Tasks, Feature Models, Categories, Perceptions and Actions. These collections are composed of what is considered relevant in the scenario, but members can be easily added throughout scenario development and piloting, as new situations occur. Even when actively using the model, this collections are not static, as new Agents can be added, although the dynamic creation of new Tasks and Perceptions goes beyond the scope of this thesis. 
 
  

@@ -54,9 +54,9 @@ While basing the scenario in the Investor Game, we decided that how the investee
 \end{figure}
 
 \subsection{Gameplay and Parametrization} 
-The game consists of numbered circles appearing and disappearing from a board. The player's goal is to press circles in a specific number sequence, namely the non-negative integers sequence ($\mathbb{N}^+ = \{1, 2, ...\}$), starting from $1$ and proceeding one by one through the sequence. This task must be done as much as possible within a time-limit, given by $TimeForGame$ in seconds.
+The game consists of numbered circles appearing and disappearing from a board. The player's goal is to press circles in a specific number sequence, namely the non-negative integers sequence ($\mathbb{N}^+ = \{1, 2, ...\}$), starting from $1$ and proceeding one by one through the sequence. This task must be done as much as possible within a time-limit, given by $Time\ For\ Game$ in seconds.
 
-Before the game starts the player must provide an amount to invest on the game, from the available resources. After submitting the value, the game starts. Numbered circles start spawning at a fixed rate, given in seconds per target spawn by the $TargetSpawnInverval$ parameter. The number with which the circle spawns depends on the state of the board, if there is no circle with the number that the player must press, then the next circle spawns with that number. Otherwise, there is a chance that the number in the circle spawned is not the right one, given by the $ChanceForWrongTarget$ parameter. If a wrong number is chosen, the chance that the number spawned is higher than the current number in the sequence, instead of a lower number, is also parametrized by $Positive Ratio$, as having higher numbers spawn may accelerate play, as the next circles in the sequence are already spawned. Circles disappear after being pressed or after a set amount of time, given in seconds by the $TargetLifetime$ parameter. After passing the time-limit, the final score screen is presented and the game ends.
+Before the game starts the player must provide an amount to invest on the game, from the available resources. After submitting the value, the game starts. Numbered circles start spawning at a fixed rate, given in seconds per target spawn by the $Target\ Spawn\ Inverval$ parameter. The number with which the circle spawns depends on the state of the board, if there is no circle with the number that the player must press, then the next circle spawns with that number. Otherwise, there is a chance that the number in the circle spawned is not the right one, given by the $Chance\ For\ Wrong\ Target$ parameter. If a wrong number is chosen, the chance that the number spawned is higher than the current number in the sequence, instead of a lower number, is also parametrized by $Positive\ Ratio$, as having higher numbers spawn may accelerate play, as the next circles in the sequence are already spawned. Circles disappear after being pressed or after a set amount of time, given in seconds by the $Target\ Lifetime$ parameter. After passing the time-limit, the final score screen is presented and the game ends.
 
 
 \subsection{Scoring}
@@ -64,13 +64,10 @@ Before the game starts the player must provide an amount to invest on the game, 
 The game's scoring is composed by two main variables:
 \begin{itemize}
     \item Investment: an amount of resources provided by the player at the start of the game. This is akin a starting bet on the performance of the player; 
-    \item Multiplier: a value starting at 0.0x that increases with every correct circle pressed. An incorrect decreases this value. At the end of the game, the Starting Bid will be multiplied by this value, resulting in the final score.
+    \item Multiplier: a value starting at $Starting\ Multiplier$ that increases with every correct circle pressed, by $Gain\ Per\ Correct\ Target$. An incorrect decreases this value, by $Loss\ Per\ Wrong\ Target$. At the end of the game, the Starting Bid will be multiplied by this value, resulting in the final score.
 \end{itemize}
 
-The final score will be the product between Investment and the Multiplier, which will then be given back to the player as resources.
-
-
-
+The final score will be the product between Investment and the Multiplier, which will then be given back to the player as resources. The initial amount of resources a player has is given by $Starting\ Resources$.
 
 
 \subsection{Agent's \ac{AI}}
