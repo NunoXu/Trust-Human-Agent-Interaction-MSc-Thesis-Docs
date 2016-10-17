@@ -96,14 +96,14 @@ This model is the most abstract, as almost all of the implementation details are
 \label{subsubsec:Related work:Trust Models:Repage}
 This system was introduced in 2006 by Sabater et al. \cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
 
-The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
+The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser}. Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
 
-\begin{figure}[hbt]
-	\centering
-	\includegraphics[width=200px]{repage.jpg}
-	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
-	\label{fig:Repage}
-\end{figure}
+%\begin{figure}[hbt]
+%	\centering
+%	\includegraphics[width=200px]{repage.jpg}
+%	\caption{Repage architecture schematic (taken from \cite{Sabater2006})}
+%	\label{fig:Repage}
+%\end{figure}
 
 At the first level of the abstraction hierarchy we have the basis of information to infer predicates, \textit{contracts}, \textit{fulfilments} and \textit{communication} (they are not themselves predicates, as no evaluation is attached). Contracts are agreements between two agents, while fulfilments are the results of the contract. Communication is the information about other agents that come from third parties. The second level is then constituted by inferences to an outcome, formed by a contract and its fulfilment, and valued information gathered from communications. This inferred predicates are not just tuples, they give an evaluation to the predicate, setting its belief strength. 
 

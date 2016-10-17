@@ -61,7 +61,8 @@ The scenario was designed with a series of parameters, mainly for the game and A
     \label{fig:ScenarioConfigs}
 \end{figure}
 
-Regarding the \ac{AI} parameters: we wanted the agent to play rapidly, if a little recklessly, as to provide more opportunities for the participant to react and notice how he played, so we empirically found 0.5 seconds to be a good value for $C_i$, as it made the agent have a slightly above average human reaction time for pressing the circles. To $C_r$ we assigned 70\% success rate, as failing 30\% of the circles averaged out the agent's score to normal human achievable levels, and to $R_t$ we selected 0.3 seconds, as it is plausible value for a 30\% fail chance, as the agent simulates not entirely recognizing the number before pressing the circle.
+Regarding the \ac{AI} parameters: we wanted the agent to play rapidly, if a little recklessly, as to provide more opportunities for the participant to react and notice how he played, so we empirically found 0.5 seconds to be a good value for $C_i$, as it made the agent have a slightly above average human speed to press the circles. To $C_r$ we assigned 70\% success rate, as failing 30\% of the circles averaged out the agent's score to normal human achievable levels, and to $R_t$ we selected 0.3 seconds, as it is a plausible value to accompany a 30\% fail chance, as it simulates the agent not entirely recognizing the number before pressing the circle.
+
 
 
 \section{Agent Architecture}
@@ -74,7 +75,7 @@ The agent we used to serve as a host to the Trust Model was built using Henrique
     \item \textbf{Speech Server}: A simple \ac{TTS} server to perform utterances.
 \end{itemize}
               
-The Rapport Controller uses a plug-in architecture, with the controller itself serving only as platform of communication between the behaviour plug-ins, where the user may load and unload plug-ins on-the-fly. One of this plug-ins, Agent Actions Manager, is integrated into the controller, as it serves as a wrapper interface to communicate with the SERA environment. It is specially important for our agent implementation, as it provides a convenient way to propose utterances and animations to the agent, by allowing the import of a text .csv data file in a table format exemplified in Table \ref{tbl:UtteranceDataFormat} and with the following field descriptions:
+The Rapport Controller uses a plug-in architecture, with the controller itself serving only as platform of communication between the behaviour plug-ins, where the user may load and unload plug-ins on-the-fly. One of this plug-ins, Agent Actions Manager, is essential, being directly integrated into the controller, as it serves as a wrapper interface to communicate with the SERA environment. It is specially important for our agent implementation, as it provides a convenient way to propose utterances and animations to the agent, by allowing the import of a text .csv data file in a table format exemplified in Table \ref{tbl:UtteranceDataFormat} and with the following field descriptions:
 
 \begin{itemize}
     \item \textbf{Category}: This field serves as a sort of namespace to identify the utterance;
@@ -156,7 +157,7 @@ The study was conducted with a between subject design with the following conditi
 
 The conditions R and T+R go out of the scope of this thesis and will not be addressed in this document.
 
-The user study sessions were individual and performed in an closed room accompanied just by the researcher, and lasted between 20 and 30 minutes. The sessions followed the stages as described in Section \ref{sub:stages}, with the interactions performed through the agent and a touch-screen table. Additionally the participants answered a questionnaire, attached in Appendix \ref{app:UserStudiesQuestionnaire}, which is divided in 3 parts, to be filled in different stages of the scenario: 
+The user study sessions were individual and performed in a closed room, accompanied just by the researcher, and lasted between 20 and 30 minutes. The sessions followed the stages as described in Section \ref{sub:stages}, with the interactions performed through the agent and a touch-screen table. Additionally the participants answered a questionnaire, attached in Appendix \ref{app:UserStudiesQuestionnaire}, which is divided in 3 parts, to be filled in different stages of the scenario: 
 
 \begin{itemize}
     \item The first part gathers demographic and sampling information, like gender, age and if the participant had previous interactions with \ac{EMYS}. It also evaluates a participant's self-trust and inclination to trust in others, through a series of questions created by Carrington \cite{Carrington2007}. Participants were asked to fill this before starting the scenario.
@@ -192,7 +193,7 @@ The study included 37 participants. The participants distribution and demographi
 \end{table}
 
 \section{Results}
-To evaluate if Trust was improved by the introduction of our Action Suggestion module, we used the Trust measurements obtained in certain of the questionnaire, namely, the sections by Carrington \cite{Carrington2007} and Schaefer \cite{Schaefer2009}, the Investment value retrieved from the scenario, and compared the results between conditions B and T. Therefore, the following hypothesis for the study arose:
+To evaluate if Trust was improved by the introduction of our Action Suggestion module, we used two Trust measurements: one obtained in the questionnaire, in the Schaefer section, and the other through the Investment value retrieved from the scenario. Then we compared the results between conditions B and T. Therefore, the following hypothesis for the study arose:
 
 \begin{itemize}
     \item Are Trust levels improved by the inclusion of the Action Suggestion module?
@@ -202,7 +203,7 @@ To evaluate if Trust was improved by the introduction of our Action Suggestion m
 All statistical analyses further mentioned used a significance level of 5\%.
 
 \subsection*{Are Trust levels improved by the inclusion of the Action Suggestion module?}
-To infer a conclusion on this hypothesis we compare the means of the results obtained from the Schaefer section questionnaires, using the Independent-Samples T-Test to check their significance. A Shapiro-Wilk normality test was also performed to conform to the T-Test sample normality assumption.  As seen in the Box-plot represented in Figure \ref{fig:SchaeferMeasurementResults} there is no significant apparent differences between results in condition B and T, further confirmed by checking the very low difference between means represented in the measurement descriptives in Table \ref{tbl:SchaeferMeasurementsDescriptives}, supported by a very high significance value in T-Test, inferring no significant difference between the means.
+To infer a conclusion on this hypothesis we compare the means of the results obtained from the Schaefer section in the questionnaire, using the Independent-Samples T-Test to check their significance. A Shapiro-Wilk normality test was also performed to conform to the T-Test sample normality assumption ($p_B=0.157,\ p_T=0.622$).  As seen in the Box-plot represented in Figure \ref{fig:SchaeferMeasurementResults} there is no significant apparent differences between results in condition B and T, further confirmed by checking the very low difference between means represented in the measurement descriptives in Table \ref{tbl:SchaeferMeasurementsDescriptives}, supported by a very high significance value in T-Test, inferring no significant difference between the means.
 
 \begin{figure}[hbt]
     \centering
@@ -258,8 +259,8 @@ Due to the distribution of the Investment value not being normal in condition B,
     \label{fig:InvestmentBoxPlot}
 \end{figure}
 
-\textbf{Answer}: There were no significant differences between the means of Investment value measurements in the 2 conditions.
+\textbf{Answer}: There were no significant differences between mean ranks of Investment value measurements in the 2 conditions.
 
 \section{Results Discussion}
 The study results show no statistical significant change in trust measurements between conditions B and T, leading to inconclusive results. But by observation of the box-plot graphs, seen in Figures \ref{fig:SchaeferMeasurementResults} and \ref{fig:InvestmentBoxPlot}, it seems that the Action Suggestion module had no effect on the participant's trust in the agent.
-We believe that this results are due to the oversimplification of the implemented model, not only were the Actions just utterances, but these utterances were not properly verified as appropriate to increase Trust. Additionally, the participants commented that they could not pay that much attention to how the agent played, as the game required too much attention, so the games should be played non-concurrently, in order to give the participant opportunity to focus on how the agent plays the game.
+We believe that this results are due to the oversimplification of the implemented model, not only were the Actions just utterances, but these utterances were not properly verified by experts as appropriate to increase Trust. The number of actions was also very few, leading to a lack of agency. Additionally, the participants commented that they could not pay that much attention to how the agent played, as the game required too much attention, so the games should be played non-concurrently, in order to give the participant opportunity to focus on how the agent plays the game.

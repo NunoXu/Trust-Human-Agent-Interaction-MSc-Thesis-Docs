@@ -16,7 +16,7 @@ While we were seeking for a solution, Henriques faced a similar problem in his t
 
 \subsubsection{Scenario Overview}
 \label{sub:ScenarioOverview}
-In Quick Numbers, a single human participant and a virtual agent are tasked to gain as many resources as possible. They both start with a fixed amount and are given the opportunity to multiply their resources by playing a simple eye-coordination game (further described in Section \ref{sec:QuickNumbersGame}). The game starts by asking for a resource investment, and at the end, this investment is multiplied by an amount according to the player's performance and then given back to the player. The human and agent's games are independent from each other, but they are played at the same time and in opposite sides of a shared touch-screen table, so the human can socially interact with the agent and be able to perceive the agent's ability in the game. After both finished running through the game, the human will be asked to perform some task away from the agent. At this moment the virtual agent will give the participant the opportunity to invest in the agent's next game, but the participant is informed that the value given back to him is decided by the agent. In this phase, the virtual agent will have the opportunity to try and convince the human to invest or increase the investment by trying to manipulate trust. When the human returns the agent gives back as much as it wishes to give. This conjunction of different phases enables trust to be addressed in three distinct contexts: the ability to perform the task, willingness to perform the task, and willingness to return the investment. 
+In Quick Numbers, a single human participant and a virtual agent are tasked to gain as many resources as possible. They both start with a fixed amount and are given the opportunity to multiply their resources by playing a simple eye-coordination game (further described in Section \ref{sec:QuickNumbersGame}). The game starts by asking for a resource investment, and at the end, this investment is multiplied by an amount according to the player's performance and then given back to the player. The human and agent's games are independent from each other, but they are played at the same time and in opposite sides of a shared touch-screen table, so the human can socially interact with the agent and be able to perceive the agent's ability in the game. After both finish running through the game, the human will be asked to perform some task away from the agent. At this moment the virtual agent will give the participant the opportunity to invest in the agent's next game, but the participant is informed that the value given back to him is decided by the agent. In this phase, the virtual agent will have the opportunity to try and convince the human to invest or increase the investment by trying to manipulate trust. When the human returns the agent gives back as much as it wishes to give. This conjunction of different phases enables trust to be addressed in three distinct contexts: the ability to perform the task, willingness to perform the task, and willingness to return the investment. 
 
 
 \subsection{Quick Numbers Game}
@@ -25,7 +25,7 @@ While basing the scenario in the Investor Game, we decided that how the investee
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=150px]{figures/FallingBoltsDiagram.png}
+    \includegraphics[width=100px]{figures/FallingBoltsDiagram.png}
     \caption{Quick Numbers Game}
     \label{fig:QuickNumbersGame}
 \end{figure}
@@ -37,7 +37,7 @@ An \ac{AI} was created to progress through the scenario, with it being mostly sc
     \item $Chance\ of\ Right\ Target\ (C_r)$: when pressing one of the circles, the \ac{AI} will choose what circle to press, the chance that it will choose the correct one is given by $C_r$;
     \item $Reaction\ Time\ (R_t)$: a circle is only be eligible to be pressed by the \ac{AI} $R_t$ seconds after it spawns, as to replicate the reaction time a human would have to recognize the circle.
 \end{itemize} 
-We wanted the agent to play rapidly, if a little recklessly, as to provide more opportunities for the participant to react and notice how he played, so we empirically found 0.5 seconds to be a good value for $C_i$, as it made the agent have a slightly above average human reaction time for pressing the circles. To $C_r$ we assigned 70\% success rate, as failing 30\% of the circles averaged out the agent's score to normal human achievable levels, and to $R_t$ we selected 0.3 seconds, as it is plausible value for a 30\% fail chance, as the agent simulates not entirely recognizing the number before pressing the circle.
+We wanted the agent to play rapidly, if a little recklessly, as to provide more opportunities for the participant to react and notice how he played, so we empirically found 0.5 seconds to be a good value for $C_i$, as it made the agent have a slightly above average human speed to press the circles. To $C_r$ we assigned 70\% success rate, as failing 30\% of the circles averaged out the agent's score to normal human achievable levels, and to $R_t$ we selected 0.3 seconds, as it is a plausible value to accompany a 30\% fail chance, as it simulates the agent not entirely recognizing the number before pressing the circle.
 
 \section{Agent Architecture}
 The agent we used to serve as a host to the Trust Model was built using Henriques' Rapport Controller \cite{Henriques2016}, a computational framework developed to create human agent interactions and transmit them to the various components that control the agent embodiment. The Rapport Controller uses a plug-in architecture, with most of the behaviour inserted through this plug-ins.
@@ -78,7 +78,7 @@ The user study sessions were individual and performed in an closed room accompan
 \end{figure}
 
 \section{Results}
-To evaluate if Trust was improved by the introduction of our Action Suggestion module, we used the Trust measurements obtained in certain of the questionnaire, namely, the sections by Carrington \cite{Carrington2007} and Schaefer \cite{Schaefer2009}, the Investment value retrieved from the scenario, and compared the results between conditions B and T. Therefore, the following hypothesis for the study arose:
+To evaluate if Trust was improved by the introduction of our Action Suggestion module, we used two Trust measurements: one obtained in the questionnaire, in the Schaefer section, and the other through the Investment value retrieved from the scenario. Then we compared the results between conditions B and T. Therefore, the following hypothesis for the study arose:
 
 \begin{itemize}
     \item Are Trust levels improved by the inclusion of the Action Suggestion module?
@@ -92,7 +92,7 @@ To infer a conclusion on this hypothesis we compare the means of the results obt
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=180px]{graphs/Schaefer.png}
+    \includegraphics[width=150px]{graphs/Schaefer.png}
     \caption{Box-plot of Schaefer measurement results (Condition B Median: 61.5; Condition T Median: 58.0).}
     \label{fig:SchaeferMeasurementResults}
 \end{figure}
@@ -119,6 +119,7 @@ To infer a conclusion on this hypothesis we compare the means of the results obt
 Due to the distribution of the Investment value not being normal in condition B, as observed in the histograms in Figures \ref{fig:InvestmentConditionBHistogram} and \ref{fig:InvestmentConditionTHistogram}, we used Mann–Whitney U statistical test to determine if there is a significant difference between the results in each condition. Additionally, as the distribution shapes are quite different, we can only check through mean rank values. But with a significance p-value of $p=0.707$ in the Mann–Whitney U test we cannot conclude any significant difference in results between the conditions, evidenced further on the box-plot graph represented in Figure \ref{fig:InvestmentBoxPlot}.
 
 
+
 \begin{figure}[h]
     \centering
     \begin{minipage}[b]{110px}
@@ -139,7 +140,7 @@ Due to the distribution of the Investment value not being normal in condition B,
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=180px]{graphs/InvestmentBoxPlot.png}
+    \includegraphics[width=150px]{graphs/InvestmentBoxPlot.png}
     \caption{Box-plot of scenario Investment measurement results (Condition B Median: 32.5; Condition T Median: 44.00).}
     \label{fig:InvestmentBoxPlot}
 \end{figure}
@@ -148,4 +149,4 @@ Due to the distribution of the Investment value not being normal in condition B,
 
 \subsection{Results Discussion}
 The study results show no statistical significant change in trust measurements between conditions B and T, leading to inconclusive results. But by observation of the box-plot graphs, seen in Figures \ref{fig:SchaeferMeasurementResults} and \ref{fig:InvestmentBoxPlot}, it seems that the Action Suggestion module had no effect on the participant's trust in the agent.
-We believe that this results are due to the oversimplification of the implemented model, not only were the Actions just utterances, but these utterances were not properly verified as appropriate to increase Trust. Additionally, the participants commented that they could not pay that much attention to how the agent played, as the game required too much attention, so the games should be played non-concurrently, in order to give the participant opportunity to focus on how the agent plays the game.
+We believe that this results are due to the oversimplification of the implemented model, not only were the Actions just utterances, but these utterances were not properly verified by experts as appropriate to increase Trust. The number of actions was also very few, leading to a lack of agency. Additionally, the participants commented that they could not pay that much attention to how the agent played, as the game required too much attention, so the games should be played non-concurrently, in order to give the participant opportunity to focus on how the agent plays the game.

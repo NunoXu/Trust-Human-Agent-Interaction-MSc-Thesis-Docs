@@ -33,7 +33,7 @@ So we designed the structure with the concepts and relations represented in Figu
     \item \textbf{Trust Feature}: a piece of information a trustor has on a trustee is represented in a Trust Feature, which contains the Belief Sources of said information. The Feature Model defines and uniquely identifies what feature is represented.
     \item \textbf{Feature Model}: the possible set of trust features from which a trustee can be assigned is defined in a collection of Feature Models where each one uniquely identifies a possible piece of trust related information relevant to the model scenario (e.g. The trustee's ability to cook, or the willingness to drive);
     \item \textbf{Category}: a Feature Model must belong to a Category, making it easier to  present the different type of Trust Features. This is usually intended to separate features between those relating to Ability and those related to Willingness.
-    \item \textbf{Belief Source}: this represents a source of information on the corresponding feature, belonging to one of the 3 sub-classes depending on the origin of the information, Reputation for when reported from other agents (whether directly (e.g. talking) or indirectly (e.g. report on newspaper)), Bias for pre-existing beliefs on the feature, and Direct Contact for direct observations of the trustee, 3 values are provided to determine the associated feature's belief value: 
+    \item \textbf{Belief Source}: this represents a source of information on the corresponding feature, belonging to one of the 3 sub-classes depending on the origin of the information, Reputation for when reported from other agents (whether directly (e.g. talking) or indirectly (e.g. report on newspaper)), Bias for pre-existing beliefs on the feature, and Direct Contact for direct observations of the trustee, 3 values are contained to determine the associated feature's belief value: 
         \begin{itemize}
             \item Belief Value, a number between 0.0 and 1.0 describing the trustor evaluation;
             \item Certainty describes how well the trustee was evaluated, in Reputation for instance, this might represent how well we trust in the reporter, and in Direct Contact how well the trustor observed the trustee performing said feature;
@@ -44,7 +44,7 @@ So we designed the structure with the concepts and relations represented in Figu
 
 \begin{figure}[hbt]
     \centering
-    \includegraphics[width=200px]{TrustMemoryDiagram.png}
+    \includegraphics[width=150px]{TrustMemoryDiagram.png}
     \caption{Memory Architecture (represented in UML)}
     \label{fig:MemoryArchitecture}
 \end{figure}
@@ -66,7 +66,7 @@ B(F_i) = \sum_{j=0}^{n} D^j_{F_i} C^j_{F_i} B_j
 \end{equation}
 
 \begin{itemize}
-    \item $D^j_{F_i}$, a value from 0.0 to 1.0 that represents how far ago in time was this belief source received compared to the last one, being 0.0 a long time ago, and 1.0 the most recent belief. We wished to represent the rapid decay of value of old beliefs when compared to new ones, but also making sure recent memories would not fall quickly in value, so we chose to describe this parameter with a Gaussian Function, as represented in Equation \ref{eq:TimeValue}, where $T^{Last}_{F_i}$ is the most recent belief value's time stamp, $T^j_{F_i}$ is $B_{F_i}^j$ belief value's time stamp, and $L$ is the difference between the oldest and newest belief value's time stamps. $\frac{L}{4}$ defines the mid drop-off point of the function.
+    \item $D^j_{F_i}$, a value from 0.0 to 1.0 that represents how far ago in time was this belief source received compared to the last one, being 0.0 a long time ago, and 1.0 the most recent belief. We wished to represent the rapid decay of value of old beliefs when compared to new ones, but also making sure recent memories would not fall quickly in value, so we chose to describe this parameter with a Gaussian Function, as represented in Equation \ref{eq:TimeValue}, where $T^{Last}_{F_i}$ is the most recent belief value's time stamp, $T^j_{F_i}$ is $B_{F_i}^j$ belief value's time stamp, and $L$ is the difference between the oldest and newest belief value's time stamps. We decided that $\frac{L}{4}$ defines a good mid drop-off point for the function.
     \item $C^j_{F_i}$, the certainty value stored in the Belief Source;
     \item $B^j_{F_i}$, the belief value stored in the Belief Source;
 \end{itemize}
@@ -90,7 +90,7 @@ B(F_i) = \sum_{j=0}^{n} D^j_{F_i} C^j_{F_i} B_j
 % 
 
 \subsection{Perception}
-Another issue we encountered in literature was a lack of detail on how would changes be inserted into the model, so we try to solve that issue by defining relevant perceptions as part of the model. As a result, a variety of environment perceptions are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}. When adding a Belief Source to a Trustee, if the associated Feature is not present, then it is added with the Belief Source. The affected Trustor and Trustee are received as arguments.
+Another issue we encountered in literature was a lack of detail on how changes in the environment would be inserted into the model, so we try to solve that issue by defining relevant perceptions as part of the model. As a result, a variety of environment perceptions are defined in the model. This is done through a Perception object, representing some possible environment input, and containing a map of what target features should have belief sources added, what kind of belief sources they are, and how to translate the values received from the environment to belief value and certainty, as exemplified in Figure \ref{fig:Perceptions Diagram}. When adding a Belief Source to a Trustee, if the associated Feature is not present, then it is added with the Belief Source. The affected Trustor and Trustee are received as arguments.
 
 \begin{figure}[hbt]
     \centering
@@ -101,7 +101,32 @@ Another issue we encountered in literature was a lack of detail on how would cha
 
 \subsection{Action Suggestion}
 \label{subsec:ActionSuggestion}
-This module contains a series of Actions that are suggested to the agent's planner when certain conditions are met. This Actions should be able to encompass a variety of social strategies relevant to the scenario, but we reduced the scope in this thesis to just utterances suggestions. Each Action is associated to the Features that it predicts it is going to change, storing a Belief Source for each Feature. If a suggested Action is performed it's Belief Sources are then added to the model. A suggestion occurs when an environment perception is received that signals that this is a good moment to perform one of the stored Actions, of course not all Actions will be relevant in a particular situation, so only some of them are then sorted by importance, by checking which action will most positively affect the features with the lowest belief values.
+%This module contains a series of Actions that are suggested to the agent's planner when certain conditions are met. This Actions should be able to encompass a variety of social strategies relevant to the scenario, but we reduced the scope in this thesis to just utterances suggestions. Each Action is associated to the Features that it predicts it is going to change, storing a Belief Source for each Feature. If a suggested Action is performed it's Belief Sources are then added to the model. A suggestion occurs when an environment perception is received that signals that this is a good moment to perform one of the stored Actions, of course not all Actions will be relevant in a particular situation, so only some of them are then sorted by importance, by checking which action will most positively affect the features with the lowest belief values.
+
+This is the module that is responsible for suggesting actions to the agent, in order to improve trust. It is composed by a series of Action objects, each represented by $A$ and containing the following:
+\begin{itemize}
+    \item $A_F = \{F_1, F_2, ..., F_i, ..., F_n\}$: A collection of $n$ relevant Feature Models that this Action will affect. At least 1 Feature Model needs to be present in the action, but $n$ is only limited by number available in the Model;
+    \item $A_B(F_i) = \{B_1^{F_i}, B_2^{F_i}, ..., B_j^{F_i}, ..., B_m^{F_i}\}$: Each $F_i$ Feature Model belonging to $F$ has a collection of Belief Sources that describe how will the Feature be affected by the Action. Through this Belief Sources it is possible to predict how will the model change with this action, by inserting this Belief Sources in a mock model;
+    \item $A_E = \{E_1, E_2, ..., E_i, ... E_p\}$: Each Action is mapped into $p$ Environment Inputs, serving as flags to signal when it is appropriate to perform said Action;
+    \item $A_a$: The action plan that is actually sent to the agent's planner. The definition of this plan is obviously dependent on the agent's architecture receiving the plan. While the complexity of this plans can achieve the implementation of social strategies, in the scope of this thesis, the actions were restricted to utterances that try to justify low ability or willingness (e.g. Saying that last game's low score was due to bad luck, but Jon can confirm my ability).
+\end{itemize}
+
+The Action Suggestion module tries to provide a suggestion when it is triggered by the reception of an Environment Input $E_i$. It then selects the Actions that have the received Environment Input mapped to them $E_i \in A_E$. The selected Actions are then sorted by a function $S_F$ representing the potential increase in trust on the associated Features $A_F$. How $S_F$ is defined is left as a parameter of the model, but we suggest a linear sum of all the differences in the affected features, as a simple solution (represented in Equation \ref{eq:ActionSuggestionLinear}). After sorting through the selected Actions, the top-most ranked is sent to the Agent's Planner, and if it is in fact performed, the predicted Feature's Belief Sources are inserted into Memory. This process is represented in Figure \ref{fig:ActionSuggestionDiagram}.
+
+\begin{equation}
+S_F = \sum_{i=0}^{n} \Delta B(F_i)
+\label{eq:ActionSuggestionLinear}
+\end{equation}
+
+
+% A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
+\begin{figure}[hbt]
+    \centering
+    \includegraphics[width=250px]{figures/ActionSuggestionDiagram.jpg}
+    \caption{Action Suggestion Behaviour Flow}
+    \label{fig:ActionSuggestionDiagram}
+\end{figure}
+
 
 % A perception is mapped to relevant actions, and actions are allocated depending on time available and what is the lowest scoring relevant feature.
 
