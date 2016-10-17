@@ -13,16 +13,16 @@
 
 \section{Related Work}
 \label{sec:Related Work}
-Computational Trust research has been focused on modelling trust in \acp{MAS}, specially on open e-commerce environments\cite{Granatyr2015, HanYu2013, Pinyol2013, Noorian2010, Huang2008}, with at least 106 models created\cite{Granatyr2015}, since the formalization of trust as a measurable property by Marsh in 1994 \cite{Marsh1994}. We will present some trust models from which we will take inspiration while creating our own, and some work done in measuring trust in \ac{HRI}.
+Computational Trust research has been focused on modelling trust in \acp{MAS}, specially on open e-commerce environments \cite{Granatyr2015, HanYu2013, Pinyol2013, Noorian2010, Huang2008}, with at least 106 models created \cite{Granatyr2015}, since the formalization of trust as a measurable property by Marsh in 1994 \cite{Marsh1994}. We will present some trust models from which we will take inspiration while creating our own, and some work done in measuring trust in \ac{HRI}.
 
 \subsection{Trust Models}
 \label{subsec:Related work:Trust Models}
-For related work concerning Trust Models we will focus on \textbf{Cognitive} Trust Models, first introduced by Castelfranchi and Falcone\cite{Castelfranchi1998}, which are defined by measuring trust on the strength of an agent's beliefs and the changes enacted through the consequent act of trusting. We want to focus on modelling trust through multiple dimensions, with the intent of having trust depend on the action to perform, context and agent performing the task and having these dimensions represented explicitly in the model, something that it is not possible with \textbf{Numerical} models, like the one introduced by \cite{Marsh1994}. 
+For related work concerning Trust Models we will focus on \textbf{Cognitive} Trust Models, first introduced by Castelfranchi and Falcone \cite{Castelfranchi1998}, which are defined by measuring trust on the strength of an agent's beliefs and the changes enacted through the consequent act of trusting. We focused on modelling trust through multiple dimensions, with the intent of having trust depend on the action to perform, context and agent performing the task and having these dimensions represented explicitly in the model, something that it is not possible with \textbf{Numerical} models, like the one introduced by \cite{Marsh1994}. 
 
 
 \subsubsection{Castelfranchi and Falcone's model}
 \label{subsubsec:Related work:Trust Models:Castelfranchi and Falcone}
-Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we will not use the entirety of this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this report. 
+Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we do not use the entirety of the concepts defined in this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this paper. 
 The model is characterised around their definition referred in Section \ref{subsubsec:CastelfranchiTrust}, through a central core, composed by a five-part relation, between:
 \begin{itemize}
 	\item The trustor (\textbf{X});
@@ -90,11 +90,11 @@ Where:
 	\item $c_{Opp}$, $c_{Ability_y}$ and $c_{WillDo}$ are constants representing the weight of each \ac{DoC}.
 \end{itemize}
 
-This model is the most abstract, as almost all of the implementation details are left aside, particularly how the beliefs are modelled and how to or even what should be a good quantification to the quality values for the agent. This provides a lot of liberty on how to contextualize the model, and for our modules such adaptability is interesting for our intent to try our modules in different scenarios.
+This model is the most abstract, as almost all of the implementation details are left aside, particularly how the beliefs are modelled and how to or even what should be a good quantification to the quality values for the agent. This provides a lot of liberty on how to contextualize the model, and such adaptability is interesting as the model can be easily adapted to different scenarios.
 
 \subsubsection{Repage: A REPutation and ImAGE model}
 \label{subsubsec:Related work:Trust Models:Repage}
-This system was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
+This system was introduced in 2006 by Sabater et al. \cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{subsec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
 
 The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
 
@@ -118,19 +118,4 @@ The last element is the analyser and its job is to propose actions in order to i
 Image and Reputation are the predicates that provide a trust evaluation of a target, and as previously stated, they have a role, that represents two things: the agents interaction model, in other words, the actions that may affect to this evaluation, and a function that contextualizes the evaluative labels of \textit{VB, B, N, G, VG}. The probability distribution of the values gives out a picture of the target interaction forecast (e.g. a probability value of $0.5$ to VB gives a $50\%$ chance of the next interaction with the target being very bad).
 
 The work described here is the only found that tries to establish an implementable architecture for a trust model, as most of the models created are purely theoretical. Furthermore, it fits to our goals of creating a trust assessment module, corresponding to the memory and detector components, and a trust decision module, corresponding to the analyser.
-
-
-
-
-
-\subsubsection{Discussion}
-Of the related work discussed here, we are going to base our solution on Repage and \textit{BC}-logic, as described in their respective Sections \ref{subsubsec:Related work:Trust Models:Repage} and \ref{subsubsec:Related work:Trust Models:BDI + Repage}. Repage fits well as a basis for our objectives, as it has the details of modelling trust already dealt with and leaves us the room to develop the analysis component that corresponds directly to the goal of this project. The choice was also made out of convenience, as no other work was found were implementable design was a concern.
-
-\subsection{The Perception and Measurement of\\Human-Robot Trust}
-\label{subsec:Related work:The Perception and Measurement of Human-Robot Trust}
-
-Schaefer\cite{Schaefer2009} presents a trust perception scale providing a way of extracting an accurate trust score from humans interacting with robots. The scale is composed of 40 items that can be ranked from 0 to 100, in 10 point intervals. The final result it then averaged by adding all the item values and divided by the total number of items (40). 
-
-While this work has been done specifically for \ac{HRI} we believe that a sub-set of this items can be used for the features used in the cognitive model of the user's trust, further described in Section \ref{subsec:Solution:Trust Assessment Module}. The items are listed in Table \ref{tbl:measurement.items.table} in appendix \ref{app:measurement.items.table}.
-
 

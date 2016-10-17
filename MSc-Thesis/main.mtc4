@@ -1,4 +1,5 @@
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.0.1}Memory}{\reset@font\mtcSSfont 23}{subsection.4.0.1}}
-{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {4.0.1.A}Trust Calculation}{\reset@font\mtcSSSfont 24}{subsubsection.4.0.1.1}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.0.2}Perception}{\reset@font\mtcSSfont 26}{subsection.4.0.2}}
-{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.0.3}Action Suggestion}{\reset@font\mtcSSfont 26}{subsection.4.0.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.1}Memory}{\reset@font\mtcSfont 21}{section.4.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {4.1.1}Trust Calculation}{\reset@font\mtcSSfont 23}{subsection.4.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.2}Perceptions}{\reset@font\mtcSfont 23}{section.4.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.3}Action Suggestion}{\reset@font\mtcSfont 24}{section.4.3}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {4.4}Scenario Ontology}{\reset@font\mtcSfont 25}{section.4.4}}

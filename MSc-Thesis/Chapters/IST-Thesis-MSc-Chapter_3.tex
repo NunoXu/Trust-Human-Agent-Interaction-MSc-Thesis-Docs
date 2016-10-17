@@ -8,16 +8,16 @@
 % The following line allows to ref this chapter
 \label{chap:RelatedWork}
 
-Computational Trust research has been focused on modelling trust in \acp{MAS}, specially on open e-commerce environments\cite{Granatyr2015, HanYu2013, Pinyol2013, Noorian2010, Huang2008}, with at least 106 models created\cite{Granatyr2015}, since the formalization of trust as a measurable property by Marsh in 1994 \cite{Marsh1994}. We will present some trust models from which we took inspiration while creating our own, and some work done in measuring trust in \ac{HRI}.
+Computational Trust research has been focused on modelling trust in \acp{MAS}, specially on open e-commerce environments\cite{Granatyr2015, HanYu2013, Pinyol2013, Noorian2010, Huang2008}, with at least 106 models created \cite{Granatyr2015}, since the formalization of trust as a measurable property by Marsh in 1994 \cite{Marsh1994}. We will present some trust models from which we took inspiration while creating our own, and some work done in measuring trust in \ac{HRI}.
 
 \section{Trust Models}
 \label{sec:Related work:Trust Models}
-For related work concerning Trust Models we will focus on \textbf{Cognitive} Trust Models, first introduced by Castelfranchi and Falcone\cite{Castelfranchi1998}, which are defined by measuring trust on the strength of an agent's beliefs and the changes enacted through the consequent act of trusting. We want to focus on modelling trust through multiple dimensions, with the intent of having trust depend on the action to perform, context and agent performing the task and having these dimensions represented explicitly in the model, something that it is not possible with \textbf{Numerical} models, like the one introduced by \cite{Marsh1994}. 
+For related work concerning Trust Models we will focus on \textbf{Cognitive} Trust Models, first introduced by Castelfranchi and Falcone \cite{Castelfranchi1998}, which are defined by measuring trust on the strength of an agent's beliefs and the changes enacted through the consequent act of trusting. We focused on modelling trust through multiple dimensions, with the intent of having trust depend on the action to perform, context and agent performing the task and having these dimensions represented explicitly in the model, something that it is not possible with \textbf{Numerical} models, like the one introduced by \cite{Marsh1994}. 
 
 
 \subsection{Castelfranchi and Falcone's model}
 \label{subsec:Related work:Trust Models:Castelfranchi and Falcone}
-Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we will not use the entirety of this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this report. 
+Having developed the concept of Cognitive Trust Models, this author's model is generally regarded as a classical basis for most other authors, and while we do not use the entirety of the concepts defined in this model, it is worth describing, as it was also a source of inspiration to other authors referenced in this chapter. 
 The model is characterised around their definition referred in Section \ref{subsec:CastelfranchiTrust}, through a central core, composed by a five-part relation, between:
 \begin{itemize}
     \item The trustor (\textbf{X});
@@ -36,22 +36,22 @@ This defines Trust as goal-oriented, contextual, and multi-dimensional, as from 
 The model also conceptualizes \textbf{Expectation} as a belief of when agent X awaits for $\rho$ to happen when an action $\alpha$ trusted to Y is being performed, formalized in first order logic in equation \ref{eq:TrustExpectation}.
 \begin{equation}
 \begin{aligned}
-(\text{\textit{Expectation}}\ X\ \rho) \implies (Bel_x^{t'} &(\text{\textit{will-be-true}} ^ {t''} \rho)) \wedge (Goal_x^{Period(t', t''')} \\
-&(KnowWhether_X (\rho\ OR\ \text{\textit{Not} } \rho)^{t''}))
+(Expectation\ X\ \rho) \implies (Bel_x^{t'} &(will\mhyphen be\mhyphen true ^ {t''} \rho)) \wedge (Goal_x^{Period(t', t''')} \\
+&(KnowWhether_X (\rho\ OR\ Not\ \rho)^{t''}))
 \end{aligned}
 \label{eq:TrustExpectation}
 \end{equation}
 This can be used to establish what expectations the user should have in the agent, whether initial or constructed during interaction, and provide an additional measure to weight the importance of certain agent functions and actions.
 
-As stated in the definition (Section \ref{subsubsec:CastelfranchiTrust}) the mental attitude of the trustor X is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through its \textbf{\ac{DoC}}, which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $\text{\textit{Qual-i}}_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$. 
+As stated in the definition (Section \ref{subsec:CastelfranchiTrust}) the mental attitude of the trustor X is defined by beliefs of the qualities (and faults) of Y. Therefore we can quantify the strength of our belief in a certain quality through its \textbf{\ac{DoC}}, which is defined by a function \textbf{F} that takes all different belief sources for this quality, as shown in equation \ref{eq:DegreeOfCredibility}, where for a source $sj$, $Str_j$ represents the value of the source and $Qual\mhyphen i_{sjY}(\tau)$ the value of quality $i$ of agent Y provided by the source in performing task $\tau$. 
 \begin{equation}
 \begin {aligned}
-DoC_X&(\text{\textit{Qual-i}}_{(s1, ...sn), Y} (\tau)) = F_{X, Y, \tau} (Bel_X(Str_1 \text{\textit{Qual-i}}_{s1Y}(\tau)), \\
-&Bel_X(Str_2 \text{\textit{Qual-i}}_{s2Y}(\tau)), ..., Bel_X(Str_n \text{\textit{Qual-i}}_{snY}(\tau))) \\
+DoC_X&(Qual\mhyphen i_{(s1, ...sn), Y} (\tau)) = F_{X, Y, \tau} (Bel_X(Str_1 Qual\mhyphen i_{s1Y}(\tau)), \\
+&Bel_X(Str_2 Qual\mhyphen i_{s2Y}(\tau)), ..., Bel_X(Str_n Qual\mhyphen i_{snY}(\tau))) \\
 \end {aligned}
 \label{eq:DegreeOfCredibility}
 \end{equation}
-$F_{X, Y, \tau}$ associates the \textit{strengh-of-sources ($Str_j$)} and \textit{quality-values ($\text{\textit{Qual-i}}_{sjY}(\tau)$)} with a probability curve. It should return a matrix with two columns, with an amount of rows corresponding to the number of quality values selected out of the received as input (since not all values must or should be used, and some may be integrated into a single value), and the first column should contain these values associated with their normalized probabilities in the second column (the probabilities sum should be 1). 
+$F_{X, Y, \tau}$ associates the \textit{strengh-of-sources ($Str_j$)} and \textit{quality-values ($Qual\mhyphen i_{sjY}(\tau)$)} with a probability curve. It should return a matrix with two columns, with an amount of rows corresponding to the number of quality values selected out of the received as input (since not all values must or should be used, and some may be integrated into a single value), and the first column should contain these values associated with their normalized probabilities in the second column (the probabilities sum should be 1). 
 
 For example, consider that we want agent X's \ac{DoC} regarding Y's ability to clean:
 \begin{itemize}
@@ -59,9 +59,9 @@ For example, consider that we want agent X's \ac{DoC} regarding Y's ability to c
     \begin{enumerate}
         \item X saw Y once clean quite well, but long ago, so we could attribute $\text{\textit{Ability}}_{s1Y}(cleaning) = 0.8$ and $Str_1=0.2$;
         \item Someone X considers reliable informs that Y performed poorly recently, se we attribute
-        $\text{\textit{Ability}}_{s2Y}(cleaning) = 0.2s$ and $Str_2=0.6$;
+        $Ability_{s2Y}(cleaning) = 0.2s$ and $Str_2=0.6$;
     \end{enumerate}
-    \item So a possible result of $DoC_X(\text{\textit{Ability}}_Y (cleaning))$ is:
+    \item So a possible result of $DoC_X(Ability_Y (cleaning))$ is:
     $$\begin{pmatrix}
     0.8 & 0.25 \\
     0.2 & 0.75
@@ -86,11 +86,11 @@ Where:
     \item $c_{Opp}$, $c_{Ability_y}$ and $c_{WillDo}$ are constants representing the weight of each \ac{DoC}.
 \end{itemize}
 
-This model is the most abstract, as almost all of the implementation details are left aside, particularly how the beliefs are modelled and how to or even what should be a good quantification to the quality values for the agent. This provides a lot of liberty on how to contextualize the model, and for our modules such adaptability is interesting for our intent to try our modules in different scenarios.
+This model is the most abstract, as almost all of the implementation details are left aside, particularly how the beliefs are modelled and how to or even what should be a good quantification to the quality values for the agent. This provides a lot of liberty on how to contextualize the model, and such adaptability is interesting as the model can be easily adapted to different scenarios.
 
 \subsection{Repage: A REPutation and ImAGE model}
 \label{subsec:Related work:Trust Models:Repage}
-This system was introduced in 2006 by Sabater et al.\cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{sec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
+This system was introduced in 2006 by Sabater et al. \cite{Sabater2006} and aims to establish two different aspects to trust modelling, Image and Reputation, as defined in Section \ref{sec:Reputation}. The representation for an evaluation are fuzzy sets, defined by a tuple of five positive numbers(summing to one), where each number corresponds to a value of probability (weights) traced directly to the following scale: \textit{very bad (VB), bad (B), neutral (N), good (G), very good (VG)}. Additionally the strength of the belief is added to the tuple, so it can be represented like this $\{w_1, w_2, ..., w_5, s\}$.
 
 The architecture is composed by three main elements, a \textit{memory}, a set of \textit{detectors}, and the \textit{analyser} (check Figure \ref{fig:Repage}). Memory is composed by predicates that are conceptually organized in different levels of abstraction and are inter-connected by a network of dependencies that propagate changes and inferences through the various predicates. The predicates contain a fuzzy evaluation belonging to one of the following types (image, reputation, shared voice, shared evaluation, valued info, evaluation from informers, and outcomes), and refer to a certain agent performing a specific role. The detectors infer new predicates, remove non-useful ones and builds the dependency network.
 
@@ -118,7 +118,7 @@ The work described here is one of the only found that tries to establish an impl
 
 \subsection{\textit{BC}-logic: A Representation of Beliefs for Repage}
 \label{subsec:Related work:Trust Models:BDI + Repage}
-Pinyol et al.\cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a \ac{BDI} Agent\cite{Rao1995}. While the \ac{BDI} model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
+Pinyol et al. \cite{Pinyol2009} proposes an integration of the Repage model, introduced in the previous Section \ref{subsubsec:Related work:Trust Models:Repage} with a \ac{BDI} Agent \cite{Rao1995}. While the \ac{BDI} model is not relevant to us, their work specifies \textit{BC}-logic, a belief first order logic that is capable of representing Repage predicate semantics and this is the part we will describe in the following paragraphs.
 
 \textit{BC}-logic is structured hierarchically, in a way that formulas from a certain first-order language lower in the hierarchy can be embedded in another language above as constants. This is written as $\lceil\phi\rceil$, with $\phi$ being the formula of the lower language.
 The hierarchy is composed of three languages, starting with the base language, \textit{$L_{basic}$}, that expresses the ontology and contains the symbols to represent the domain. Next there is \textit{$L_{ag}$}, which contains symbols of the base language and special predicates to allow to reason about probability of formulas, about formulas communicated, and formulas believed by agents. Finally there is \textit{BC}-language, the meta-logic language, with the aim to express statements about the agents' reasoning. \textit{$L_{ag}$} and \textit{BC}-language are sorted languages, in other words, its symbols and predicates are partitioned into sorts, each containing their own semantics. All languages contain the logical symbols $\forall$, $\exists$, $\wedge$, $\vee$, $\neg$, and $\implies$.
@@ -135,9 +135,9 @@ Symbols in predicates are identified by their sorts, take for example a binary p
 
 The set of formulas $Fm(L_{ag})$ has the following special predicates:
 \begin{itemize}
-    \item $B(S_A, S_F)$: An agent's belief towards a formula \\(e.g. $B(i_c, \lceil sunny(Lisbon)\rceil)$); abbreviated to $B_{S_A}(S_F)$;
+    \item $B(S_A, S_F)$: An agent's belief towards a formula (e.g. $B(i_c, \lceil sunny(Lisbon)\rceil)$); abbreviated to $B_{S_A}(S_F)$;
     \item $Pr\leq(S_F, S_R),\ Pr\geq(C_F, C_R)$: A lower/upper bound on probability of a formula (e.g. $Pr\geq(\lceil sunny(Lisbon)\rceil, 0.8)$);
-    \item $S(S_A, S_A, S_F)$: The communication predicate, as stated in Repage \\(e.g. $S(i_c, j_c, \lceil sunny(Lisbon)\rceil)$);
+    \item $S(S_A, S_A, S_F)$: The communication predicate, as stated in Repage (e.g. $S(i_c, j_c, \lceil sunny(Lisbon)\rceil)$);
     abbreviated to $S_{S_A, S_A}(S_F)$.
 \end{itemize}
 
@@ -169,11 +169,11 @@ Image and Reputation can also be represented as a set of beliefs:
 
 The work goes into further detail regarding representing the relationship of Image and Reputation, addressing agent honesty and consistency in communicating reputation, and while interesting, it is not part of what we to model.
 
-Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model, but we found it to be too complex to be used, as we wanted to maintain simplicity with the model's design.
+Overall \textit{BC}-logic is an interesting approach to representing beliefs in the Repage model, but we found it to be too complex to represent the model, as we wanted to maintain simplicity in the model's design, with the main goal of it being easy to read and interpret.
 
 \subsection{Sutcliffe and Wang's model}
 \label{subsec:Related work:Sutcliffe and Wang}
-This work was published by Sucliffe and Wang in 2012\cite{Sutcliffe2012} and they built a trust model to figure out how cognitive social mechanisms emerge to follow Dunbar's \ac{SBH}\cite{Dunbar1998}, an evolutionary psychology theory that proposes that humans have a predisposition to build relationships in layers of decreasing intimacy. As trust has been acknowledged to be one of major component of human relationships, they demonstrate that simulating trust development and decay, through interactions and neglect, respectively, show the patterns predicted in \ac{SBH}.
+This work was published by Sucliffe and Wang in 2012 \cite{Sutcliffe2012} and they built a trust model to figure out how cognitive social mechanisms emerge to follow Dunbar's \ac{SBH} \cite{Dunbar1998}, an evolutionary psychology theory that proposes that humans have a predisposition to build relationships in layers of decreasing intimacy. As trust has been acknowledged to be one of major component of human relationships, they demonstrate that simulating trust development and decay, through interactions and neglect, respectively, show the patterns predicted in \ac{SBH}.
 
 From the model standpoint, its main interesting feature is that agents develop trusting relationships between one another, affecting interaction frequency between agents, by preferring to pick those with already high trust value. Additionally the trust relationship degrades as time passes by, with variable speeds depending on the current relationship level, giving stronger ties a slower descent. All in all, the model provides a good tool to simulate multi agent social behaviour, and may be interesting to predict trust degradation in the agent, albeit its described application for social simulations is a bit far from our scope.
 
@@ -181,5 +181,5 @@ From the model standpoint, its main interesting feature is that agents develop t
 \section{The Perception and Measurement of Human-Robot Trust}
 \label{sec:Related work:The Perception and Measurement of Human-Robot Trust}
 
-Schaefer\cite{Schaefer2009} presents a trust perception scale providing a way of extracting an accurate trust score from humans interacting with robots. The scale is composed of 40 items that can be ranked from 0 to 100, in 10 point intervals. The final result it then averaged by adding all the item values and divided by the total number of items (40). A list of these items can be seen in Appendix \ref{app:measurement.items.table}.
+Schaefer \cite{Schaefer2009} presents a trust perception scale providing a way of extracting an accurate trust score from humans interacting with robots. The scale is composed of 40 items that can be ranked from 0 to 100, in 10 point intervals. The final result it then averaged by adding all the item values and divided by the total number of items (40). A list of these items can be seen in Appendix \ref{app:measurement.items.table}.
 

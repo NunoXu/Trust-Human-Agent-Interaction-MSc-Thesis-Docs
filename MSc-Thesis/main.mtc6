@@ -1,2 +1,8 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.1}Conclusions}{\reset@font\mtcSfont 35}{section.6.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.2}System Limitations and Future Work}{\reset@font\mtcSfont 36}{section.6.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.1}Scenario and Game Parametrization}{\reset@font\mtcSfont 33}{section.6.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.2}Agent Architecture}{\reset@font\mtcSfont 34}{section.6.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.2.1}Trust Model Plug-in}{\reset@font\mtcSSfont 36}{subsection.6.2.1}}
+{\reset@font\mtcSSSfont\mtc@string\contentsline{subsubsection}{\noexpand \leavevmode \numberline {6.2.1.A}Scenario Ontology}{\reset@font\mtcSSSfont 36}{subsubsection.6.2.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.3}Methodology and Procedures}{\reset@font\mtcSfont 37}{section.6.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {6.3.1}Sample Description}{\reset@font\mtcSSfont 39}{subsection.6.3.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.4}Results}{\reset@font\mtcSfont 39}{section.6.4}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {6.5}Results Discussion}{\reset@font\mtcSfont 41}{section.6.5}}

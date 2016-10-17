@@ -51,6 +51,12 @@
 % PREAMBLE
 \input{content/Include}
 \graphicspath{{figures/}}
+
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd{\maketitle}{\@copyrightspace}{}{}{}
+\makeatother
+
 % ---------------------------------------------------------------------------------------------------------------
 
 \begin{document}
@@ -120,7 +126,7 @@
 % without further effort on your part as the last section in
 % the body of your article BEFORE References or any Appendices.
 
-\numberofauthors{5} %  in this sample file, there are a *total*
+\numberofauthors{3} %  in this sample file, there are a *total*
 % of EIGHT authors. SIX appear on the 'first-page' (for formatting
 % reasons) and the remaining two appear in the \additionalauthors section.
 %
@@ -141,8 +147,7 @@ Nuno Xu
 %\titlenote{Dr.~Trovato insisted his name be first.}
 \\
        \affaddr{Instituto Superior Técnico}\\
-       \affaddr{1932 Wallamaloo Lane}\\
-       \affaddr{Wallamaloo, New Zealand}\\
+       \affaddr{Lisbon, Portugal}\\
        \email{nuno.xu@tecnico.ulisboa.pt}
 % 2nd. author
 }
@@ -166,7 +171,7 @@ Nuno Xu
 
 % --------------------------------------------------------
 %\printccsdesc
-\keywords{ACM proceedings; \LaTeX; text tagging}
+\keywords{\ac{AI}, \ac{HRI}, Trust Modelling, Trust Evaluation}
 % --------------------------------------------------------
 \input{content/Introduction}
 %\input{content/Example(ignore)}
@@ -179,7 +184,7 @@ Nuno Xu
 %\end{document}  % This is where a 'short' article might terminate
 
 %ACKNOWLEDGMENTS are optional
-\input{content/Acknowledgments}
+%\input{content/Acknowledgments}
 %
 % The following two commands are all you need in the
 % initial runs of your .tex file to
@@ -195,8 +200,8 @@ Nuno Xu
 %
 %APPENDICES are optional
 %\balancecolumns
-\appendix
-\input{content/Appendices}
+%\appendix
+%\input{content/Appendices}
 
 %\balancecolumns % GM June 2007
 % That's all folks!

@@ -1,2 +1,7 @@
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Maecenas vitae nulla consequat}{\reset@font\mtcSfont 29}{section.5.1}}
-{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Proin ornare dignissim lacus}{\reset@font\mtcSfont 30}{section.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.1}Overview}{\reset@font\mtcSfont 27}{section.5.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.1.1}Stages}{\reset@font\mtcSSfont 28}{subsection.5.1.1}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.2}Trust Evaluation}{\reset@font\mtcSfont 29}{section.5.2}}
+{\reset@font\mtcSfont\mtc@string\contentsline{section}{\noexpand \leavevmode \numberline {5.3}Quick Numbers Game}{\reset@font\mtcSfont 30}{section.5.3}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.1}Gameplay and Parametrization}{\reset@font\mtcSSfont 30}{subsection.5.3.1}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.2}Scoring}{\reset@font\mtcSSfont 31}{subsection.5.3.2}}
+{\reset@font\mtcSSfont\mtc@string\contentsline{subsection}{\noexpand \leavevmode \numberline {5.3.3}Agent's \ac {AI}}{\reset@font\mtcSSfont 31}{subsection.5.3.3}}
